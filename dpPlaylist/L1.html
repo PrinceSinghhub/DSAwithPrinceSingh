@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>L8 Combination Sum I</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg" />
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                      JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  <h1 class="has-text-align-center mb-60">
+                    L1 Phebonachi Number
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  <p>
+                    <b>Dynamic Programming Introduction</b> <br /><br />
+                    <b
+                      >Problem Statement: Introduction To Dynamic Programming</b
+                    >
+                    <br /><br />
+
+                    In this article, we will be going to understand the concept
+                    of dynamic programming. <br /><br />
+
+                    Dynamic Programming can be described as storing answers to
+                    various sub-problems to be used later whenever required to
+                    solve the main problem. <br /><br />
+
+                    The two common dynamic programming approaches are: <br />
+
+                    <li>
+                      Memoization: Known as the “top-down” dynamic programming,
+                      usually the problem is solved in the direction of the main
+                      problem to the base cases.
+                    </li>
+                    <li>
+                      Tabulation: Known as the “bottom-up ” dynamic programming,
+                      usually the problem is solved in the direction of solving
+                      the base cases to the main problem
+                    </li>
+                    <br />
+                    Note: The base case does not always mean smaller input. It
+                    depends upon the implementation of the algorithm. 
+                    <br>The flow
+                    of this article will be as follows:
+                    <br /> <br>
+                    <img src="./img/1.jpg" alt="" /> <br>
+
+                    We will be using the example of Fibonacci numbers here. The
+                    following series is called the Fibonacci series: <br>
+                    <b>0,1,1,2,3,5,8,13,21,…</b> <br>We need to find the nth Fibonacci
+                    number, where n is based on a 0-based index. <br>Every ith
+                    number of the series is equal to the sum of (i-1)th and
+                    (i-2)th number where the first and second number is given as
+                    0 and 1 respectively. <br><b>Disclaimer:</b> Don’t jump directly to the
+                    solution, try it out yourself first. <br>
+                    <b>Pre-req: Recursion <br>
+                        Solution :  <br>Part – 1: Memoizaton <br></b> As every number is equal to
+                    the sum of the previous two terms, the recurrence relation
+                    can be written as: 
+                    <br>
+
+                    <img src="./img/2.jpg" alt=""><br>
+                    
+                    The basic pseudo-code for the problem
+                    will be given as: <br> <br>
+                    <img src="./img/3.jpg" alt="">
+                            <br>
+                    If we draw the recursive tree for n=5, it
+                    will be: <br><br>
+                    <img src="./img/4.jpg" alt=""> <br>
+                    If there are two recursive calls inside a function,
+                    the program will run the first call, finish its execution
+                    and then run the second call. Due to this reason, each and
+                    every call in the recursive tree will be executed. This
+                    gives the recursive code its exponential time complexity.
+                    Can we improve on this? The answer is <b>Yes!</b> <br> <br>
+                    
+                    <img src="./img/5.jpg" alt=""> <br>
+
+                    We want to
+                    compute f(2) as the second call from f(4), but in the
+                    recursive tree we had already computed f(2) once (in the
+                    first recursive call of f(3) ) Similar is the case with
+                    f(3), therefore if we somehow store these values, the first
+                    time we calculated it then we can simply find its value in
+                    constant time whenever we need it. This technique is called
+                    <b>Memoization</b>. Here the cases marked in yellow are called
+                    overlapping sub-problems and we need to solve them only once
+                    during the code execution. <br><br>
+
+                    <h3>Recursive Code</h3>
+
+                    <div class="container">
+                        <div class="item">
+                          <div class="title"><b>Python Code</b></div>
+                          <div class="content">
+                            <img src="./img/L1R.png" alt="" />
+                          </div>
+                        </div>
+    
+                        <div class="item">
+                          <div class="title"><b>C++ Code</b></div>
+                          <div class="content">
+                            <img src="./img/L1Rc++.png" alt="" />
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="title"><b>Java Code</b></div>
+                          <div class="content">
+                            <h5>Sb Mai He Kru ...</h5>
+                            <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                          </div>
+                        </div>
+                      </div>
+                    <br><br>
+
+                    <h3>Time & Space Complexity</h3>
+                    <b>Time Complexity: O(N)</b> <br>
+
+Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N). <br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N) <br><br>
+
+                    <b>Steps to memoize a recursive solution:</b> <br>
+
+Any recursive solution to a problem can be memoized using these three steps: <br>
+
+<li>Create a dp[n+1] array initialized to -1.</li>
+<li>Whenever we want to find the answer of a particular value (say n), we first check whether the answer is already calculated using the dp array(i.e dp[n]!= -1 ). If yes, simply return the value from the dp array.</li>
+<li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[n] to the solution we get.</li>
+
+                  </p>
+
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <!-- <embed
+                    src="./Notes/L8.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  /> -->
+                  <br /><br />
+
+                  <!-- <a href="#">link text</a> -->
+
+                
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Python Code</b></div>
+                      <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit corrupti accusantium eveniet perferendis ratione necessitatibus, iste, sit tempore minus ducimus ullam labore explicabo nobis qui. Ad laboriosam repellendus a expedita.</p>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Java Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L8java.png" alt="" />
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>C++ Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
