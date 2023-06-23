@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>L11 Combination Sum IV</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href=""><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    L11 Combination Sum IV
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  <p>
+                    Given an array of distinct integers nums and a target integer target, return the number of possible combinations that add up to target. <br>
+
+The test cases are generated so that the answer can fit in a <b>32-bit integer</b>.
+                  </p>
+
+                  <p class="exp">
+                    <b>Example 1:</b>
+                    <br />
+                    nput: nums = [1,2,3], target = 4 <br>
+Output: 7 <br>
+Explanation: <br>
+The possible combination ways are: <br>
+(1, 1, 1, 1) <br>
+(1, 1, 2) <br>
+(1, 2, 1) <br>
+(1, 3) <br>
+(2, 1, 1) <br>
+(2, 2) <br>
+(3, 1) <br>
+Note that different sequences are counted as different combinations.
+                    <br /> <br>
+
+                    <b>Example 2:</b>
+                    <br />
+                    Input: nums = [9], target = 3 <br>
+Output: 0
+                    <br /> <br>
+                    <b>Constraints:</b> <br />
+
+                    - 1 <= nums.length <= 200 <br>
+                    - 1 <= nums[i] <= 1000 <br>
+                    - All the elements of nums are unique. <br>
+                    - 1 <= target <= 1000<br>
+                  </p>
+
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L11.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+                  <br /><br />
+
+                  <h3>Extended Version of the L9 Combination Sum II</h3> 
+                  <p>Bascially our Task is cout all the Possible and Unique Subsecquance.</p>
+                  
+                  <h3>Approch</h3>
+                  <li>In L9 Combination Sum II ouir task is print all the <b>unique, lexagraphysical, adn Sorted Order</b> Combination</li>
+                  <li>Similler in this Problem our task is cout all the possible Combination of the Array</li>
+                  <li>Concept and Login will be Same that we used in the L9 Combination Sum II <b>only few steps will be changed</b></li>
+                  <li>Again follow <b>Pick and Not Pick Concept</b></li>
+                  <li>We chosse any element any number of thime its totally depends on you for constructing the Unique Combination</li>
+                  <br>
+
+                  <h5>Recursive Tree</h5>
+                  <img src="../recursionPlayList/Notes/L11Rtree.jpg" alt="">
+
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L11Code (1).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L11Code (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <p>
+                    <b>Time Complexity:O(2 ^ n * k)</b> <br>
+
+<b>Reason:</b>O(2 ^ N) Number of the Combination <b>Expointinal</b><br>
+k: for put the subsecquance into the DS every Time
+<br>
+                    <b>Space Complexity:O(k * x * N)</b>
+                    <li>k: average len if the every Subsecquance</li>
+                    <li>x: for combinations/li>
+                    <li>N: Recursion stack Space</li>
+                        <br>
+                    
+                  </p>
+
+                  <p>
+                    Now the Constrain is Very Highe So this Solution gives <b>TLE</b> Now time to Optimized
+                    <li>Recursion</li>
+                    <li>Memoization</li>
+                    <li>Tabulation</li>
+                  </p>
+
+                  <b>
+                    Memoization, Tabulation and Space Optimization we leard in th DP Series ..... Soon
+                  </b> <br>
+                  <br>
+
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Memoization & Tabulation Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L11Code (3).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>Memoization & Tabulation Java Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L11Code (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Memoization & Tabulation C++ Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+        </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
