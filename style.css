@@ -39,6 +39,12 @@
   gap: 10px;
 }
 
+@media (max-width:400px){
+  .aboutMe{
+    flex-direction: column;
+  }
+}
+
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
