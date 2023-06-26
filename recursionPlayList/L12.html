@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
   <head>
-    <title>L11 Combination Sum IV</title>
+    <title>L12 Subsets I or Subsets Sum I</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg">
 
     <link
@@ -23,6 +24,7 @@
 
     <link rel="stylesheet" href="../style.css" />
   </head>
+
   <html lang="en"  oncontextmenu="return false"></html>
 
   <body
@@ -77,76 +79,69 @@
                   
 
                   <h1 class="has-text-align-center mb-60">
-                    L11 Combination Sum IV
+                    L12 Subsets I or Subsets Sum I
                   </h1>
 
                   <!-- Problem Statements  -->
+                  
                   <p>
-                    Given an array of distinct integers nums and a target integer target, return the number of possible combinations that add up to target. <br>
-
-The test cases are generated so that the answer can fit in a <b>32-bit integer</b>.
+                    Given an integer array nums of <b>unique</b> elements, return all possible subsets (the power set).
+<br>
+The solution set <b>must not</b> contain duplicate subsets. Return the solution in <b>any order</b>.
                   </p>
 
                   <p class="exp">
                     <b>Example 1:</b>
                     <br />
-                    nput: nums = [1,2,3], target = 4 <br>
-Output: 7 <br>
-Explanation: <br>
-The possible combination ways are: <br>
-(1, 1, 1, 1) <br>
-(1, 1, 2) <br>
-(1, 2, 1) <br>
-(1, 3) <br>
-(2, 1, 1) <br>
-(2, 2) <br>
-(3, 1) <br>
-Note that different sequences are counted as different combinations.
+                    Input: nums = [1,2,3]<br>
+                    Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
                     <br /> <br>
 
                     <b>Example 2:</b>
                     <br />
-                    Input: nums = [9], target = 3 <br>
-Output: 0
-                    <br /> <br>
+                    Input: nums = [0] <br>
+                    Output: [[],[0]]
+                        <br><br>
                     <b>Constraints:</b> <br />
 
-                    - 1 <= nums.length <= 200 <br>
-                    - 1 <= nums[i] <= 1000 <br>
-                    - All the elements of nums are unique. <br>
-                    - 1 <= target <= 1000<br>
+                    - 1 <= nums.length <= 10 <br>
+- 10 <= nums[i] <= 10 <br>
+- All the numbers of nums are unique. <br>
                   </p>
 
                   <h3>Notes</h3>
                   <p><b>Note: Zoom for Better Understanding</b></p>
                   <embed
-                    src="./Notes/L11.pdf"
+                    src="./Notes/L12.pdf"
                     type="application/pdf"
                     width="100%"
                     height="800px"
                   />
                   <br /><br />
 
-                  <h3>Extended Version of the L9 Combination Sum II</h3> 
-                  <p>Bascially our Task is cout all the Possible and Unique Subsecquance.</p>
-                  
-                  <h3>Approch</h3>
-                  <li>In L9 Combination Sum II ouir task is print all the <b>unique, lexagraphysical, adn Sorted Order</b> Combination</li>
-                  <li>Similler in this Problem our task is cout all the possible Combination of the Array</li>
-                  <li>Concept and Login will be Same that we used in the L9 Combination Sum II <b>only few steps will be changed</b></li>
-                  <li>Again follow <b>Pick and Not Pick Concept</b></li>
-                  <li>We chosse any element any number of thime its totally depends on you for constructing the Unique Combination</li>
-                  <br>
+                  <p>
+                    <b>Intuition:</b> The main idea is that on every index you have two options either to select the element to add it to your subset(pick) or not select the element at that index and move to the next index(non-pick). <br><br>
 
-                  <h5>Recursive Tree</h5>
-                  <img src="../recursionPlayList/Notes/L11Rtree.jpg" alt="">
+<b>Approach:</b> Traverse through the array and for each index solve for two arrays, one where you pick the element,i.e add the element to the sum or don’t pick and move to the next element, recursively, until the base condition. Here when you reach the end of the array is the base condition.
 
+
+</p>
+<br>
+<img src="./Notes/L12RTree.png" alt=""> <br>
+<li>
+    If this problem comes in the Interview then first we Solved using <b>Power Set Algorithm</b> then moved on the Recursion Approch.
+</li>
+
+<br>
+<b>Recursion Tree</b> <br><br>
+<img src="./Notes/L12RTree.jpg" alt="">
+<br><br>
                   <h3>Code Zone!</h3>
                   <div class="container">
                     <div class="item">
                       <div class="title"><b>Recursion Python Code</b></div>
                       <div class="content">
-                      <img src="./Notes/L11Code (1).png" alt="">
+                      <img src="./Notes/L12py.png" alt="">
                       </div>
                     </div>
 
@@ -155,7 +150,7 @@ Output: 0
                     <div class="item">
                       <div class="title"><b>Recursion Java Code</b></div>
                       <div class="content">
-                      <img src="./Notes/L11Code (2).png" alt="">
+                      <img src="./Notes/L12Java.png" alt="">
                       </div>
                     </div>
 
@@ -170,58 +165,16 @@ Output: 0
                   </div>
                   <br>
                   <p>
-                    <b>Time Complexity:O(2 ^ n * k)</b> <br>
+                    <b>Time Complexity:O(2^n)+O(2^n log(2^n))</b> <br>
 
-<b>Reason:</b>O(2 ^ N) Number of the Combination <b>Expointinal</b><br>
-k: for put the subsecquance into the DS every Time
-<br>
-                    <b>Space Complexity:O(k * x * N)</b>
-                    <li>k: average len if the every Subsecquance</li>
-                    <li>x: for combinations/li>
-                    <li>N: Recursion stack Space</li>
+<b>Reason:</b>ach index has two ways. You can either pick it up or not pick it. So for n index time complexity for O(2^n) and for sorting it will take (2^n log(2^n)).
+<br><br>
+                    <b>Space Complexity: O(2^n) * O(N)</b>
+                    for storing subset sums, since 2^n subsets can be generated for an array of size n. and Recursion Stack Space.
                         <br>
                     
                   </p>
 
-                  <p>
-                    Now the Constrain is Very Highe So this Solution gives <b>TLE</b> Now time to Optimized
-                    <li>Recursion</li>
-                    <li>Memoization</li>
-                    <li>Tabulation</li>
-                  </p>
-
-                  <b>
-                    Memoization, Tabulation and Space Optimization we leard in th DP Series ..... Soon
-                  </b> <br>
-                  <br>
-
-                  <h3>Code Zone!</h3>
-                  <div class="container">
-                    <div class="item">
-                      <div class="title"><b>Memoization & Tabulation Python Code</b></div>
-                      <div class="content">
-                      <img src="./Notes/L11Code (3).png" alt="">
-                      </div>
-                    </div>
-
-          
-
-                    <div class="item">
-                      <div class="title"><b>Memoization & Tabulation Java Code</b></div>
-                      <div class="content">
-                      <img src="./Notes/L11Code (2).png" alt="">
-                      </div>
-                    </div>
-
-
-                    <div class="item">
-                      <div class="title"><b>Memoization & Tabulation C++ Code</b></div>
-                      <div class="content">
-                        <h5>Sb Mai He Kru ...</h5>
-                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
-                      </div>
-                    </div>
-                  </div>
 
                 </div>
                 <br />
