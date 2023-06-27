@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+
+  <head>
+    <title>L13 Subsets II or Subsets Sum II</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    L13 Subsets II or Subsets Sum II
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  
+                <p>
+                    Given an integer array nums that may contain duplicates, return all possible subsets (the power set). <br>
+
+The solution set must not contain duplicate subsets. Return the solution in <b>any order</b>.
+                </p>
+
+                  <p class="exp">
+                    <b>Example 1:</b>
+                    <br />
+                    Input: nums = [1,2,2] <br>
+Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
+                    <br /> <br>
+
+                    <b>Example 2:</b>
+                    <br />
+                    Input: nums = [0] <br>
+Output: [[],[0]]
+                        <br><br>
+                    <b>Constraints:</b> <br />
+
+                    - 1 <= nums.length <= 10 <br>
+- -10 <= nums[i] <= 10
+                  </p>
+
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L13.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+                  <br /><br />
+
+                  <p>
+                    <b>Intuition:</b> This Problem is the Extended Version of the <b>Subset Sum I</b><br><br>
+
+<b>Approach:</b> In Prevesely Problem is the our Main task is finding all the <b>Possible Subset</b> and this problem finding all the possible sunset without any <b>dublicate Subset</b>. 
+
+
+</p>
+
+<p>
+At every index, we make a decision whether to pick or not pick the element at that index. This will help us in generating all possible combinations but does not take care of the duplicates. Hence we will use a set to store all the combinations that will discard the duplicates.
+</p>
+<li>
+    Again we follow the Concepet of the <b>Pick and Not Pick</b> that we learned Preveselly.
+</li>
+<li>
+    Used the Set Data structure to store the unique combinations that will discard the duplicates
+</li>
+<br>
+
+<img src="./Notes/L13rTree.PNG" alt=""> <br>
+
+<h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L13Sol1 (2).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L13Sol1 (1).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+ 
+                  <br>
+
+                  <p>
+                    <b>Time Complexity:O( 2^n *(k log (x) )). 2^n</b> <br>
+
+<b>Reason:</b>for generating every subset and <b>* log( x)</b>  to insert every combination of average length k in a set of size x. After this, we have to convert the set of combinations back into a list of list /vector of vectors which takes more time.
+<br><br>
+                    <b>Space Complexity: O(2^n * k) </b>
+                    to store every subset of average length k. Since we are initially using a set to store the answer another <b>O(2^n *k)</b> is also used.
+                        <br>
+                    
+                  </p>
+
+<li>
+    So Interviewr Not Happy with this Approch and Ask removed that the Extra Time and Optimized Solution
+</li>
+
+<br>
+<p>
+    <b>Approach: </b>
+
+In the previous method, we were taking extra time to store the unique combination with the help of a set.  To make the solution efficient we will have to decide on a method that will consider only the unique combinations without the help of additional data structure. <br> <br>
+
+Lets  understand  with an example where arr = [1,2,2 ]. <br> <br>
+
+Initially start with an empty data structure. In the first recursion, call make a subset of size one, in the next recursion call a subset of size 2, and so on. But first, in order to make a subset of size one what options do we have? <br> <br>
+
+We can pick up elements from either the first index or the second index or the third index. However, if we have already picked up two from the second index, picking up two from the third index will make another duplicate subset of size one. Since we are trying to avoid duplicate subsets we can avoid picking up from the third index. This should give us an intuition that whenever there are duplicate elements in the array we pick up only the first occurrence. <br> <br>
+
+The next recursion calls will continue from the point the previous one ended. <br> <br>
+
+<b>Let’s summarize:-</b><br>
+<li>
+    Here we used the Concept that we learned in the previous in <b>Combination Sum II </b> for finding the unique Combination. 
+</li>
+<br>
+<li>
+    Sort the input array.Make a recursive function that takes the input array ,the current subset,the current index and  a list of list/ vector of vectors to contain the answer.
+</li>
+ <br>
+<li>
+    Try to make a subset of size n during the nth recursion call and consider elements from every index while generating the combinations. Only pick up elements that are appearing for the first time during a recursion call to avoid duplicates.
+</li>
+ <br>
+<li>
+    Once an element is picked up, move to the next index.The recursion will terminate when the end of array is reached.While returning backtrack by removing the last element that was inserted.
+</li>
+</p>
+
+<b>Recursion Tree</b> <br><br>
+<embed
+                    src="./Notes/L13LtREE.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+<br><br>
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Optimized Recursion Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L13optSol (1).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>Optimized Recursion Java Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L13optSol (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Optimized Recursion C++ Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <p>
+                    <b>Time Complexity:O(2^n) </b> <br>
+
+<b>Reason:</b>for generating every subset and <b>O(k)</b>  to insert every subset in another data structure if the average length of every subset is <b>k</b>. Overall <b>O(k * 2^n).</b>
+<br><br>
+                    <b>Space Complexity: O(2^n * k)</b>
+                    to store every subset of average length k. Auxiliary space is <b>O(n)</b>  if n is the depth of the recursion tree.
+                        <br>
+                    
+                  </p>
+
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+        </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
