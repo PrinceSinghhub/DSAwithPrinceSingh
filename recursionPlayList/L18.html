@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+
+  <head>
+    <title>L18 Sudoku Solver</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    L18 Sudoku Solver
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  
+                <p>
+                    Write a program to solve a Sudoku puzzle by filling the empty cells. <br>
+
+A sudoku solution must satisfy <b>all of the following rules:</b> <br> <br>
+	1. Each of the digits 1-9 must occur exactly once in each row. <br>
+	2. Each of the digits 1-9 must occur exactly once in each column.<br>
+    3. Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.<br>
+                </p>
+
+                <img src="./Notes/L18sdu1.png" alt=""> <br>
+
+                  <p class="exp">
+                    <b>Example 1:</b>
+                    <br />
+                    Input: board = [["5","3",".",".","7",".",".",".","."], <br>
+                    ["6",".",".","1","9","5",".",".","."], <br>
+                    [".","9","8",".",".",".",".","6","."], <br>
+                    ["8",".",".",".","6",".",".",".","3"], <br>
+                    ["4",".",".","8",".","3",".",".","1"], <br>
+                    ["7",".",".",".","2",".",".",".","6"], <br>
+                    [".","6",".",".",".",".","2","8","."], <br>
+                    [".",".",".","4","1","9",".",".","5"], <br>
+                    [".",".",".",".","8",".",".","7","9"]]<br><br>
+                    Output: [["5","3","4","6","7","8","9","1","2"], <br>
+                    ["6","7","2","1","9","5","3","4","8"], <br>
+                    ["1","9","8","3","4","2","5","6","7"], <br>
+                    ["8","5","9","7","6","1","4","2","3"], <br>
+                    ["4","2","6","8","5","3","7","9","1"], <br>
+                    ["7","1","3","9","2","4","8","5","6"], <br>
+                    ["9","6","1","5","3","7","2","8","4"], <br>
+                    ["2","8","7","4","1","9","6","3","5"], <br>
+                    ["3","4","5","2","8","6","1","7","9"]]
+
+                    <br>
+                    <b>Explanation:</b> The input board is shown above and the only valid solution is shown below: <br><br>
+                    <img src="./Notes/L18sdu2.png" alt=""> <br>
+                    <br>
+
+                    <b>Constraints:</b> <br />
+                    board.length == 9 <br>
+                    board[i].length == 9 <br>
+                    board[i][j] is a digit or '.'. <br>
+                    It is <b>guaranteed</b> that the input board has only one solution. <br>
+                  </p>
+
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L18.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+                  <br /><br />
+
+
+<br>
+<li>
+   This is the Standared problem based on the Recursion and Backtracking
+</li>
+<br>
+<p>
+    <b>Intuition:</b> <br>
+
+Since we have to fill the empty cells with available possible numbers and we can also have multiple solutions, the main intuition is to try every possible way of filling the empty cells. And the more correct way to try all possible solutions is to use recursion. In each call to the recursive function, we just try all the possible numbers for a particular cell and transfer the updated board to the next recursive call.
+</p>
+
+<li>
+    Let’s see the step by step approach. Our main recursive function(solve()) is going to just do a plain matrix traversal of the sudoku board. When we find an empty cell, we pause and try to put all available numbers(1 – 9) in that particular empty cell.
+</li> <br>
+<li>
+    We need another loop to do that. But wait, we forgot one thing – the board has to satisfy all the conditions, right? So, for that we have another function(isValid()) which will check whether the number we have inserted into that empty cell will not violate any conditions.
+</li> <br>
+<li>
+    If it is violating, we try with the next number. If it is not, we call the same function recursively, but this time with the updated state of the board. Now, as usual it tries to fill the remaining cells in the board in the same way.
+</li> <br>
+<li>
+    Now we’ll come to the returning values. If at any point we cannot insert any numbers from 1 – 9 in a particular cell, it means the current state of the board is wrong and we need to backtrack. An important point to follow is, we need to return false to let the parent function(which is called this function) know that we cannot fill this way. This will serve as a hint to that function, that it needs to try with the next possible number. Refer to the picture below.
+</li> <br>
+
+<img src="./Notes/L18fig1.png" alt="">
+
+<br>
+<li>
+    If a recursive call returns true, we can assume that we found one possible way of filling and we simply do an <b>early return.</b>
+</li> <br>
+
+<b>Validating Board</b> <br>
+
+<li>
+    Now, let’s see how we are validating the sudoku board. After determining a number for a cell(at i’th row, j’th col), we try to check the validity. As we know, a valid sudoku needs to satisfy 3 conditions, we can use three loops. But we can do within a single loop itself. Let’s try to understand that.
+</li> <br>
+<li>
+    <b>
+        We loop from 0 to 8 and check the values – board[i][col](1st condition) and board[row][i](2nd condition), whether the number is already included. For the 3rd condition – the expression (3 * (row / 3) + i / 3) evaluates to the row numbers of that 3×3 submatrix and the expression (3 * (col / 3) + i % 3) evaluates to the column numbers.
+    </b>
+</li> <br>
+<li>
+    For eg, if row= 5 and col= 3, the cells visited are
+</li> <br>
+
+<img src="./Notes/L18fig2.png" alt="">
+
+<br>
+<b>Recursion Tree</b> <br><br>
+<img src="./Notes/L18rtree.jpg" alt="">
+<li>Reamaing Tree in the Notes [ Like that we find the Possible Paath ]</li>
+
+<br><br>
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L18code (2).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L18code (1).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <p>
+                    <b>Time Complexity:O(9(n ^ 2)) </b>in the worst case, for each cell in the n2 board, we have 9 possible numbers. <br>
+
+                    <b>Space Complexity:  O(1) + O(N) </b>since we are refilling the given board itself, there is no extra space required, so constant space complexity.
+                    O(N) for the Recursive Stack Space.
+                        <br>
+                    
+                  </p>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+        </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
