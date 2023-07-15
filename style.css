@@ -10,9 +10,12 @@
 {
   width:100%;
   font-family:arial;
-  cursor: pointer;
-  
 }
+
+.container:hover{
+  cursor: pointer;
+}
+
 .title{
   display:flex;
   align-items:center;
