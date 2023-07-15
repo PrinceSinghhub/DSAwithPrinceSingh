@@ -109,7 +109,7 @@
                     <br>The flow
                     of this article will be as follows:
                     <br /> <br>
-                    <img src="./img/1.jpg" alt="" /> <br>
+                    <img src="./Notes/1.jpg" alt="" /> <br>
 
                     We will be using the example of Fibonacci numbers here. The
                     following series is called the Fibonacci series: <br>
@@ -118,22 +118,23 @@
                     number of the series is equal to the sum of (i-1)th and
                     (i-2)th number where the first and second number is given as
                     0 and 1 respectively. <br><b>Disclaimer:</b> Don’t jump directly to the
-                    solution, try it out yourself first. <br>
-                    <b>Pre-req: Recursion <br>
-                        Solution :  <br>Part – 1: Memoizaton <br></b> As every number is equal to
+                    solution, try it out yourself first. <br><br>
+                    
+                    <h3>Recursive Approch</h3>
+                    As every number is equal to
                     the sum of the previous two terms, the recurrence relation
                     can be written as: 
                     <br>
 
-                    <img src="./img/2.jpg" alt=""><br>
+                    <img src="./Notes/2.jpg" alt=""><br>
                     
                     The basic pseudo-code for the problem
                     will be given as: <br> <br>
-                    <img src="./img/3.jpg" alt="">
-                            <br>
+                    <img src="./Notes/3.jpg" alt="">
+                            <br>Notes
                     If we draw the recursive tree for n=5, it
                     will be: <br><br>
-                    <img src="./img/4.jpg" alt=""> <br>
+                    <img src="./Notes/4.jpg" alt=""> <br>
                     If there are two recursive calls inside a function,
                     the program will run the first call, finish its execution
                     and then run the second call. Due to this reason, each and
@@ -141,7 +142,7 @@
                     gives the recursive code its exponential time complexity.
                     Can we improve on this? The answer is <b>Yes!</b> <br> <br>
                     
-                    <img src="./img/5.jpg" alt=""> <br>
+                    <img src="./Notes/5.jpg" alt=""> <br>
 
                     We want to
                     compute f(2) as the second call from f(4), but in the
@@ -154,25 +155,23 @@
                     overlapping sub-problems and we need to solve them only once
                     during the code execution. <br><br>
 
-                    <h3>Recursive Code</h3>
-
                     <div class="container">
                         <div class="item">
-                          <div class="title"><b>Python Code</b></div>
+                          <div class="title"><b>Recursive Python Code</b></div>
                           <div class="content">
-                            <img src="./img/L1R.png" alt="" />
+                            <img src="./Notes/L1py (1).png" alt="" />
                           </div>
                         </div>
     
                         <div class="item">
-                          <div class="title"><b>C++ Code</b></div>
+                          <div class="title"><b>Recursive C++ Code</b></div>
                           <div class="content">
-                            <img src="./img/L1Rc++.png" alt="" />
+                            <img src="./Notes/L1cp1.png" alt="">
                           </div>
                         </div>
 
                         <div class="item">
-                          <div class="title"><b>Java Code</b></div>
+                          <div class="title"><b>Recursive Java Code</b></div>
                           <div class="content">
                             <h5>Sb Mai He Kru ...</h5>
                             <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
@@ -190,6 +189,8 @@ Reason: The overlapping subproblems will return the answer in constant time O(1)
 
 Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N) <br><br>
 
+                    <h3>Memoization Approch</h3>
+
                     <b>Steps to memoize a recursive solution:</b> <br>
 
 Any recursive solution to a problem can be memoized using these three steps: <br>
@@ -199,44 +200,168 @@ Any recursive solution to a problem can be memoized using these three steps: <br
 <li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[n] to the solution we get.</li>
 
                   </p>
+                  
 
-                  <h3>Notes</h3>
-                  <p><b>Note: Zoom for Better Understanding</b></p>
-                  <!-- <embed
-                    src="./Notes/L8.pdf"
-                    type="application/pdf"
-                    width="100%"
-                    height="800px"
-                  /> -->
-                  <br /><br />
+                  <p>
+                    <b>Dry Run:</b> <br><br>
 
-                  <!-- <a href="#">link text</a> -->
+                    <img src="./Notes/L1dparr.jpg" alt=""> <br><br>
+
+Declare a dp[] array of size n+1 and initialize it to -1.  <br><br>
+
+
+Now, following the recursive code we see that at n=5, the value of dp[5] is equal to -1 therefore we need to compute its value and go to the inner recursive calls. Similar is the case at n=4, n=3, and n=2. For n=2, we hit our two base conditions as the inner recursive calls. <br><br>
+
+As we traverse back after solving n=2, we update its dp array value to 1 ( the answer we got). Similarly, for the second recursive call for n=3, we again hit a base condition and we get an answer of f(n=3) as 2, we again update the dp array. <br><br>
+<img src="./Notes/L1rtree1.jpg" alt=""> <br><br>
+
+Then for the second recursive call f(n=4), we see that dp[2] is not equal to -1, which means that we have already solved this subproblem and we simply return the value at dp[2] as our answer. Hence we get the answer of f(n=4) as 3(2+1).
+
+Similarly, for the second recursive call f(n=5), we get dp[3] as 2. Then we compute for(n=5) as 5(2+3).
+
+<br><br>
+
+<img src="./Notes/L1rtree2.jpg" alt="">
+                  </p>
+
 
                 
 
                   <div class="container">
                     <div class="item">
-                      <div class="title"><b>Python Code</b></div>
+                      <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit corrupti accusantium eveniet perferendis ratione necessitatibus, iste, sit tempore minus ducimus ullam labore explicabo nobis qui. Ad laboriosam repellendus a expedita.</p>
+                        <img src="./Notes/L1py (4).png" alt="" />
                       </div>
                     </div>
 
                     <div class="item">
-                      <div class="title"><b>Java Code</b></div>
+                      <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L8java.png" alt="" />
+                        <img src="./Notes/L1cp2.png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
-                      <div class="title"><b>C++ Code</b></div>
+                      <div class="title"><b>Memoization Java Code</b></div>
                       <div class="content">
                         <h5>Sb Mai He Kru ...</h5>
                         <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
                       </div>
                     </div>
                   </div>
+
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                    <b>Time Complexity: O(N)</b> <br>
+
+Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N). <br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N) <br><br>
+
+<h3>Tabulation Approch</h3>
+
+Tabulation is a ‘bottom-up’ approach where we start from the base case and reach the final answer that we want.
+<br><br>
+<b>Steps to convert Recursive Solution to Tabulation one.</b><br>
+
+<li>Declare a dp[] array of size n+1.</li>
+<li>First initialize the base condition values, i.e i=0 and i=1 of the dp array as 0 and 1 respectively.</li>
+<li>Set an iterative loop that traverses the array( from index 2 to n) and for every index set its value as dp[i-1] + dp[i-2]. </li>
+
+<br>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>Tabulation Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L1py (3).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation C++ Code</b></div>
+    <div class="content">
+      <img src="./Notes/L1cp3.png" alt="">
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity: O(N)</b> <br>
+
+                    Reason: We are running a simple iterative loop<br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using an external array of size ‘n+1’.<br><br>
+
+<h3>Space Optimization</h3>
+
+<p>
+  If we closely look at the relation, <br>
+
+<b>dp[i] =  dp[i-1] + dp[i-2]</b>
+
+we see that for any i, we do need only the last two values in the array. So is there a need to maintain a whole array for it?  <br>
+
+The answer is ‘No’. Let us call dp[i-1] as prev and dp[i-2] as prev2. Now understand the following illustration. <br><br>
+
+<img src="./Notes/L1tabulation.jpg" alt="">
+<br>
+<li>Each iteration’s cur_i and prev becomes the next iteration’s prev and prev2 respectively.</li>
+<li>Therefore after calculating cur_i, if we update prev and prev2 according to the next step, we will always get the answer. </li>
+<li>After the iterative loop has ended we can simply return prev as our answer.</li>
+</p>
+
+
+
+<div class="container">
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L1py (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized C++ Code</b></div>
+    <div class="content">
+      <img src="./Notes/L1cp4.png" alt="">
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+<br>
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity: O(N)</b> <br>
+
+                    Reason: We are running a simple iterative loop<br>
+
+<b>Space Complexity: O(1)</b> <br>
+
+Reason: We are not using any extra space Only Used a 2 Variables fro Storing the Prev Result.
+
+
                 </div>
                 <br />
 
