@@ -28,6 +28,10 @@
   padding:10px;
   display:none;
 }
+
+.item {
+  margin-bottom:0.5rem;
+}
 .item.active .content
 {
   display:block;
