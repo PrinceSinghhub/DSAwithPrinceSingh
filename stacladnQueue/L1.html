@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+
+  <head>
+    <title>SQP1 Stack Implementation Using Array</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    SQP1 Stack Implementation Using Array
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  
+                  <h4>What is Stack?</h4>
+                 <p>
+                    A stack is a non-primitive linear data structure. it is an ordered list in which the addition of a new data item and deletion of the already existing data item is done from only one end known as the top of the stack (TOS). The element which is added in last will be first to be removed and the element which is inserted first will be removed in last. As all the deletion and insertion in a stack is done from the top of the stack, the last added element will be the first to be removed from the stack. That is the reason why stack is also called <b>Last-in-First-out (LIFO).</b>
+                 </p>
+
+                 <br>
+                 <img src="./Notes/stq.gif" alt="">
+
+                 <p>
+
+                    <h3>Stack Implementation</h3>
+<b>The stack can be implemented in two ways : </b> <br>
+<li>Static implementation</li>
+<li>Dynamic implementation</li>
+<br><br>
+<b>Static Implementation:</b> – Here array is used to create a stack. it is a simple technique but is not a flexible way of creation, as the size of the stack has to be declared during program design, after that size implementation is not efficient with respect to memory utilization. <br><br>
+
+<b>Dynamic implementation:</b> – It is also called linked list representation and uses a pointer to implement the stack type of data structure.
+                 </p>
+
+                 <h3>Some Basics operations on the Stack</h3>
+                 <li>push()</li>
+                 <li>pop()</li>
+                 <li>top() or peek()</li>
+                 <li>size()</li>
+                 <li>empty()</li>
+
+
+                 
+                 <br><br>
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L1.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+
+                 <br><br>
+                 <b>Push()</b>: Push Function used for the put the element to the Stack if the stack limit is <b>Not Overflow under the Limit</b> or The process of adding new elements to the top of the stack is called push operation.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the stack is full or not.</li>
+                 <li>If the stack is full, then print error of <b>overflow</b> and exit the program.</li>
+                 <li>If the stack is not full, then increment the top and add the element.</li>
+<br>
+                 <pre>
+                    push (Stack, Size, Limit, x) 
+                        { 
+                        if (Limit=Size) 
+                        Print stack overflow and exit
+                        Limit = Limit + 1
+                        Stack[Limit] = x
+                        EXIT
+                        }
+                 </pre>
+
+                 <br><br>
+                 <b>Pop()</b>: Pop Function The process of deleting an element. from the top of the stack is called POP operation
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the stack is full or not.</li>
+                 <li>If the stack is empty, then print error of <b>underflow</b> and exit the program.</li>
+                 <li>If the stack is not empty, then print the element at the top and decrement the top.</li>
+                 <br>
+                 <pre>
+                    pop (Stack, Size, Limit) 
+                        { 
+                        if (Limit==-1) 
+                        Print Underflow 
+                        X = Stack[Limit] 
+                        Limit=Limit-1 
+                        Return X and Exit 
+                        }
+                 </pre>
+
+                 <br><br>
+                 <b>Top() or Peeks()</b>: Means Prnt the Top Element from the Stack.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the stack is not Empty.</li>
+                 <li>If the stack is empty, then print error of <b>underflow</b> and exit the program.</li>
+                 <li>If the stack is not empty, then print the element at the top of the Stack</li>
+                 <br>
+
+                 <pre>
+                    top (Stack, Size, Limit) 
+                        { 
+                        if (Limit==-1) 
+                        Print Underflow error
+                        X = Stack[Limit] 
+                        Return X and Exit 
+                        }
+                 </pre>
+
+
+                 <br><br>
+                 <b>Size()</b>: Size function used for find the Size of the Stack.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the stack is not Empty.</li>
+                 <li>If the stack is empty, then print -1</li>
+                 <li>If the stack is not empty, then print Limit is our Size of the Stack</li>
+                 <br>
+
+                 <pre>
+                    size (Stack, Size, Limit) 
+                        { 
+                        if (Limit==-1) 
+                        Print Underflow error
+                        
+                        Return Limit and Exit 
+                        }
+                 </pre>
+
+                 <br><br>
+                 <b>Empty()</b>: Empty function is Used for check Stack Stck is Empty or Not.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the stack is not Empty.</li>
+                 <li>If the stack is Not empty, then print -1 or False</li>
+                 <li>If the stack is empty, then print 1 or True</li>
+                 <br>
+
+                 <pre>
+                  empty (Stack, Size, Limit) 
+                      { 
+                      if (Limit==-1) 
+                      Print(1)
+                      
+                      Return -1
+                      }
+               </pre>
+                 <br>
+
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L1code (1).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>C++ Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L1code (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <p>
+                    <b>Time Complexity:</b>Push Operation : O(1) <br>
+                        Pop Operation : O(1) <br>
+                        Top Operation : O(1) <br>
+                        Empty Operation: O(1)  <br>
+                        Size Operation: O(1) <br>
+                        Search Operation : O(n)<br>
+
+                    <b>Space Complexity:O(N) </b>O(N) Size of the Stack
+                        <br>
+                    
+                  </p>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+        </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

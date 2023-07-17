@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+
+  <head>
+    <title>SQP2 Queue Implementation Using Array</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://Queueoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    SQP2 Queue Implementation Using Array
+                  </h1>
+
+                  <!-- Problem Statements  -->
+            
+                <h3>What is Queue?</h3>
+                <p>
+                    A queue is a linear list of elements in which deletions can take place only at one end called the front, and insertions can take place only at the end called the rear. The queue is a First In First Out type of data structure <b>(FIFO)</b>, the terms <b>FRONT</b> and <b>REAR</b> are used in describing a linear list only when it is implemented as a queue.
+                </p>
+
+                <img src="./Notes/L2ququ.gif" alt="">
+
+                 <br><br>
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L2.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+                  <br>
+
+
+                  <p>
+                    In computer science queues are used in multiple places e.g. in a time-sharing system program with the same priority from a queue waiting to be executed. A queue is a non-primitive linear data structure. it is a homogeneous collection of elements.
+                <br>
+
+The process to add an element into a queue is called <b>Enqueue</b> and the process of removal of an element from the queue is called <b>Dequeue</b>.
+                  </p>
+
+                  <p>
+                    <b>Basic features of Queue</b>
+                    <br>
+                    <li>Like Stack, queue is also an ordered list of elements of similar data types.</li>
+                    <li>Queue is a FIFO( First in First Out ) structure.</li>
+                    <li>Once a new element is inserted into the Queue, all the elements inserted before the new element in the queue must be removed, to remove the new element.</li>
+                    <li>peek() function is used to return the value of first element without dequeuing it.</li>
+                  </p>
+
+                  <br>
+
+                  <h3>Implementation of Queue Data Structure</h3>
+<b>The queue can be implemented in two ways : </b>
+<li>
+    Static implementation (using arrays)</li>
+<li>
+    Dynamic implementation (using linked list)</li>
+    <br>
+
+    <h3>Some Basics operations on the Queue</h3>
+                 <li>push()</li>
+                 <li>pop()</li>
+                 <li>top() or peek()</li>
+                 <li>size()</li>
+                 <li>empty()</li>
+
+                 <br><br>
+                 <b>Push()</b>: Push Function used for the put the element to the Queue if the Queue limit is <b>Not Overflow under the Limit</b> or The process of adding new elements to the top of the Queue is called <b>Enqueue</b> operation.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check for the overflow condition.</li>
+                 <li>Check if the queue is empty.</li>
+                 <li>If the queue is empty, then both FRONT and REAR are set to zero, so that the new value can be stored at the 0th location. Otherwise, if the queue already has some values, then REAR is incremented so that it points to the next location in the array.</li>
+                 <li>The value is stored in the queue at the location pointed by REAR.</li>
+<br>
+                 <pre>
+                    push (Queue, Size, Front, Rear, x) 
+                        {
+                        if (Rear == Size - 1) 
+                            Print Over flow 
+                        if (Front == -1) 
+                            Set Front = 0 && Rear = 0 
+                        Else 
+                            Rear = Rear + 1 
+                            Queue[Rear] = x 
+                            EXIT
+                        }
+                 </pre>
+
+                 <br><br>
+                 <b>Pop()</b>: Pop Function The process of deleting an element. from the front of the Queue is called POP operation also know as <b>Dequeue</b>
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check for underflow condition. An underflow occurs if FRONT == –1 or FRONT > REAR.</li>
+                 <li>If queue has some values, then FRONT is incremented so that it now points to the next value in the queue.</li>
+                 
+                 <br>
+                 <pre>
+                    pop (Queue, Size, Front, Rear) 
+                        { 
+                        if (Front == - 1) 
+                            Print Under flow 
+                        x = Queue [Front] 
+                        if (Front == Rear) 
+                            Set Front = -1 && Rear = -1 
+                        Else 
+                            Front = Front + 1 
+                            EXIT
+                        }
+                 </pre>
+
+                 <br><br>
+                 <b>Top() or Peek()</b>: Means Print the Front Element from the Queue.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the Queue is not Empty.</li>
+                 <li>If the Queue is empty, then print error of <b>underflow</b> and exit the program.</li>
+                 <li>If the Queue is not empty, then print the element at the front of the Queue</li>
+
+                 <pre>
+                    top (Queue, Size, Front, Rear) 
+                    { 
+                        if (Front == - 1) 
+                            Print Under flow 
+                        else:
+                            x = Queue [Front] 
+                            print(x)
+                            Exit
+                        }
+                 </pre>
+
+
+                 <br><br>
+                 <b>Size()</b>: Size function used for find the Size of the Queue.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the Queue is not Empty.</li>
+                 <li>If the Queue is empty, then print -1</li>
+                 <li>If the Queue is not empty, then print Limit is our Size of the Queue</li>
+                 <br>
+
+                 <pre>
+                    size (Queue, Size, Front, Rear) 
+                    { 
+                        if (Front == - 1) 
+                            Print Under flow 
+                        else:
+                           print(Size)
+                            Exit
+                        }
+                 </pre>
+
+                 <br><br>
+                 <b>Empty()</b>: Empty function is Used for check Queue Stck is Empty or Not.
+                <br>
+                 <b>Conditions:</b>
+                 <li>Check if the Queue is not Empty.</li>
+                 <li>If the Queue is Not empty, then print -1 or False</li>
+                 <li>If the Queue is empty, then print 1 or True</li>
+                 <br>
+
+                 <pre>
+                    empty (Queue, Size, Front, Rear) 
+                    { 
+                        if (Front == - 1) 
+                            Print print(1)
+                        else:
+                            print(-1)
+                            Exit
+                        }
+                 </pre>
+
+<br><br>
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L2code (1).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L2code (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <p>
+                    <b>Time Complexity:</b>Push Operation : O(1) <br>
+                        Pop Operation : O(1) <br>
+                        Top Operation : O(1) <br>
+                        Empty Operation: O(1)  <br>
+                        Size Operation: O(1) <br>
+                        Search Operation : O(n)<br>
+
+                    <b>Space Complexity:O(N) </b>O(N) Size of the Queue
+                        <br>
+                    
+                  </p>
+
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+        </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
