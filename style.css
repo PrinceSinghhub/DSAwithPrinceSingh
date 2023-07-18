@@ -1,3 +1,9 @@
+@media (max-width:400px){
+  .aboutMe{
+    flex-direction: column;
+  }
+}
+
 .dsa{
   display: flex;
   gap: 10px;
@@ -47,12 +53,6 @@
 .aboutMe{
   display:flex;
   gap: 10px;
-}
-
-@media (max-width:400px){
-  .aboutMe{
-    flex-direction: column;
-  }
 }
 
 body {
