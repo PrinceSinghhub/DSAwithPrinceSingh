@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+  <head>
+    <title>SQP9 Implementation LRU Cache</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                    </div> 
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    SQP9 Implementation LRU Cache
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  <p>
+                    Design a data structure that follows the constraints of a <b>Least Recently Used (LRU)</b> cache. <br><br>
+
+Implement the LRUCache class: <br>
+
+<li>LRUCache(int capacity) Initialize the LRU cache with positive size capacity.</li>
+<li>
+    int get(int key) Return the value of the key if the key exists, otherwise return -1.
+</li>
+<li>void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.</li>
+The functions get and put must each run in O(1) average time complexity.
+                  </p>
+
+                  <p class="exp">
+                    <b>Example 1:</b>
+                    <br />
+                    Input:["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"] <br>
+                    [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]<br />
+                    Output: [null, null, null, 1, null, -1, null, -1, 3, 4]<br />
+                    <b>Explanation</b>: <br />
+                    LRUCache lRUCache = new LRUCache(2); <br>
+                    lRUCache.put(1, 1); // cache is {1=1} <br>
+                    lRUCache.put(2, 2); // cache is {1=1, 2=2} <br>
+                    lRUCache.get(1);    // return 1 <br>
+                    lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3} <br>
+                    lRUCache.get(2);    // returns -1 (not found) <br>
+                    lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3} <br>
+                    lRUCache.get(1);    // return -1 (not found) <br>
+                    lRUCache.get(3);    // return 3 <br>
+                    lRUCache.get(4);    // return 4 <br>
+                    <br />
+
+                    <b>Constraints:</b> <br />
+
+                    - 1 <= capacity <= 3000 <br>
+                    - 0 <= key <= 104 <br>
+                    - 0 <= value <= 105 <br>
+                    - At most 2 * 105 calls will be made to get and put. <br>
+                  </p>
+
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L9.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+                  <br /><br />
+
+                  <h3>Approch</h3>
+
+                  <p>Basically we Degine the Data Structure that follow the Properties of the <b>LRU</b> in this problem we have a tuple of the finction</p>
+
+                  <li>get()</li>
+                  <li>put()</li>
+
+                  <p>
+                    get function return the value of the particular key, if the key is not present into the ds retuirn -1 <b>get(key)</b>
+                  </p>
+                  <p>
+                    out function used for the we gives the <b>key and value</b> and we put into the cache data structure <b>put(key,val)</b>
+                  </p>
+
+                  <li><b>if the capacity of the data structure s filled then return -1</b></li>
+                  <p>remove the <b>least recent used guy</b> and then we will Insert the our New pair</p>
+
+                  <b>Implementation and Dry run into the Notes check out</b>
+                  <!-- <a href="#">link text</a> -->
+                  
+                  <br><br>
+                  <h3>Code Zone!</h3>
+                  <p>Before Loking the Code... <br> <b>Try by Your Self ...</b></p>
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L9code (1).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+
+
+                    <div class="item">
+                      <div class="title"><b>C++ Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L9code (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                    <br>
+
+                    <p>
+                        <b>Time Complexity:O(N) </b>Linear Iteration<br>
+    
+                        <b>Space Complexity:O(N) </b>O(N) Stack Space.
+                            <br>
+                        
+                      </p>
+
+                      <br>
+
+                      <p>Interviewer Not Happy with these Solution Becouse we used a Extra Space O(N) time to optimized the Approch</p>
+
+                      <h3>Optimized Approch</h3>
+                      <b>Prerequisite: Should have knowledge on the topics Hashmaps & DLL(Doubly Linked List)</b>
+                      <br><br>
+
+                      <p>
+                        While inserting the {key,val} pair into the DDL make sure that we are inserting it from the back tail to head. <br>
+
+The cache will tell us when the {key, value} pair is used/inserted. <br>
+
+Approach: <br>
+
+Size = 3 <br>
+
+put(1,10) <br>
+
+put(3,15) <br>
+
+put(2,12) <br>
+
+get(3) <br>
+
+put(4,25) <br>
+
+Create a DLL and hashmap <br>
+<br>
+<img src="./Notes/L9p1.jpg" alt=""> <br>
+
+While inserting the {key,val}pair consider the following <br><br>
+
+<li>Check if the {key,val} pair is already present in Cache.</li>
+<li>Check for the capacity. if the Cache size == capacity then while inserting the new pair remove the <b>LRU</b> and insert the <b>new pair right after the head</b>.while removing the node make sure to remove the {value, node} pair from the cache</li>.
+<li>If the key is not present in the Cache then return -1;</li>
+
+Query 1: put(1,10) <br>
+
+Initialling Cache is empty so (n = 0) and  (1,10) are not present in the Cache. It is a new element so we should insert it into the Cache. <br>
+
+Since n < capacity(0 < 3), so we can insert the pair. <br>
+
+Insert the pair({1,10}) right after the head.And store the {key,address of the node x} in the Cache. <br>
+<br>
+<img src="./Notes/L9p2.jpg" alt=""> <br>
+
+Query 2: put(3,15) <br>
+
+Repeat the same process. <br>
+
+(3,15) is not present in the Cache and the size of the Cache (n = 1) is less than capacity 3. <br>
+
+Insert the pair(3,10) right after the head and store the address of that node in the Cache with its key value. <br>
+<br>
+<img src="./Notes/L9p3.jpg" alt=""> <br>
+
+Query 3: put(2,12) <br>
+
+Repeat again. check if (2,12) Is present in the Cache. <br>
+
+No, it’s not present in the cache so now check for the size Cache size is 2 < capacity(3).so insert the pair right after the head. <br>
+<br>
+<img src="./Notes/L9p4.jpg" alt=""> <br>
+
+Query 4: get(3) <br>
+
+Check if the value is present in the cache. Yes, 3 is present in the cache so take the address of the node(Y) and output the value which is present in that node. <br>
+
+Now the most recently used should be changed because the flow is from head(most recent) to tail(least recent). <br>
+
+Delete the node and add that node right after the head. Since the node is moved to a new address update the address of the key in the cache. <br>
+<br>
+<img src="./Notes/L9p5.jpg" alt=""> <br>
+Query 5: put(4,25) <br>
+
+Check for the size of the cache n = 3 which is equal to capacity so we have to remove the LRU which is present right before the tail. <br>
+
+Before removing the node delete the pair{key, node} of that node present in the cache. <br>
+<br>
+<img src="./Notes/L9p6.jpg" alt=""> <br>
+
+Now the size of the cache will be 2 now we have space to insert the pair(4,25). <br>
+
+Take (4,25) right after the head and take the address of the node(s) and insert it into the cache. <br>
+<br>
+<img src="./Notes/L9p7.jpg" alt=""> <br>
+
+
+                      </p> <br>
+                      <h3>Code Zone!</h3>
+                      <div class="container">
+                        <div class="item">
+                          <div class="title"><b>Optimized Python Code</b></div>
+                          <div class="content">
+                          <img src="./Notes/L9optcode (1).png" alt="">
+                          </div>
+                        </div>
+    
+              
+    
+    
+    
+                        <div class="item">
+                          <div class="title"><b>Optimized C++ Code</b></div>
+                          <div class="content">
+                          <img src="./Notes/L9optcode (2).png" alt="">
+                          </div>
+                        </div>
+    
+    
+                        <div class="item">
+                          <div class="title"><b>Optimized Java Code</b></div>
+                          <div class="content">
+                            <h5>Sb Mai He Kru ...</h5>
+                            <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                          </div>
+                        </div>
+                        <br>
+    
+                        <p>
+                            <b>Time Complexity:O(N) </b>Linear Iteration<br>
+        
+                            <b>Space Complexity:O(1) </b>Becouse we can not used a any further data structure for our answer.
+                                <br>
+                            
+                          </p>
+
+
+
+                  </div>
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
