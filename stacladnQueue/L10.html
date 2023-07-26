@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+  <head>
+    <title>SQP10 Implementation LFU Cache</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                    </div> 
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    SQP10 Implementation LFU Cache
+                  </h1>
+
+                  <!-- Problem Statements  -->
+
+                  <p>
+                    Design and implement a data structure for a Least Frequently Used (LFU) cache. <br><br>
+
+Implement the LFUCache class:
+ <br><br>
+LFUCache(int capacity) Initializes the object with the capacity of the data structure.
+int get(int key) Gets the value of the key if the key exists in the cache. Otherwise, returns -1.
+void put(int key, int value) Update the value of the key if present, or inserts the key if not already present. When the cache reaches its capacity, it should invalidate and remove the least frequently used key before inserting a new item. For this problem, when there is a tie (i.e., two or more keys with the same frequency), the least recently used key would be invalidated. <br><br>
+To determine the least frequently used key, a use counter is maintained for each key in the cache. The key with the smallest use counter is the least frequently used key.
+ <br><br>
+When a key is first inserted into the cache, its use counter is set to 1 (due to the put operation). The use counter for a key in the cache is incremented either a get or put operation is called on it.
+ <br><br>
+The functions get and put must each run in O(1) average time complexity.
+                  </p>
+                  
+
+                  <p class="exp">
+                    <b>Example 1:</b>
+                    <br />
+                    Input:["LFUCache", "put", "put", "get", "put", "get", "get", "put", "get", "get", "get"]
+                    [[2], [1, 1], [2, 2], [1], [3, 3], [2], [3], [4, 4], [1], [3], [4]]<br />
+                    Output: [null, null, null, 1, null, -1, 3, null, -1, 3, 4]
+                    <br />
+                    <b>Explanation</b>:
+                    <pre>
+// cnt(x) = the use counter for key x
+// cache=[] will show the last used order for tiebreakers (leftmost element is  most recent)
+LFUCache lfu = new LFUCache(2);
+lfu.put(1, 1);   // cache=[1,_], cnt(1)=1
+lfu.put(2, 2);   // cache=[2,1], cnt(2)=1, cnt(1)=1
+lfu.get(1);      // return 1
+                 // cache=[1,2], cnt(2)=1, cnt(1)=2
+lfu.put(3, 3);   // 2 is the LFU key because cnt(2)=1 is the smallest, invalidate 2.
+                 // cache=[3,1], cnt(3)=1, cnt(1)=2
+lfu.get(2);      // return -1 (not found)
+lfu.get(3);      // return 3
+                 // cache=[3,1], cnt(3)=2, cnt(1)=2
+lfu.put(4, 4);   // Both 1 and 3 have the same cnt, but 1 is LRU, invalidate 1.
+                 // cache=[4,3], cnt(4)=1, cnt(3)=2
+lfu.get(1);      // return -1 (not found)
+lfu.get(3);      // return 3
+                 // cache=[3,4], cnt(4)=1, cnt(3)=3
+lfu.get(4);      // return 4
+                 // cache=[4,3], cnt(4)=2, cnt(3)=3
+                    </pre>
+
+                    <b>Constraints:</b> <br />
+                    - 1 <= capacity <= 10^4 <br>
+                    - 0 <= key <= 10^5 <br>
+                    - 0 <= value <= 10^9 <br>
+                    - At most 2 * 10^5 calls will be made to get and put. <br>
+                  </p>
+
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L10.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+                  <br /><br />
+
+                  <h3>Approch</h3>
+
+                  <p>Basically we Degine the Data Structure that follow the Properties of the <b>LFU</b> Lest Frequenty used in this problem we have a tuple of the finction</p>
+
+                  <li>get()</li>
+                  <li>put()</li>
+
+                  <p>
+                    get function return the value of the particular key, if the key is not present into the ds retuirn -1 <b>get(key)</b>
+                  </p>
+                  <p>
+                    put function used for the we gives the <b>key and value</b> and we put into the cache data structure <b>put(key,val)</b>
+                  </p>
+
+                  <li><b>if the capacity of the data structure is filled then removed LFU guy</b></li>
+
+                  <p>remove the <b>least frequent used guy</b> and then we will Insert the our New pair</p>
+                  <b>The Main Task is Degine the algorithm with Space Complexcity O(1) but function work in the Constant Time.</b>
+
+                  <li>Check the Exapmple in the Notes.</li><br>
+
+                  <h3>How Algorithm Works</h3>
+            
+                  <pre>
+• get(key):
+    ○ If key is not present in cache, return -1
+    ○ Get the node from the cache
+    ○ Update the node frequency
+    ○ Remove the node from the DLL of node's previous frequency
+    ○ Add the node to the DLL with the node's updated frequency
+    ○ Update min frequency value
+                
+• put(key, value):
+    ○ If key is present in cache
+        - Similar logic to that of get function
+        - Only difference being that we need to update the value here
+    ○ If key not present in cache
+        - If the cache has already reached it's capacity, delete the tail 
+           node from the DLL with least frequency
+        - Create the new node with the (key, value) pair passed as arguments
+        - Add the node to the frequency table with frequency key = 1
+        - Add the node to the cache
+        - Update min frequency to be 1
+                  </p>
+                  </pre>
+
+                  <h3>Code Zone!</h3>
+                  <p>Before Loking the Code... <br> <b>Try by Your Self ...</b></p>
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L10code (1).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>C++ Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L10code (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                    <br>
+
+                    <p>
+                        <b>Time Complexity:O(N) </b>Linear Iteration<br>
+    
+                        <b>Space Complexity:O(N) </b>O(N) Stack Space.
+                            <br>
+                        
+                      </p>
+
+                  </div>
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
