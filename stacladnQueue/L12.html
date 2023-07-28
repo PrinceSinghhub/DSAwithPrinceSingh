@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+
+  <head>
+    <title>SQP11 Sliding Window Maximum</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg">
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+            
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                    
+                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  
+
+                  <h1 class="has-text-align-center mb-60">
+                    SQP11 Sliding Window Maximum
+                  </h1>
+
+                  <!-- Problem Statements  -->
+            
+                 <p>
+                    You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. <br><br>
+
+Return the max sliding window.
+                 </p>
+
+                 <p class="exp">
+                    <b>Example 1:</b>
+                    <br />
+                    Input:nums = [1,3,-1,-3,5,3,6,7], k = 3<br />
+                    Output: Output: [3,3,5,5,6,7]
+                    <br />
+                    
+                    <br>
+                    <b>Explanation</b>: <br>
+                    <pre>
+Window position                Max
+-------------------------     -----
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+                    </pre>
+
+                    <b>Constraints:</b> <br />
+                    - 1 <= nums.length <= 10^5 <br>
+- -10^4 <= nums[i] <= 10^4 <br>
+- 1 <= k <= nums.length <br>
+
+                  </p>
+
+                 <br>
+                  <h3>Notes</h3>
+                  <p><b>Note: Zoom for Better Understanding</b></p>
+                  <embed
+                    src="./Notes/L12.pdf"
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                  />
+<br><br>
+
+<p>
+    Always start with the BruteForce Approch and then moved on the Optimal Approch <br>
+    <img src="./Notes/L12img1.jpg" alt="">
+</p>
+<li>Now can we say that I start with Iteration from 0 and finding the all the possible subarray with the length ok k</li>
+<img src="./Notes/L12img2.jpg" alt="">
+<br>
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L12code (1).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L12code (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <p>
+                    <b>Time Complexity:O(N ^ 2) </b>Becouse we used a nested Loop thats why<br>
+
+                    <b>Space Complexity:O(N) </b>for the Answer
+                        <br>
+                    
+                  </p>
+
+
+                  <p>
+                    <h3>Optimized  Approch</h3>
+                    <li>Now here again we used the concept of the <b>Next Greatest Element</b> that we learned pevesolly <b>in this Concept we store the element into the Increasing Fassion</b></li>
+                    <li>In this problem we store the element into the <b>Desciring order Fassion</b> we required the <b>deque</b> data structure</li>
+                    <li>we start Iteration from the Index = 0</li>
+                    <li><b>And maintain the deque prpoperty that is decresing order</b> and put that Index into the deque</li>
+                  </p>
+
+                  <br>
+                  <b>Maintain Property</b>
+                  <br>
+                  <li>check if the deque is Empty() then put the Index into the deque</li>
+                  <li>and check if the <b>exisiting element is the < then arr[i] then removed all the element from the deque</b> and then put Index into the deque</li>
+                  <li>otherwise put Index into the deque</li>
+
+                  <br>
+
+                  <h3>Code Zone!</h3>
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Optimized Python Code</b></div>
+                      <div class="content">
+                      <img src="./Notes/L12optcode (1).png" alt="">
+                      </div>
+                    </div>
+
+          
+
+                    <div class="item">
+                      <div class="title"><b>Optimized C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L12optcode (2).png" alt="">
+                      </div>
+                    </div>
+
+
+                    <div class="item">
+                      <div class="title"><b>Optimized Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <p>
+                    <b>Time Complexity:O(N) + O(N) ~ O(N) </b>for the linear Iteration, and for the checking the Window Size <b>That is the Amotized Time Complexcity</b><br>
+
+                    <b>Space Complexity:O(K) </b>for the Answer of window size
+                        <br>
+                    
+                  </p>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+        </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+
+      items.forEach((item) => {
+        const x = item.querySelector(".title");
+        const y = item.querySelector(".content");
+
+        x.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>
