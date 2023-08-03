@@ -1,3 +1,11 @@
+*{
+  scroll-behavior:smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 @media (max-width:400px){
   .aboutMe{
     flex-direction: column;
@@ -12,10 +20,15 @@
   width: 100px;
   height: 100px;
 }
+
+
 .container
 {
   width:100%;
   font-family:arial;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .container:hover{
@@ -55,7 +68,7 @@
   gap: 10px;
 }
 
-/* status bar css  */
+/* ----------------------------------------status bar css  ----------------------------------*/
 @keyframes progress {
   0% { --percentage: 0; }
   100% { --percentage: var(--value); }
@@ -82,6 +95,10 @@
   display: grid;
   place-items: center;
   -webkit-animation: progress 2s 0.5s forwards;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 [role="progressbar"]::before {
@@ -91,16 +108,16 @@
   left: 15px;
   width: 70%;
   height: 70%;
-  border-radius: 20px;
+  border-radius: 40px;
   background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
   mask: radial-gradient(white 55%, transparent 0);
   mask-mode: alpha;
   -webkit-mask: radial-gradient(#0000 55%, #000 0);
   -webkit-mask-mode: alpha;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
 }
 
 [role="progressbar"]::after {
@@ -137,16 +154,16 @@
   left: 15px;
   width: 70%;
   height: 70%;
-  border-radius: 20px;
+  border-radius: 40px;
   background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
   mask: radial-gradient(white 55%, transparent 0);
   mask-mode: alpha;
   -webkit-mask: radial-gradient(#0000 55%, #000 0);
   -webkit-mask-mode: alpha;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
 }
 
 [role="progressbar1"]::after {
@@ -175,6 +192,52 @@
 
 .dsaHeading{
  gap: 50px;
+}
+
+
+/* ------------------------------------------------------ completion baar Mai File -------------------------  */
+
+.statusBarHai{
+  display: flex;
+  width: 80px;
+  margin-top: -60px;
+  margin-left: 160px;
+}
+
+.circular-progress{
+  position: relative;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+ 
+}
+.circular-progress::before{
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.progress-value{
+  position: relative;
+  font-size: 20px;
+  font-weight: 1000;
+  color: #ff070798;
+
+}
+
+
+/* -------------------------------------------------------------------------------- */
+
+center {
+  font-weight: 1000;
+  font-size: 20px;
 }
 
 body {
