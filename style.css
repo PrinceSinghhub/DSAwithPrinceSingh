@@ -55,6 +55,128 @@
   gap: 10px;
 }
 
+/* status bar css  */
+@keyframes progress {
+  0% { --percentage: 0; }
+  100% { --percentage: var(--value); }
+}
+
+@property --percentage {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: var(--value);
+  --primary: #369;
+  --secondary: #adf;
+  --size: 100px;
+  top: -40px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  -webkit-animation: progress 2s 0.5s forwards;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  width: 70%;
+  height: 70%;
+  border-radius: 20px;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
+/* ---------------------------- bar 2  ----------------------------- */
+
+[role="progressbar1"] {
+  --percentage: var(--value);
+  --primary: #ff070798;
+  --secondary: #adf;
+  --size: 100px;
+  top: -40px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  -webkit-animation: progress 2s 0.5s forwards;
+}
+
+[role="progressbar1"]::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  width: 70%;
+  height: 70%;
+  border-radius: 20px;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+[role="progressbar1"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------- */
+
+.statusBar{
+  display: flex;
+}
+
+.QuestionStatus{
+  color: #ff070798;
+}
+
+.InterviewImp{
+  color: rgba(0, 128, 0, 0.747);
+}
+
+/* --------------------------------------------------------------------- */
+
+.dsaHeading{
+ gap: 50px;
+}
+
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
