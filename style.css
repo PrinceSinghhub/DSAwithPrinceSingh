@@ -235,10 +235,53 @@
 
 /* -------------------------------------------------------------------------------- */
 
-center {
-  font-weight: 1000;
-  font-size: 20px;
+/* ------------------------------------ core Subjects CSS ------------------------------- */
+
+.coreZone{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  
 }
+
+.os .cn .dbms .oops{
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.os img{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+
+}
+
+.cn img{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+
+}
+.dbms img{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+
+}
+
+.oops img{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+
+}
+
+
+
+/* ------------------------------------------------------------------------------------------- */
+
 
 body {
     --wp--preset--color--black: #001d30;
