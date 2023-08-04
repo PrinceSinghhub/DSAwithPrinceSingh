@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title> DPL1 Phebonachi Number</title>
+    <title>DPL2 Climbing Stars</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,172 +74,178 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL1 Phebonachi Number
+                    DPL2 Climbing Stars
                   </h1>
 
                   <!-- Problem Statements  -->
                   <p>
-                    <b>Dynamic Programming Introduction</b> <br /><br />
-                    <b
-                      >Problem Statement: Introduction To Dynamic Programming</b
-                    >
-                    <br /><br />
+                    You are climbing a staircase. It takes n steps to reach the top. <br>
 
-                    In this article, we will be going to understand the concept
-                    of dynamic programming. <br /><br />
+Each time you can either climb <b>1 or 2</b> steps. In how many distinct ways can you climb to the top?
+                  </p>
 
-                    Dynamic Programming can be described as storing answers to
-                    various sub-problems to be used later whenever required to
-                    solve the main problem. <br /><br />
+                  <img src="./Notes/L2qimg.jpg" alt=""> <br>
 
-                    The two common dynamic programming approaches are: <br />
+                  
 
-                    <li>
-                      Memoization: Known as the “top-down” dynamic programming,
-                      usually the problem is solved in the direction of the main
-                      problem to the base cases.
-                    </li>
-                    <li>
-                      Tabulation: Known as the “bottom-up ” dynamic programming,
-                      usually the problem is solved in the direction of solving
-                      the base cases to the main problem
-                    </li>
+                  <p class="exp">
+                    <b>Example 1:</b>
                     <br />
-                    Note: The base case does not always mean smaller input. It
-                    depends upon the implementation of the algorithm. 
-                    <br>The flow
-                    of this article will be as follows:
-                    <br /> <br>
-                    <img src="./Notes/1.jpg" alt="" /> <br>
+                    Input:n = 2<br />
+                    Output: 2<br />
+                    <b>Explanation</b>: <br />
+                    There are two ways to climb to the top. <br>
+1. 1 step + 1 step <br>
+2. 2 steps <br>
+                    <br />
 
-                    We will be using the example of Fibonacci numbers here. The
-                    following series is called the Fibonacci series: <br>
-                    <b>0,1,1,2,3,5,8,13,21,…</b> <br>We need to find the nth Fibonacci
-                    number, where n is based on a 0-based index. <br>Every ith
-                    number of the series is equal to the sum of (i-1)th and
-                    (i-2)th number where the first and second number is given as
-                    0 and 1 respectively. <br><b>Disclaimer:</b> Don’t jump directly to the
-                    solution, try it out yourself first. <br><br>
-                    
-                    <h3>Recursive Approch</h3>
-                    As every number is equal to
-                    the sum of the previous two terms, the recurrence relation
-                    can be written as: 
+                    <b>Example 2:</b>
+                    <br />
+                    Input: n = 3<br />
+                    Output: 3 <br />
+
+                    <b>Explanation</b>: <br />
+                    There are three ways to climb to the top. <br>
+1. 1 step + 1 step + 1 step <br>
+2. 1 step + 2 steps <br>
+3. 2 steps + 1 step <br>
+                    <br />
+                    <b>Constraints:</b> <br />
+
+                    - 1 <= n <= 45 <br />
+                  </p>
+
+                  <p>
+                    This Problem is Based on the Prevesouly that Problem that we learned in DPL1. Now there is the Question and that question is:-
+                  </p>
+
+                  <h4>Important Point</h4>
+
+                  <p>
+                    <b>How to Identify a DP problem?</b> <br>
+
+When we see a problem, it is very important to identify it as a dynamic programming problem. Generally (but not limited to) if the problem statement asks for the following:
+
+<li>
+    Count the total number of ways
+</li>
+<li>
+    Given multiple ways of doing a task, which way will give the minimum or the maximum output
+</li>
+<br>
+We can try to apply recursion. Once we get the recursive solution, we can go ahead to convert it to a dynamic programming one.
+<br><br>
+<b>Steps To Solve The Problem After Identification</b>
+<br>
+Once the problem has been identified, the following three steps comes handy in solving the problem:
+
+<li>Try to represent the problem in terms of indexes.</li>
+<li>
+    Try all possible choices/ways at every index according to the problem statement.
+</li>
+<br>
+<b>If the question states:-</b>
+<li>Count all the ways – return sum of all choices/ways.</li>
+<li>Find maximum/minimum- return the choice/way with maximum/minimum output.</li>
+                  </p>
+
+
+                  <b>Now uesing thes Concept we Solved the all upcoming DP Problems and Also this One.</b><br><br>
+
+                  <h3>Thought Process</h3>
+                  <p>
+                    <li>
+                        We will assume n stairs as indexes from 0 to N.
+                    </li>
+                    <img src="./Notes/L2pimg (1).jpg" alt="">
                     <br>
 
-                    <img src="./Notes/2.jpg" alt=""><br>
-                    
-                    The basic pseudo-code for the problem
-                    will be given as: <br> <br>
-                    <img src="./Notes/3.jpg" alt="">
-                            <br>Notes
-                    If we draw the recursive tree for n=5, it
-                    will be: <br><br>
-                    <img src="./Notes/4.jpg" alt=""> <br>
-                    If there are two recursive calls inside a function,
-                    the program will run the first call, finish its execution
-                    and then run the second call. Due to this reason, each and
-                    every call in the recursive tree will be executed. This
-                    gives the recursive code its exponential time complexity.
-                    Can we improve on this? The answer is <b>Yes!</b> <br> <br>
-                    
-                    <img src="./Notes/5.jpg" alt=""> <br>
+                    <li>
+                        At a single time, we have 2 choices: Jump one step or jump two steps. We will try both of these options at every index.
+                    </li>
+                    <img src="./Notes/L2pimg (2).jpg" alt="">
+                    <br>
 
-                    We want to
-                    compute f(2) as the second call from f(4), but in the
-                    recursive tree we had already computed f(2) once (in the
-                    first recursive call of f(3) ) Similar is the case with
-                    f(3), therefore if we somehow store these values, the first
-                    time we calculated it then we can simply find its value in
-                    constant time whenever we need it. This technique is called
-                    <b>Memoization</b>. Here the cases marked in yellow are called
-                    overlapping sub-problems and we need to solve them only once
-                    during the code execution. <br><br>
+                    <li>
+                        As the problem statement asks to count the total number of distinct ways, we will return the sum of all the choices in our recursive function.
+                    </li>
+                  </p>
 
-                    <div class="container">
-                        <div class="item">
-                          <div class="title"><b>Recursive Python Code</b></div>
-                          <div class="content">
-                            <img src="./Notes/L1py (1).png" alt="" />
-                          </div>
-                        </div>
-    
-                        <div class="item">
-                          <div class="title"><b>Recursive C++ Code</b></div>
-                          <div class="content">
-                            <img src="./Notes/L1cp1.png" alt="">
-                          </div>
-                        </div>
+                  <p>
+                    he base case will be when we want to go to the 0th stair, then we have only one option. <br>
+                    <li>
+                        There will be one more edge-case when n=1, if we call f(n-2) we will reach stair numbered -1 which is not defined, therefore we add an extra test case to return 1 ( the only way) when n=1.
+                    </li> <br>
+                    <b>Recurance Code</b>
 
-                        <div class="item">
-                          <div class="title"><b>Recursive Java Code</b></div>
-                          <div class="content">
-                            <h5>Sb Mai He Kru ...</h5>
-                            <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
-                          </div>
-                        </div>
+                    <pre>
+function(index) {
+    if( index == 0) return 1
+    if( index == 1) return 1
+    return function(index-1) + function(index-2)
+    }
+                    </pre>
+                  </p>
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L2rcode (1).png" alt="" />
                       </div>
-                    <br><br>
+                    </div>
 
-                    <h3>Time & Space Complexity</h3>
-                    <b>Time Complexity: O(N)</b> <br>
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L2rcode (2).png" alt="">
+                      </div>
+                    </div>
 
-Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N). <br>
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  <b>Time Complexity: O(2 ^ N)</b> <br>
+
+Reason: Exponential Time we find out the all the Possible Path<br>
 
 <b>Space Complexity: O(N)</b> <br>
 
-Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N) <br><br>
+Reason: We are using a recursion stack space(O(N))<br><br>
 
-                    <h3>Memoization Approch</h3>
-
-                    <b>Steps to memoize a recursive solution:</b> <br>
+<h3>Memoization Approch</h3>
+<b>Steps to memoize a recursive solution:</b> <br>
 
 Any recursive solution to a problem can be memoized using these three steps: <br>
 
 <li>Create a dp[n+1] array initialized to -1.</li>
 <li>Whenever we want to find the answer of a particular value (say n), we first check whether the answer is already calculated using the dp array(i.e dp[n]!= -1 ). If yes, simply return the value from the dp array.</li>
 <li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[n] to the solution we get.</li>
-
-                  </p>
-                  
-
-                  <p>
-                    <b>Dry Run:</b> <br><br>
-
-                    <img src="./Notes/L1dparr.jpg" alt=""> <br><br>
-
-Declare a dp[] array of size n+1 and initialize it to -1.  <br><br>
+<br>
 
 
-Now, following the recursive code we see that at n=5, the value of dp[5] is equal to -1 therefore we need to compute its value and go to the inner recursive calls. Similar is the case at n=4, n=3, and n=2. For n=2, we hit our two base conditions as the inner recursive calls. <br><br>
 
-As we traverse back after solving n=2, we update its dp array value to 1 ( the answer we got). Similarly, for the second recursive call for n=3, we again hit a base condition and we get an answer of f(n=3) as 2, we again update the dp array. <br><br>
-<img src="./Notes/L1rtree1.jpg" alt=""> <br><br>
-
-Then for the second recursive call f(n=4), we see that dp[2] is not equal to -1, which means that we have already solved this subproblem and we simply return the value at dp[2] as our answer. Hence we get the answer of f(n=4) as 3(2+1).
-
-Similarly, for the second recursive call f(n=5), we get dp[3] as 2. Then we compute for(n=5) as 5(2+3).
-
-<br><br>
-
-<img src="./Notes/L1rtree2.jpg" alt="">
-                  </p>
-
-
-                
 
                   <div class="container">
                     <div class="item">
                       <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L1py (4).png" alt="" />
+                        <img src="./Notes/L2mcode (1).png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L1cp2.png" alt="">
+                        <img src="./Notes/L2mcode (2).png" alt="">
                       </div>
                     </div>
 
@@ -278,14 +284,14 @@ Tabulation is a ‘bottom-up’ approach where we start from the base case and r
   <div class="item">
     <div class="title"><b>Tabulation Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L1py (3).png" alt="" />
+      <img src="./Notes/L2tabcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>Tabulation C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L1cp3.png" alt="">
+      <img src="./Notes/L2tabcode (2).png" alt="" />
     </div>
   </div>
 
@@ -320,7 +326,7 @@ we see that for any i, we do need only the last two values in the array. So is t
 
 The answer is ‘No’. Let us call dp[i-1] as prev and dp[i-2] as prev2. Now understand the following illustration. <br><br>
 
-<img src="./Notes/L1tabulation.jpg" alt="">
+<img src="./Notes/L2tabImg.jpg" alt="">
 <br>
 <li>Each iteration’s cur_i and prev becomes the next iteration’s prev and prev2 respectively.</li>
 <li>Therefore after calculating cur_i, if we update prev and prev2 according to the next step, we will always get the answer. </li>
@@ -333,14 +339,14 @@ The answer is ‘No’. Let us call dp[i-1] as prev and dp[i-2] as prev2. Now un
   <div class="item">
     <div class="title"><b>SpaceOptmized Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L1py (2).png" alt="" />
+      <img src="./Notes/L2spcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>SpaceOptmized C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L1cp4.png" alt="">
+      <img src="./Notes/L2spcode (2).png" alt="" />
     </div>
   </div>
 
@@ -376,17 +382,6 @@ Reason: We are not using any extra space Only Used a 2 Variables fro Storing the
 
       <!-- #main -->
     </div>
-    <script>
-      const items = document.querySelectorAll(".item");
-
-      items.forEach((item) => {
-        const x = item.querySelector(".title");
-        const y = item.querySelector(".content");
-
-        x.addEventListener("click", () => {
-          item.classList.toggle("active");
-        });
-      });
-    </script>
+    <script src="../script.js"></script>
   </body>
 </html>
