@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL2 Climbing Stairs</title>
+    <title>DPL3 Frog Jump I</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,131 +74,84 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL2 Climbing Staris
+                    DPL3 Frog Jump I
                   </h1>
 
                   <!-- Problem Statements  -->
                   <p>
-                    You are climbing a staircase. It takes n steps to reach the top. <br>
-
-Each time you can either climb <b>1 or 2</b> steps. In how many distinct ways can you climb to the top?
+                    Given a number of stairs and a frog, the frog wants to climb from the 0th stair to the (N-1)th stair. At a time the frog can climb either one or two steps. A height[N] array is also given. Whenever the frog jumps from a stair i to stair j, the energy consumed in the jump is abs(height[i]- height[j]), where abs() means the absolute difference. We need to return the minimum energy that can be used by the frog to jump from stair 0 to stair N-1.
                   </p>
 
-                  <img src="./Notes/L2qimg.jpg" alt=""> <br>
+                  <b>Example:</b> <br>
+                  <img src="./Notes/L3exp1.jpg" alt=""> <br><br>
 
-                  
-
-                  <p class="exp">
-                    <b>Example 1:</b>
-                    <br />
-                    Input:n = 2<br />
-                    Output: 2<br />
-                    <b>Explanation</b>: <br />
-                    There are two ways to climb to the top. <br>
-1. 1 step + 1 step <br>
-2. 2 steps <br>
-                    <br />
-
-                    <b>Example 2:</b>
-                    <br />
-                    Input: n = 3<br />
-                    Output: 3 <br />
-
-                    <b>Explanation</b>: <br />
-                    There are three ways to climb to the top. <br>
-1. 1 step + 1 step + 1 step <br>
-2. 1 step + 2 steps <br>
-3. 2 steps + 1 step <br>
-                    <br />
-                    <b>Constraints:</b> <br />
-
-                    - 1 <= n <= 45 <br />
+                  <p>
+                    This Problem is Based on the Prevesouly that Problem that we learned in DPL2. only some term will be changed.
                   </p>
 
                   <p>
-                    This Problem is Based on the Prevesouly that Problem that we learned in DPL1. Now there is the Question and that question is:-
+                    As the problem statement states to find the minimum energy required, two approaches should come to our mind, greedy and dynamic programming. <br><br>
+                    <b>First, we will see why a greedy approach will not work?</b> <br>
+
+                    <p>Greedy: Find the Min for the Every Steps</p>
+
+The total energy required by the frog depends upon the path taken by the frog. If the frog just takes the cheapest path in every stage it can happen that it eventually takes a costlier path after a certain number of jumps. The following example will help to understand this.
                   </p>
 
-                  <h4>Important Point</h4>
+                  <img src="./Notes/L3diffImg.jpg" alt=""> 
+                  <b>Therefore a greedy solution will not work and we need to try all possible paths to find the answer.</b><br><br>
+
+                  <h3>Recursice Approch</h3>
 
                   <p>
-                    <b>How to Identify a DP problem?</b> <br>
-
-When we see a problem, it is very important to identify it as a dynamic programming problem. Generally (but not limited to) if the problem statement asks for the following:
-
-<li>
-    Count the total number of ways
-</li>
-<li>
-    Given multiple ways of doing a task, which way will give the minimum or the maximum output
-</li>
-<br>
-We can try to apply recursion. Once we get the recursive solution, we can go ahead to convert it to a dynamic programming one.
-<br><br>
-<b>Steps To Solve The Problem After Identification</b>
-<br>
-Once the problem has been identified, the following three steps comes handy in solving the problem:
-
-<li>Try to represent the problem in terms of indexes.</li>
-<li>
-    Try all possible choices/ways at every index according to the problem statement.
-</li>
-<br>
-<b>If the question states:-</b>
-<li>Count all the ways – return sum of all choices/ways.</li>
-<li>Find maximum/minimum- return the choice/way with maximum/minimum output.</li>
+                    Again we follow the Same Concept that we follow in the Preveious DPL2 Lecture we find the one steps and two steps and return the Min of both.
                   </p>
 
-
-                  <b>Now uesing thes Concept we Solved the all upcoming DP Problems and Also this One.</b><br><br>
-
-                  <h3>Thought Process</h3>
-                  <p>
-                    <li>
-                        We will assume n stairs as indexes from 0 to N.
-                    </li>
-                    <img src="./Notes/L2pimg (1).jpg" alt="">
-                    <br>
-
-                    <li>
-                        At a single time, we have 2 choices: Jump one step or jump two steps. We will try both of these options at every index.
-                    </li>
-                    <img src="./Notes/L2pimg (2).jpg" alt="">
-                    <br>
-
-                    <li>
-                        As the problem statement asks to count the total number of distinct ways, we will return the sum of all the choices in our recursive function.
-                    </li>
-                  </p>
+                  <b>
+                    Steps to form the recursive solution
+                  </b>
 
                   <p>
-                    he base case will be when we want to go to the 0th stair, then we have only one option. <br>
-                    <li>
-                        There will be one more edge-case when n=1, if we call f(n-2) we will reach stair numbered -1 which is not defined, therefore we add an extra test case to return 1 ( the only way) when n=1.
-                    </li> <br>
-                    <b>Recurance Code</b>
+                    Step 1: Express the problem in terms of indexes
+                    <li>This can be easily done as there are array indexes [0,1,2,…, n-1].</li>
+                    <li>We can say that f(n-1) signifies the minimum amount of energy required to move from stair 0 to stair n-1. </li>
+                    <li>Therefore f(0) simply should give us the answer as 0(base case).</li> <br><br>
 
-                    <pre>
-function(index) {
-    if( index == 0) return 1
-    if( index == 1) return 1
-    return function(index-1) + function(index-2)
-    }
-                    </pre>
+                    Step 2: Try all the choices to reach the goal.
+                    <li>The frog can jump either by one step or by two steps. We will calculate the cost of the jump from the height array. The rest of the cost will be returned by the recursive calls that we make</li>
+
+                    <center><img src="./Notes/L3base1.jpg" alt="" style="height: 350px; width:auto"></center>
+
+                    Step 3: Take the minimum of all the choices
+
+                    <li>As the problem statement asks to find the minimum total energy, we will return the minimum of two choices of step2.</li>
+                    <li>Also at ind=1, we can’t try the second choice so we will only make one recursive call.</li>
+                    <li>The base case will be when we want to go to the 0th stair, then we have only one option.</li>
+
+                    <center><img src="./Notes/L3base2.jpg" alt="" style="height: 350px; width:auto"> <br></center>
+
+                    <h4>Recursion Tree</h4>
+
+                    <img src="./Notes/L3rtree.jpg" alt="">
+
+                    <b>Once we form the recursive solution, we can use the approach told in Dynamic Programming Introduction to convert it into a dynamic programming</b>
+
                   </p>
+
+
 
                   <div class="container">
                     <div class="item">
                       <div class="title"><b>Recursion Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2rcode (1).png" alt="" />
+                        <img src="./Notes/L3rcode (1).png" alt="" />
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Recursion C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2rcode (2).png" alt="">
+                        <img src="./Notes/L3rcode (2).png" alt="">
                       </div>
                     </div>
 
@@ -222,14 +175,16 @@ Reason: Exponential Time we find out the all the Possible Path<br>
 Reason: We are using a recursion stack space(O(N))<br><br>
 
 <h3>Memoization Approch</h3>
-<b>Steps to memoize a recursive solution:</b> <br>
 
-Any recursive solution to a problem can be memoized using these three steps: <br>
+<b>Steps to convert Recursive code to memoization solution:</b> <br>
 
-<li>Create a dp[n+1] array initialized to -1.</li>
+<li>Create a dp[n] array initialized to -1.</li>
 <li>Whenever we want to find the answer of a particular value (say n), we first check whether the answer is already calculated using the dp array(i.e dp[n]!= -1 ). If yes, simply return the value from the dp array.</li>
 <li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[n] to the solution we get.</li>
 <br>
+<h4>Recursion Tree</h4>
+
+<img src="./Notes/L3rtree.jpg" alt=""> <br>
 
 
 
@@ -238,14 +193,14 @@ Any recursive solution to a problem can be memoized using these three steps: <br
                     <div class="item">
                       <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2mcode (1).png" alt="">
+                        <img src="./Notes/L3memocode (1).png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2mcode (2).png" alt="">
+                        <img src="./Notes/L3memocode (2).png" alt="">
                       </div>
                     </div>
 
@@ -263,35 +218,35 @@ Any recursive solution to a problem can be memoized using these three steps: <br
                   <h3>Time & Space Complexity</h3>
                     <b>Time Complexity: O(N)</b> <br>
 
-Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N). <br>
+                    Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N).<br>
 
 <b>Space Complexity: O(N)</b> <br>
 
-Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N) <br><br>
+Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)<br><br>
 
 <h3>Tabulation Approch</h3>
 
-Tabulation is a ‘bottom-up’ approach where we start from the base case and reach the final answer that we want.
+Tabulation is a <b>‘bottom-up’</b> approach where we start from the base case and reach the final answer that we want and Memoization is the <b>Top-down</b> Approch.
 <br><br>
 <b>Steps to convert Recursive Solution to Tabulation one.</b><br>
 
 <li>Declare a dp[] array of size n+1.</li>
-<li>First initialize the base condition values, i.e i=0 and i=1 of the dp array as 0 and 1 respectively.</li>
-<li>Set an iterative loop that traverses the array( from index 2 to n) and for every index set its value as dp[i-1] + dp[i-2]. </li>
+<li>First, initialize the base condition values, i.e dp[0] as 0.</li>
+<li>Set an iterative loop that traverses the array( from index 1 to n-1) and for every index calculate jumpOne and jumpTwo and set dp[i] = min(jumpOne, jumpTwo).</li>
 
 <br>
 <div class="container">
   <div class="item">
     <div class="title"><b>Tabulation Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L2tabcode (1).png" alt="" />
+      <img src="./Notes/L3tabcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>Tabulation C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L2tabcode (2).png" alt="" />
+      <img src="./Notes/L3tabcode (2).png" alt="" />
     </div>
   </div>
 
@@ -320,13 +275,15 @@ Reason: We are using an external array of size ‘n+1’.<br><br>
 <p>
   If we closely look at the relation, <br>
 
-<b>dp[i] =  dp[i-1] + dp[i-2]</b>
+  <b>if we solved the problem using thabulation and in these problem we used the concept of the dp[i-1] , dp[i-2] then 100% Space Complexity Possible in that types of the Problems</b> <br>
+<br>
+dp[i] =  min(dp[i-1],dp[i-2]) <br><br>
 
 we see that for any i, we do need only the last two values in the array. So is there a need to maintain a whole array for it?  <br>
 
 The answer is ‘No’. Let us call dp[i-1] as prev and dp[i-2] as prev2. Now understand the following illustration. <br><br>
 
-<img src="./Notes/L2tabImg.jpg" alt="">
+<center><img src="./Notes/L3spopt.jpg" alt="" style="height: 350px; width:auto"></center>
 <br>
 <li>Each iteration’s cur_i and prev becomes the next iteration’s prev and prev2 respectively.</li>
 <li>Therefore after calculating cur_i, if we update prev and prev2 according to the next step, we will always get the answer. </li>
@@ -339,14 +296,14 @@ The answer is ‘No’. Let us call dp[i-1] as prev and dp[i-2] as prev2. Now un
   <div class="item">
     <div class="title"><b>SpaceOptmized Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L2spcode (1).png" alt="" />
+      <img src="./Notes/L3spcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>SpaceOptmized C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L2spcode (2).png" alt="" />
+      <img src="./Notes/L3spcode (2).png" alt="" />
     </div>
   </div>
 

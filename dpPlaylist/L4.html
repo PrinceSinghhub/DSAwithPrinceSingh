@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL2 Climbing Stairs</title>
+    <title>DPL4 Frog Jump with K Distance</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,131 +74,61 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL2 Climbing Staris
+                    DPL4 Frog Jump with K Distance
                   </h1>
 
                   <!-- Problem Statements  -->
                   <p>
-                    You are climbing a staircase. It takes n steps to reach the top. <br>
-
-Each time you can either climb <b>1 or 2</b> steps. In how many distinct ways can you climb to the top?
-                  </p>
-
-                  <img src="./Notes/L2qimg.jpg" alt=""> <br>
-
-                  
-
-                  <p class="exp">
-                    <b>Example 1:</b>
-                    <br />
-                    Input:n = 2<br />
-                    Output: 2<br />
-                    <b>Explanation</b>: <br />
-                    There are two ways to climb to the top. <br>
-1. 1 step + 1 step <br>
-2. 2 steps <br>
-                    <br />
-
-                    <b>Example 2:</b>
-                    <br />
-                    Input: n = 3<br />
-                    Output: 3 <br />
-
-                    <b>Explanation</b>: <br />
-                    There are three ways to climb to the top. <br>
-1. 1 step + 1 step + 1 step <br>
-2. 1 step + 2 steps <br>
-3. 2 steps + 1 step <br>
-                    <br />
-                    <b>Constraints:</b> <br />
-
-                    - 1 <= n <= 45 <br />
+                    This is a follow-up question to <b>“Frog Jump”</b> discussed in the previous DPL3. In the previous question, the frog was allowed to jump either <b>one or two steps</b> at a time. In this question, the frog is allowed to jump up to ‘K’ steps at a time. If K=4, the frog can jump 1,2,3, or 4 steps at every index.
                   </p>
 
                   <p>
-                    This Problem is Based on the Prevesouly that Problem that we learned in DPL1. Now there is the Question and that question is:-
-                  </p>
+                    We will first see the modifications required in the pseudo-code that we learn in DPL3. Once the recursive code is formed, we can go ahead with the memoization and tabulation. <br>
 
-                  <h4>Important Point</h4>
+<b>Here is the pseudocode from the simple DPL3 Lecture.</b>
+                  </p>
+                  <center><img src="./Notes/L3base2.jpg" alt="" style="height: 350px; width:auto"></center> <br><br>
 
                   <p>
-                    <b>How to Identify a DP problem?</b> <br>
+                    This was the case where we needed to try two options (move a single step and move two steps) in order to try out all the possible ways for the problem. Now in this problem we need to try K options in order to try out all possible ways. <br>
 
-When we see a problem, it is very important to identify it as a dynamic programming problem. Generally (but not limited to) if the problem statement asks for the following:
+These are the calls we need to make for K=2, K=3, K=4 <br>
 
-<li>
-    Count the total number of ways
-</li>
-<li>
-    Given multiple ways of doing a task, which way will give the minimum or the maximum output
-</li>
-<br>
-We can try to apply recursion. Once we get the recursive solution, we can go ahead to convert it to a dynamic programming one.
-<br><br>
-<b>Steps To Solve The Problem After Identification</b>
-<br>
-Once the problem has been identified, the following three steps comes handy in solving the problem:
+<img src="./Notes/L4img.jpg" alt="">
 
-<li>Try to represent the problem in terms of indexes.</li>
-<li>
-    Try all possible choices/ways at every index according to the problem statement.
-</li>
-<br>
-<b>If the question states:-</b>
-<li>Count all the ways – return sum of all choices/ways.</li>
-<li>Find maximum/minimum- return the choice/way with maximum/minimum output.</li>
+<li>Every time we try to find all the possible path from <b>1 to k</b> steps</li>
                   </p>
 
 
-                  <b>Now uesing thes Concept we Solved the all upcoming DP Problems and Also this One.</b><br><br>
-
-                  <h3>Thought Process</h3>
-                  <p>
-                    <li>
-                        We will assume n stairs as indexes from 0 to N.
-                    </li>
-                    <img src="./Notes/L2pimg (1).jpg" alt="">
-                    <br>
-
-                    <li>
-                        At a single time, we have 2 choices: Jump one step or jump two steps. We will try both of these options at every index.
-                    </li>
-                    <img src="./Notes/L2pimg (2).jpg" alt="">
-                    <br>
-
-                    <li>
-                        As the problem statement asks to count the total number of distinct ways, we will return the sum of all the choices in our recursive function.
-                    </li>
-                  </p>
+                  <h3>Recursice Approch</h3>
 
                   <p>
-                    he base case will be when we want to go to the 0th stair, then we have only one option. <br>
-                    <li>
-                        There will be one more edge-case when n=1, if we call f(n-2) we will reach stair numbered -1 which is not defined, therefore we add an extra test case to return 1 ( the only way) when n=1.
-                    </li> <br>
-                    <b>Recurance Code</b>
-
-                    <pre>
-function(index) {
-    if( index == 0) return 1
-    if( index == 1) return 1
-    return function(index-1) + function(index-2)
-    }
-                    </pre>
+                    If we generalize, we are making K calls, therefore, we can set a for loop to run from 1 to K and in each iteration we can make a function call, corresponding to a step. We will return the minimum step call after the loop.
                   </p>
+
+                 <center> <img src="./Notes/L4rtreecode.jpg" alt="" style="height: 350px; width:auto"></center>
+
+                  <b>
+                    We need to make sure that we are not passing negative index to the array, therefore an extra if the condition is used.
+                  </b> <br><br>
+
+
+                    <b>Once we form the recursive solution, we can use the approach told in Dynamic Programming Introduction to convert it into a dynamic programming</b> <br><br>
+
+
 
                   <div class="container">
                     <div class="item">
                       <div class="title"><b>Recursion Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2rcode (1).png" alt="" />
+                        <img src="./Notes/L4rcode (1).png" alt="" />
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Recursion C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2rcode (2).png" alt="">
+                        <img src="./Notes/L4rcode (2).png" alt="">
                       </div>
                     </div>
 
@@ -222,11 +152,10 @@ Reason: Exponential Time we find out the all the Possible Path<br>
 Reason: We are using a recursion stack space(O(N))<br><br>
 
 <h3>Memoization Approch</h3>
-<b>Steps to memoize a recursive solution:</b> <br>
 
-Any recursive solution to a problem can be memoized using these three steps: <br>
+<b>Steps to convert Recursive code to memoization solution:</b> <br>
 
-<li>Create a dp[n+1] array initialized to -1.</li>
+<li>Create a dp[n] array initialized to -1.</li>
 <li>Whenever we want to find the answer of a particular value (say n), we first check whether the answer is already calculated using the dp array(i.e dp[n]!= -1 ). If yes, simply return the value from the dp array.</li>
 <li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[n] to the solution we get.</li>
 <br>
@@ -238,14 +167,14 @@ Any recursive solution to a problem can be memoized using these three steps: <br
                     <div class="item">
                       <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2mcode (1).png" alt="">
+                        <img src="./Notes/L4memocode (1).png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L2mcode (2).png" alt="">
+                        <img src="./Notes/L4memocode (2).png" alt="">
                       </div>
                     </div>
 
@@ -261,37 +190,38 @@ Any recursive solution to a problem can be memoized using these three steps: <br
                   <br>
 
                   <h3>Time & Space Complexity</h3>
-                    <b>Time Complexity: O(N)</b> <br>
-
-Reason: The overlapping subproblems will return the answer in constant time O(1). Therefore the total number of new subproblems we solve is ‘n’. Hence total time complexity is O(N). <br>
+                  
+                    <b>Time Complexity: O(N * K)</b> <br>
+                    
+                    Reason: The overlapping subproblems will return the answer in constant time. Therefore the total number of new subproblems we solve is ‘n’. At every new subproblem, we are running another loop for K times. Hence total time complexity is O(N * K).<br>
 
 <b>Space Complexity: O(N)</b> <br>
 
-Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N) <br><br>
+Reason: We are using a recursion stack space(O(N)) and an array (again O(N)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)<br><br>
 
 <h3>Tabulation Approch</h3>
 
-Tabulation is a ‘bottom-up’ approach where we start from the base case and reach the final answer that we want.
+Tabulation is a <b>‘bottom-up’</b> approach where we start from the base case and reach the final answer that we want and Memoization is the <b>Top-down</b> Approch.
 <br><br>
 <b>Steps to convert Recursive Solution to Tabulation one.</b><br>
 
 <li>Declare a dp[] array of size n+1.</li>
-<li>First initialize the base condition values, i.e i=0 and i=1 of the dp array as 0 and 1 respectively.</li>
-<li>Set an iterative loop that traverses the array( from index 2 to n) and for every index set its value as dp[i-1] + dp[i-2]. </li>
+<li>First, initialize the base condition values, i.e dp[0] as 0.</li>
+<li>Set an iterative loop that traverses the array( from index 1 to n-1) and for every index calculate jumpOne and jumpTwo and set dp[i] = min(jumpOne, jumpTwo).</li>
 
 <br>
 <div class="container">
   <div class="item">
     <div class="title"><b>Tabulation Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L2tabcode (1).png" alt="" />
+      <img src="./Notes/L4tabcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>Tabulation C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L2tabcode (2).png" alt="" />
+      <img src="./Notes/L4tabcode (2).png" alt="" />
     </div>
   </div>
 
@@ -307,67 +237,24 @@ Tabulation is a ‘bottom-up’ approach where we start from the base case and r
 <br>
 
 <h3>Time & Space Complexity</h3>
-                    <b>Time Complexity: O(N)</b> <br>
+                    <b>Time Complexity: O(N*K)</b> <br>
 
-                    Reason: We are running a simple iterative loop<br>
+                    Reason: We are running two nested loops, where outer loops run from 1 to n-1 and the inner loop runs from 1 to K<br>
 
 <b>Space Complexity: O(N)</b> <br>
 
-Reason: We are using an external array of size ‘n+1’.<br><br>
+Reason: We are using an external array of size ‘n’.<br><br>
 
 <h3>Space Optimization</h3>
 
-<p>
-  If we closely look at the relation, <br>
+<p>Space Optimization is Not Possible in this Problem <b>Why ?</b></p>
+<li>if we have the constat changes or <b>dependents variable</b> then we apply Space Optimization exp: dp[n-1] or dp[n-2]</li>
+<li>but in this Problem we have no the case of like that <b>dp[n-1] or dp[n-2]</b></li>
+<li>Becouse in our Preveous Lecture our Jump is <b>Fixed</b> in this Problem our Jump is Not Fixed it is depend on the K and [ K is: 1,2,3,4,5,6,,7,8 ....... n ] </li>
+<li>Preveous Lecture ew Required <b>dp[n-1] or dp[n-2]</b></li>
+<li>In this Problem we Required <b>dp[k]</b></li> <br>
 
-<b>dp[i] =  dp[i-1] + dp[i-2]</b>
-
-we see that for any i, we do need only the last two values in the array. So is there a need to maintain a whole array for it?  <br>
-
-The answer is ‘No’. Let us call dp[i-1] as prev and dp[i-2] as prev2. Now understand the following illustration. <br><br>
-
-<img src="./Notes/L2tabImg.jpg" alt="">
-<br>
-<li>Each iteration’s cur_i and prev becomes the next iteration’s prev and prev2 respectively.</li>
-<li>Therefore after calculating cur_i, if we update prev and prev2 according to the next step, we will always get the answer. </li>
-<li>After the iterative loop has ended we can simply return prev as our answer.</li>
-</p>
-
-
-
-<div class="container">
-  <div class="item">
-    <div class="title"><b>SpaceOptmized Python Code</b></div>
-    <div class="content">
-      <img src="./Notes/L2spcode (1).png" alt="" />
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="title"><b>SpaceOptmized C++ Code</b></div>
-    <div class="content">
-      <img src="./Notes/L2spcode (2).png" alt="" />
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="title"><b>SpaceOptmized Java Code</b></div>
-    <div class="content">
-      <h5>Sb Mai He Kru ...</h5>
-      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
-    </div>
-  </div>
-</div>
-<br>
-<h3>Time & Space Complexity</h3>
-                    <b>Time Complexity: O(N)</b> <br>
-
-                    Reason: We are running a simple iterative loop<br>
-
-<b>Space Complexity: O(1)</b> <br>
-
-Reason: We are not using any extra space Only Used a 2 Variables fro Storing the Prev Result.
-
+<p>This is the region we can not Space Optimized these Types of problems <b>we can do it using the concept of the kth Subarray every ith Iteration [ But uska koi fayda hoga nhi baat braabr hai O(N) kee in worst case ] </b></p>
 
                 </div>
                 <br />
