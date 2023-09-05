@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+  <head>
+    <title>DPL7 Ninja's Training or Vacation Atcoder 2D DP 🔥</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg" />
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                      JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  <h1 class="has-text-align-center mb-60">
+                    DPL7 Ninja's Training or Vacation Atcoder 2D DP 🔥
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                 <p>
+                    A Ninja has an ‘N’ Day training schedule. He has to perform one of these three activities <b>(Running, Fighting Practice, or Learning New Moves)</b> each day. There are merit points associated with performing an activity each day. The same activity can’t be performed on two consecutive days. We need to find the maximum merit points the ninja can attain in N Days.
+
+                    <br><br>
+
+We are given a 2D Array POINTS of size <b>‘N*3’</b> which tells us the merit point of specific activity on that particular day. <b>Our task is to calculate the maximum number of merit points that the ninja can earn.</b>
+                 </p>
+
+                  <img src="./Notes/L7expImg.jpg" alt=""> <br>
+
+                 <p><b>Greedy Approch</b> <br> Accroding to the Greedy we find the Best Solution on the every Point that is the Defination of the Greedy Algorithm</p>
+
+                 <p>
+                  So if we used the Greedy then our ans may be not correct let's understand
+                  <li>On Day 0, we will consider the activity with maximum points i.e 50</li>
+                  <li>On Day 1, the maximum point activity is 100 but we can’t perform the same activity in two consecutive days. Therefore we will take the next maximum point activity of 11 points. </li>
+                  <li>TAccording to the Greedy Solution : 50+11 = 61(Ans)</li>
+
+                  <br>
+                  <img src="./Notes/L7exp1.jpg" alt="">
+                 </p>
+
+                 <b>Hence Proved Not Every time Greedy is Correct for the Expected Ans</b><p>
+                  As this is a small example we can clearly see that we have a better approach, to consider activity with 10 points on day0 and 100 points on day1. It gives us the total merit points as 110 which is better than the greedy solution.
+
+                  <br>
+
+                  <img src="./Notes/L7img2.jpg" alt="">
+                 </p>
+
+
+                  <h3>Recursice Approch</h3>
+
+                  <b>Steps to form the recursive solution</b> <br>
+
+                  <b>Step 1: Express the problem in terms of indexes:</b> <br>
+
+<li>
+    We are given an N*3 Matrix which can be easily thought of in terms of indexes(Days), It is the number of days. Clearly, we have n days (from 0 to n-1), so one changing parameter which can be expressed in terms of indexes is <b>‘day’</b> fun(day). 
+</li> <br>
+<li>
+  Every day we have the option of three activities(say 0,1,2) to be performed so we required the one more parameter that is tarck the record of <b>last Day</b> becouse the Question say we can nto perform the same task on consecutive days fun(day,last)
+</li> <br>
+<li>
+    Every iht_day we have a three task(0,1,2) and we try to iterate all the task of the day that is != last. Therefore our function will take two parameters – day and last.
+</li> <br>
+<img src="./Notes/L7rec1.jpg" alt="">
+<br>
+<b>Step 2: Try all the choices to reach the goal. & Try out all possible choices at a given index.</b> <br>
+
+We are writing a <b>top-down recursive function</b>. We start from day n-1 to day 0. Therefore whenever we call the recursive function for the next day we call it for fun(day-1, <b>second parameter</b>).
+Now let’s discuss the  <b>second parameter</b>. The choices we have for a current day depend on the <b> ‘last’</b> variable. If we are at our base case <b>(day=0)</b>, we will have the following choices.<br><br>
+
+<li>
+  Other than the base case, whenever we perform an activity ‘i’ its merit points will be given by <b>points[day][i]</b> and to get merit points of the remaining days we will let recursion do its job by passing fun(day-1, i). We are passing the second parameter as i because the current day’s activity will become the <b>Next day’s last</b>.
+</li>
+<br>
+<img src="./Notes/L7rec2.jpg" alt=""><br>
+
+<b>Step 3: Take the maximum of all the choices</b> <br>
+
+<li>As the problem statement wants us to find the maximum merit points, we will take the maximum of all choices.
+</li>
+<br>
+<b>Recursion Base Conditions</b> <br>
+
+<b>The base conditions for the recursive Solution</b> <br>
+
+<li>If DAY=0, then we try (0,1,2) all the task for the finding the out max Ans, that is task is != to the last, Max = max(Max,points[0][i]) and return Max</li>
+<br>
+<b>Recursion Tree</b>
+<img src="./Notes/L7rtree.jpg" alt=""> <br>
+
+        <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L7rcode (1).png" alt="" />
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L7rcode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  <b>Time Complexity: O(N*4*3)</b> <br>
+
+Reason: Exponential Time we find out the all the Possible Path<br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using a recursion stack space(O(N))<br><br>
+
+<h3>Memoization Approch</h3>
+
+<p>
+    If we observe in the recursion tree, we will observe a many number of overlapping subproblems. Therefore the recursive solution can be memoized for to reduce the time complexity.
+</p>
+
+<img src="./Notes/L7rtree.jpg" alt=""> <br>
+
+<b>Steps to convert Recursive code to memoization solution:</b> <br><br>
+
+<li>Create a dp array of size [n][4]. There are total ‘n’ days and for every day, there can be 4 choices (0,1,2 and 3). Therefore we take the dp array as dp[n][4]. Inilisized with the -1</li> <br>
+<li>Whenever we want to find the answer of particular parameters (say fun(day,last)), we first check whether the answer is already calculated using the dp array(i.e dp[day][last]!= -1 ). If yes, simply return the value from the dp array. dp[day][last]</li> <br>
+<li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[day][last] to the solution we get.</li>
+<br>
+
+
+
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Memoization Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L7memocode (1).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L7memocode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  
+                    <b>Time Complexity:O(N*4*3)</b> <br>
+                    
+                    Reason: There are N*4 states and for every state, we are running a for loop iterating three times.<br>
+
+<b>Space Complexity: O(N) + O(N*4)</b> <br>
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array (again O(N*4)). Therefore total space complexity will be O(N) + O(N) ≈ O(N)<br><br>
+
+<h3>Tabulation Approch</h3>
+
+Tabulation is a <b>‘bottom-up’</b> approach where we start from the base case and reach the final answer that we want and Memoization is the <b>Top-down</b> Approch.
+<br><br>
+<b>Steps to convert Recursive Solution to Tabulation one.</b><br>
+
+<li>Declare a dp[] array of size [n][4]</li>
+<ul>
+  <li>First initialize the base condition values. We know that base condition arises when day = 0. Therefore, we can say that the following will be the base conditions
+    <ul>
+      <li>dp[0][0] = max(points[0][1], points[0][2]) </li>
+      <li>dp[0][1] = max(points[0][0], points[0][2]) </li>
+      <li>dp[0][2] = max(points[0][0], points[0][1]) </li>
+      <li>dp[0][3] = max(points[0][0], points[0][1] and points[0][2]) </li>
+    </ul>
+  </li>
+</ul>
+<li>Set an iterative loop which traverses dp array (from index 1 to n) and for every index set its value according to the recursive logic</li>
+
+<br>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>Tabulation Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L7tabcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation C++ Code</b></div>
+    <div class="content">
+      <img src="./Notes/L7tabcode (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity:  O(N*4*3)</b> <br>
+
+                    Reason:There are three nested loops<br>
+
+<b>Space Complexity: O(N*4)</b> <br>
+
+Reason: We are using an external array of size ‘N*4’’.<br><br>
+
+<h3>Space Optimization</h3>
+
+<p>
+    If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: ( i,i-1,i-2,i-3)</b> for the finding the our ans then definetly here <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
+</p>
+
+<img src="./Notes/L7spoptImg.jpg" alt="">
+
+<p>
+
+  <li>Initially we filled the dp[0]th row entire & we clearly see int the tabulation Methode we used the <b>dp[day-1] + something</b> that is our ans</li> <br>
+
+    <li><b>dp[day][last] =  max(dp[day][last],points[day][task] + dp[day-1][task])</b> Here the task can be anything from 0 to 3 and day-1 is the previous stage of recursion. So in order to compute any dp array value, we only require the last row to calculate it.</li> <br>
+    <li>So rather than storing the entire 2D Array of size N*4, we can just store values of size 4(say prev). </li> <br>
+    <li>We can then take a dummy array, again of size 4 (say temp) and calculate the next row’s value using the array we stored in step 1.</li> <br>
+    <li>After that whenever we move to the next day, the temp array becomes our prev for the next step.</li>
+    <li>At last prev[3] will give us the answer.</li>
+
+</p>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L7spcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized C++ Code</b></div>
+    <div class="content">
+        <img src="./Notes/L7spcode (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity:O(N*4*3)</b> <br>
+
+                    Reason: There are three nested loops<br>
+
+<b>Space Complexity: O(4)</b> <br>
+
+Reason: We are using an external array of size ‘4’ to store only one row.<br><br>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
