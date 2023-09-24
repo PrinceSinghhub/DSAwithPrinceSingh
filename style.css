@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 @media (max-width:400px){
   .aboutMe{
     flex-direction: column;
@@ -67,6 +66,10 @@
   display:flex;
   gap: 10px;
 }
+
+
+
+
 
 /* ----------------------------------------status bar css  ----------------------------------*/
 @keyframes progress {
@@ -285,6 +288,22 @@ center{
   font-weight: 1000;
 }
 
+/* ---------------------------------------------------------------------------------- */
+
+.mainBar{
+  position: relative;
+  top: 10px;
+  min-height: 20px;
+  max-height: 50px;
+  min-width: 150px;
+  max-width: 150px;
+  /* background: #000; */
+}
+
+.nameTag{
+  position: relative;
+  top: 8px;
+}
 
 body {
     --wp--preset--color--black: #001d30;
