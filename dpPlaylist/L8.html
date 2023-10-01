@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+  <head>
+    <title>DPL8  Grid Unique Paths I</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg" />
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                      JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  <h1 class="has-text-align-center mb-60">
+                    DPL8  Grid Unique Paths I
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                 <p>
+                    In this Problem, we will solve the most asked coding interview problem: Grid Unique Paths I <br>
+
+                    Given two values M and N, which represent a matrix[M][N]. We need to find the total unique paths from the top-left cell (matrix[0][0]) to the rightmost cell (matrix[M-1][N-1]).
+                    
+                    At any cell we are allowed to move in only two directions:- <b>bottom and right</b>.
+                 </p>
+
+
+                  <p>As we have to count all possible ways to go from matrix[0,0] to matrix[m-1,n-1], we can try recursion to generate all possible paths.</p>
+
+                 
+
+
+                  <h3>Recursice Approch</h3>
+
+                  <b>Steps to form the recursive solution</b> <br>
+
+                  <b>Step 1: Express the problem in terms of indexes: <b>(i->row,j->coll)</b></b> <br>
+
+<li>
+    We are given two variables M and N, representing the dimensions of a 2D matrix. For every different problem, this M and N will change. <br>
+
+We can define the function with two parameters i and j, where i and j represent the row and column of the matrix.
+</li> <br>
+
+<center><img src="./Notes/L8recfn.jpg" alt="" style="height: 100px;"></center>
+<li>
+    f(i,j) will give us a sub-answer for the region (marked in blue) below:
+</li> <br>
+<center><img src="https://lh3.googleusercontent.com/I1f_CFwzs3ZcrtZq0KXBmHVuQtNiD1-Z2N-dWshgdwnuv0HGJV_G3yinmPi80Jl0xBxct_Zp9wrPaSZIfhr4GIcP4moesTLppnBtpMZVSitIgQOFrXttLNuOFLEpKHZoZFkxx2CM" alt="" style="height: 300px;"></center>
+<li>
+    <b>We will be doing a top-down recursion, i.e we will move from the cell[M-1][N-1] and try to find our way to the cell[0][0]. Therefore at every index, we will try to move up and towards the left.</b>
+</li> <br>
+
+<b>Our Base Case is</b>
+<li>When i=0 and j=0, that is we have reached the destination so we can count the current path that is going on, hence we return 1.</li>
+<li>When i < 0 and j < 0, it means that we have crossed the boundary of the matrix and we couldn’t find a right path, hence we return 0.</li>
+<br>
+<b><p>The Recursive Function is</p></b>
+
+<center><img src="./Notes/L8recfunImg.jpg" alt="" style="height: 250px;"></center>
+
+<br>
+<b>Step 2: Try all the choices to reach the goal. & Try out all possible choices at a given index.</b> <br>
+
+
+<li>
+    As we are writing a top-down recursion, at every index we have two choices, one to go <b>up(↑)</b> and the other to go <b>left(←)</b>. To go upwards, we will reduce i by 1, and move towards left we will reduce j by 1.
+</li>
+<br>
+<center><img src="./Notes/L8recfunImg1.jpg" alt="" style="height: 300px;"><br></center>
+
+<b>Step 3: Take the maximum of all the choices</b> <br>
+
+<li>AAs we have to count all the possible unique paths, <b>we will return the sum of the choices(up and left)</b> 
+The final pseudocode after steps 1, 2, and 3:
+</li>
+<br>
+
+<center><img src="./Notes/L8recfunImg2.jpg" alt="" style="height: 300px;"></center>
+<b>Recursion Base Conditions</b> <br>
+
+<li>When i=0 and j=0, that is we have reached the destination so we can count the current path that is going on, hence we return 1.</li>
+<li>When i < 0 and j < 0, it means that we have crossed the boundary of the matrix and we couldn’t find a right path, hence we return 0.</li>
+<br>
+<b>Recursion Tree</b>
+<img src="./Notes/L8rtree.jpg" alt=""> <br>
+
+        <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L8rcode (1).png" alt="" />
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L8rcode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  <b>Time Complexity: O(2^N)</b> <br>
+
+Reason: Exponential Time we find out the all the Possible Path<br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using a recursion stack space(O(N))<br><br>
+
+<h3>Memoization Approch</h3>
+
+<p>
+    If we observe in the recursion tree, we will observe a many number of overlapping subproblems. Therefore the recursive solution can be memoized for to reduce the time complexity.
+</p>
+
+<img src="./Notes/L8rtree.jpg" alt=""> <br>
+
+<b>Steps to convert Recursive code to memoization solution:</b> <br><br>
+
+<li>Create a dp array of size [m][n] Inilisized with the -1</li> <br>
+<li>Whenever we want to find the answer of particular parameters (say fun(day,last)), we first check whether the answer is already calculated using the dp array(i.e dp[day][last]!= -1 ). If yes, simply return the value from the dp array. dp[day][last]</li> <br>
+<li>If not, then we are finding the answer for the given values for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[i][j] to the solution we get.</li>
+<br>
+
+
+
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Memoization Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L8memocode (1).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L8memocode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  
+                    <b>Time Complexity:O(N*M)</b> <br>
+                    
+                    Reason: At max, there will be M*N calls of recursion..<br>
+
+<b>Space Complexity:  O((N-1)+(M-1)) + O(M*N)</b> <br>
+
+Reason:We are using a recursion stack space: O((N-1)+(M-1)), here (N-1)+(M-1) is the path length and an external DP Array of size ‘M*N’.<br><br>
+
+<h3>Tabulation Approch</h3>
+
+Tabulation is a <b>‘bottom-up’</b> approach where we start from the base case and reach the final answer that we want and Memoization is the <b>Top-down</b> Approch.
+<br><br>
+<b>Steps to convert Recursive Solution to Tabulation one.</b><br>
+
+<li>Declare a dp[] array of size [n][m]</li>
+<li>First initialize the base condition values, i.e dp[0][0] = 1</li>
+<li>Convert the Recurance Relation in the Term of the Index(i,j)</li>
+<li>Our answer should get stored in dp[m-1][n-1]. We want to move from (0,0) to (m-1,n-1). But we can’t move arbitrarily, we should move such that at a particular i and j, we have all the values required to compute dp[i][j].
+</li>
+<li>We have already filled the top-left corner (i=0 and j=0), if we move in any of the two following ways(given below), at every cell we do have all the previous values required to compute its value..</li>
+<br>
+<center><img src="./Notes/L8spimg.jpg" alt="" style="height: 300px;"></center>
+
+<br>
+<li>
+    We can use two nested loops to have this traversal -> (row,coll)
+</li>
+<li>At every cell we calculate <b>up and left</b> as we had done in the recursive solution and then assign the cell’s value as <b>(up+left)</b></li>
+<li><b>Note: For the first row and first column (except for the top-left cell), then up and left values will be zero respectively.</b></li> <br>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>Tabulation Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L8tabcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation C++ Code</b></div>
+    <div class="content">
+      <img src="./Notes/L8tabcode (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity:  O(M*N)</b> <br>
+
+                    Reason:There are 2 nested loops<br>
+
+<b>Space Complexity: O(N*M)</b> <br>
+
+Reason: We are using an external array of size ‘M*N’’.<br><br>
+
+<h3>Space Optimization</h3>
+
+<p>
+    If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: dp[i][j] = dp[i-1][j] + dp[i][j-1]</b> for the finding the our ans then definetly here <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
+</p>
+
+<b>Golden Rule</b>
+<li>If we required only Prev row and Prev Collom then definetly we can Space Optimized</li> <br>
+<img src="./Notes/L8spoptImg.jpg" alt="">
+
+<p>
+
+  <li>We see that we only need the previous row and column, in order to calculate dp[i][j]. Therefore we can space optimize it.</li> <br>
+  <li>Initially, we can take a dummy row ( say prev) and initialize it as 0.</li> <br>
+
+    <li><b>Now the current row(say temp) only needs the previous row value and the current row’s value in order to calculate dp[i][j].</b></li> <br>
+    <li>At the next step, the temp array becomes the prev of the next(dp) step and using its values we can still calculate the next row’s values. </li> <br>
+    <li>At last prev[n-1] will give us the required answer.</li> 
+</p>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L8spcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized C++ Code</b></div>
+    <div class="content">
+        <img src="./Notes/L8spcode (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity:O(M*N)</b> <br>
+
+                    Reason: There are three 2 nested loops<br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using an external array of size ‘N’ to store only one row.<br><br>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>

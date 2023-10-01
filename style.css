@@ -61,14 +61,10 @@
   
 }
 
-
 .aboutMe{
   display:flex;
   gap: 10px;
 }
-
-
-
 
 
 /* ----------------------------------------status bar css  ----------------------------------*/
@@ -217,7 +213,6 @@
   justify-content: center;
 
   
- 
 }
 .circular-progress::before{
   content: "";
