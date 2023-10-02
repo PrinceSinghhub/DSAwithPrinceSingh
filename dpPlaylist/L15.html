@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+  <head>
+    <title>DPL15 Partition Equal Subset</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg" />
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                      JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  <h1 class="has-text-align-center mb-60">
+                    DPL15 Partition Equal Subset
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  <p>
+                    We are given an array ‘ARR’ with N positive integers. We need to find if we can partition the array into two subsets such that the sum of elements of each subset is equal to the other.
+
+<b>If we can partition, return true else return false.</b>
+                  </p>
+
+                  <img src="./Notes/L15expImg.jpg" alt=""> <br>
+
+                  <P>
+                    This question is a slight modification of the problem discussed in <B>LDP14</B>. We need to partition the array(say S) into two subsets(say S1 and S2). According to the question:
+                  </P>
+
+                  <b>Algorithm / Intuition</b>
+                  <li>Sum of elements of S1 + sum of elements of S2 = sum of elements of S.</li>
+                  <li>Sum of elements of S1 = sum of elements of S2.</li>
+                  <li>These two conditions imply that S1 = S2 = (S/2).</li>
+                  <li>If S (sum of elements of the input array) is odd , there is no way we can divide it into two equal halves, so we can simply return false.</li>
+                  <li>If S is even, then we need to find a subsequence in the input array whose sum is equal to S/2 because if we find one subsequence with sum S/2, the remaining elements sum will be automatically S/2. So, we can partition the given array. Hence we return true.</li>
+                  
+                  <br>
+                  <b><h5>Now remaining Entire 👇 Process will Be Same As Like in DPL14</h5></b>
+
+                   <p><b>what a Subsequence/Subset?</b>
+
+                    A subset/subsequence is a contiguous or non-contiguous part of an array, where elements appear in the same order as the original array. <br>
+                    For example, for the array: [2,3,1] , the subsequences will be [{2},{3},{1},{2,3},{2,1},{3,1},{2,3,1}] <b>but {3,2} is not a subsequence because its elements are not in the same order as the original array.</b></p>
+
+                  <center><img src="./Notes/L14expImg.jpg" alt="" style="height: 200px;"></center>
+
+                  <br>
+                  <p>In this Question first thing Comes into the My Mind is <b>Generate all the Possible Subsecquance</b> and check if any sum(subset) == k or not</p>
+
+                  <p>I Have Two Option for this Question
+                    <li>Power Set Concept</li>
+                    <li>Recursion Concept</li>
+                  </p>
+
+                  <p><b>But in this Problem we Just Required the Only One Subset no Need to Check All the Subsetst
+                    thats why I go with the Recursion Approch
+                  </b></p>
+                 
+                  <h3>Recursice Approch</h3>
+
+                  <b>Steps to form the Recursive Solution</b> <br>
+
+                  <b>Step 1: Express the problem in terms of indexes.</b><br>
+
+<li>
+    The array will have an index but there is one more parameter “target”. We are given the initial problem to find whether there exists in the whole array a subsequence whose sum is equal to the target.<br>
+
+    So, we can say that initially, we need to <b>fun(n-1, target)</b> which means that we need to find whether there exists a subsequence in the array from <b>index 0 to n-1</b>, whose sum is equal to the target. Similarly, we can generalize it for any index ind as follows:
+</li> <br>
+
+<center><img src="./Notes/L14resImg1.jpg" alt="" style="height: 100px;"></center>
+
+<b>Our Base</b>
+<li>If target == 0, it means that we have already found the subsequence from the previous steps, so we can return true.</li>
+<li>If ind==0, it means we are at the first element, so we need to return arr[ind]==target. If the element is equal to the target we return true else false.</li>
+<br>
+<b><p>The Recursive Function is</p></b>
+
+<center><img src="./Notes/L14resImg2.jpg" alt="" style="height: 250px;"></center>
+
+<br>
+<b>Step 2: Try out all possible choices at a given index.</b> <br>
+
+<p>We need to generate all the subsequences. We will use the pick/non-pick technique as discussed in, That we All Ready Learn in the Recursion Series.</p>
+<b>We have two choices:</b>
+<li>
+    <b>Exclude the current element in the subsequence:</b> We first try to find a subsequence without considering the current index element. For this, we will make a recursive call to f(ind-1,target).
+</li>
+<li>
+    <b>Include the current element in the subsequence:</b> We will try to find a subsequence by considering the current index as element as part of subsequence. As we have included arr[ind], the updated target which we need to find in the rest if the array will be target – arr[ind]. Therefore, we will call f(ind-1,target-arr[ind]).
+</li>
+<p>Note: We will consider the current element in the subsequence only when the current element is less or equal to the target.</p>
+<br>
+<center><img src="./Notes/L14resImg3.jpg" alt="" style="height: 300px;"><br></center>
+
+<b>Step 3: Return (taken || notTaken)</b> <br>
+
+<li>As we are looking for only one subset, if any of the one among taken or not taken returns true, we can return true from our function. Therefore, we return ‘or(||)’ of both of them.
+</li>
+<p>The final pseudocode after steps 1, 2, and 3:</p>
+<br>
+
+<center><img src="./Notes/L14resImg4.jpg" alt="" style="height: 300px;"></center>
+<b>Recursion Base Conditions</b> <br>
+
+<li>If target == 0, it means that we have already found the subsequence from the previous steps, so we can return true.</li>
+<li>If ind==0, it means we are at the first element, so we need to return arr[ind]==target. If the element is equal to the target we return true else false.</li>
+<br>
+<b>Recursion Tree</b>
+<img src="./Notes/L14rtree.jpg" alt=""> <br>
+
+        <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L15rcode (1).png" alt="" />
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L15rcode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  <b>Time Complexity: O(2^N)</b> <br>
+
+Reason: Exponential Time we find out the all the Possible Path<br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using a recursion stack space(O(N))<br><br>
+
+<h3>Memoization Approch</h3>
+
+<p>
+    If we observe in the recursion tree, we will observe a many number of overlapping subproblems. Therefore the recursive solution can be memoized for to reduce the time complexity.
+</p>
+
+<img src="./Notes/L14rtree.jpg" alt=""> <br>
+
+<b>Steps to convert Recursive code to memoization solution:</b> <br><br>
+
+<li>Create a dp array of size [n][k+1]. The size of the input array is ‘n’, so the index will always lie between ‘0’ and ‘n-1’. The target can take any value between ‘0’ and ‘k’. Therefore we take the dp array as dp[n][k+1]</li> <br>
+<li>We initialize the dp array to -1.</li> <br>
+<li>Whenever we want to find the answer of particular parameters (say f(ind,target)), we first check whether the answer is already calculated using the dp array(i.e dp[ind][target]!= -1 ). If yes, simply return the value from the dp array.</li> <br>
+<li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[ind][target] to the solution we get.</li>
+<br>
+
+
+
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Memoization Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L15memocode (1).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L15memocode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  
+                    <b>Time Complexity:O(N*K) + O(N)</b> <br>
+                    
+                    Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum.<br>
+
+<b>Space Complexity: O(N*K) + O(N)</b> <br>
+
+Reason: We are using a recursion stack space(O(N)) and a 2D array ( O(N*K)).<br><br>
+
+<h3>Tabulation Approch</h3>
+
+Tabulation is a <b>‘bottom-up’</b> approach where we start from the base case and reach the final answer that we want and Memoization is the <b>Top-down</b> Approch.
+<br>
+<p>
+    In Tabulation Approch We Just Creat a DP Array Same as Memoization and Simply Convert the <b>Recurance Relation into the form of the Looping</b>
+</p>
+
+<b>Steps to convert Recursive Solution to Tabulation one.</b><br>
+
+<li>To convert the memoization approach to a tabulation one, create a dp array with the same size as done in memoization. We can set its type as bool and initialize it as false.</li>
+<br>
+<center><img src="./Notes/L14tabImg1.jpg" alt="" style="width: 700px;"></center>
+<br>
+<li>First, we need to initialize the base conditions of the recursive solution.</li>
+<br>
+<center><img src="./Notes/L14tabImg2.jpg" alt="" style="width: 700px;"></center>
+<br>
+<li>If target == 0, ind can take any value from 0 to n-1, therefore we need to set the value of the first column as true.</li>
+<br>
+<center><img src="./Notes/L14tabImg3.jpg" alt="" style="width: 700px;"></center>
+<br>
+<li>
+    The first row dp[0][] indicates that only the first element of the array is considered, therefore for the target value equal to arr[0], only cell with that target will be true, so explicitly set dp[0][arr[0]] =true, (dp[0][arr[0]] means that we are considering the first element of the array with the target equal to the first element itself). Please note that it can happen that arr[0]>target, so we first check it: if(arr[0]<=target) then set dp[0][arr[0]] = true.
+</li>
+<br>
+<li>
+    After that , we will set our nested for loops to traverse the dp array and following the logic discussed in the recursive approach, we will set the value of each cell. Instead of recursive calls, we will use the dp array itself.
+</li><br>
+<li>
+    At last we will return dp[n-1][k] as our answer.
+</li>
+<br>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>Tabulation Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L15tabcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation C++ Code</b></div>
+    <div class="content">
+      <img src="./Notes/L15tabcode (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity:  O(N*K) +O(N)</b> <br>
+
+                    Reason:There are two nested loops that account for O(N*K) and at starting we are running a for loop to calculate totSum.<br>
+
+<b>Space Complexity: O(N*K)</b> <br>
+
+Reason: We are using an external array of size ‘N*K’’.<br><br>
+
+<h3>Space Optimization</h3>
+
+<p>
+    If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: dp[ind][target] =  dp[ind-1][target] || dp[ind-1][target-arr[ind]]</b> for the finding the our ans then definetly here <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
+</p>
+
+<b>Golden Rule</b>
+<li>If we required only Prev row and Prev Collom then definetly we can Space Optimized</li> <br>
+<img src="./Notes/L14spImg1.jpg" alt="">
+
+<p>
+
+  <li>We see that we only need the previous row and column, in order to calculate curr[i]. Therefore we can space optimize it.</li> <br>
+  <li>Initially, we can take a dummy row ( say prev) and initialize it as False.</li> <br>
+
+    <li><b>Now the current row(say temp) only needs the previous row value and the current row’s value in order to curr[i].</b></li> <br>
+    <li>Whenever we create a new row ( say cur), we need to explicitly set its first element is true according to our base condition.</li> <br>
+    <li>At last prev[k] will give us the required answer.</li> 
+</p>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L15spcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized C++ Code</b></div>
+    <div class="content">
+        <img src="./Notes/L15spcode (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity: O(N*K) +O(N)</b> <br>
+
+                    Reason: There are two nested loops that account for O(N*K) and at starting we are running a for loop to calculate totSum.<br>
+
+<b>Space Complexity: O(K)</b> <br>
+
+Reason: We are using an external array of size ‘K+1’ to store only one row.<br><br>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
