@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL14 Subset Sum Equals to Target 🔥</title>
+    <title>DPL18 Count Partitions With Given Difference</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,15 +74,74 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL14 Subset Sum Equals to Target 🔥
+                    DPL18 Count Partitions With Given Difference
                   </h1>
 
                   <!-- Problem Statements  -->
-                  <p>
-                    You are given an array/list ‘ARR’ of ‘N’ positive integers and an integer ‘K’. Your task is to check if there exists a subset in ‘ARR’ with a sum equal to ‘K’. <br><br>
-                    Note: Return true if there exists a subset with sum equal to ‘K’. Otherwise, return false.
 
+                  <b>Before the Moving on the Thsi Problem</b>
+                  <p>Let's talk about the <b>Edge Case</b> that we Not Discuss in the <b>DPL17</b>
+                    <li>if in <b>DPL17</b> Our Array Contains the 0 Values then Our Code Not Work Becouse we wrote the Code on the Bases of th <b>Constrain</b> that is num is: 1 <= 'n' <= 100</li> <br>
+                    <li>But if We put the 0 in the Array then this Gives Wrong Answer</li> <br>
+
+                    <li>Let the target arr = [0,0,1] and the target = 1</li> <br>
+                    <li>The previous code will give us the answer 1 as it first takes the element arr[2] and then finds the answer by picking it. Then from the base condition, we will return 0 ( as the target will become 0 by picking 1). But for this question, the answer will be 4 with the following subsets({0,1},{0,1},{0,0,1} and {1}).</li>
+
+                    <img src="./Notes/L18modImg2.jpg" alt="">
+
+                    <br>
+
+                    <b>Base Case Modification</b>
+                    <li>First of all, we will remove target==0 because now when target == 0, there can be many 0s present in the array which needs to be counted in the answer.</li> <br>
+                    <li>Now, the following cases can arise when we are at index 0, if the target sum is 0 and the first index is also 0, like in case [0,1], we can form the subset in two ways, either by considering the first element or leaving it, so we can return 2.</li> <br>
+                    <li>Else at index 0, if target == 0, and the first element is not 0, it means we will not pick the first element so we just return 1 way.</li> <br>
+                    <li>Or if at index 0, when the first element is not 0, and the target is equal to the first element , then we will include it in the subset and we will return 1 way.</li> <br>
+                    <li>Else in all other cases, we simply return 0.</li>
+                    <br>
+
+                    <img src="./Notes/L18modImg1.jpg" alt=""> <br>
+
+                    <b>Final Modified Base Case is</b>
+                    <pre>
+                        if(ind == 0){
+                            if(target==0 && arr[0]==0)
+                                return 2;
+                            if(target==0 || target == arr[0])
+                                return 1;
+                            return 0;
+                    }
+                    </pre>
+
+                    <b>Used this Base Case in the DPL17, For if Many 0 Include in the Array then We Want the Right Answer then Remember this Base Case.</b>
+
+
+                    </p>
+
+                  <p>
+                    We are given an array ‘ARR’ with N positive integers and an integer D. We need to count the number of ways we can partition the given array into two subsets, S1 and S2 such that S1 – S2 = D and S1 is always greater than or equal to S2.
                   </p>
+
+                  <img src="./Notes/L18expImg.jpg" alt=""> <br>
+
+                  <P>
+                    Again This question is a slight modification of the problem discussed in <B>LDP15 & DP17</B>. We need to partition the array(say S) into two subsets(say S1 and S2). According to the question:
+                    <b>We Just Changed the Slight Base Case in the DPL15 and Everything Will Be Same As From DPL15</b>
+                  </P>
+
+                  <b>Algorithm / Intuition</b>
+                  <li>Sum of elements of S1 + sum of elements of S2 = sum of elements of S.</li>
+                  <li>Sum of elements of S1 > sum of elements of S2.</li>
+                  <li>If we calculate the total sum of elements of the array (say totSum), we can say that.</li>
+                  <li>S1 = totSum – S2 </li>
+                  <li>Now solving for equations (i) and (iii), we can say that <b>S2 = (totSum – D)/2 </b></li>
+                  
+                  <br>
+                  <b>Edge Cases:</b>
+                  <li>As the array elements are positive integers including zero, we don’t want to find the case when S2 is negative or we can say that totSum is lesser than D, therefore if totSum < D, we simply return 0.</li>
+
+                  <li>S2 can’t be a fraction, as all elements are integers, therefore if totSum – D is odd, we can return 0.</li>
+                  <br>
+                  <b><h5>Now remaining Entire 👇 Process will Be Same As Like in DPL15</h5></b>
 
                    <p><b>what a Subsequence/Subset?</b>
 
@@ -160,14 +219,14 @@
                     <div class="item">
                       <div class="title"><b>Recursion Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L14rcode (1).png" alt="" />
+                        <img src="./Notes/L15rcode (1).png" alt="" />
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Recursion C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L14rcode (2).png" alt="">
+                        <img src="./Notes/L15rcode (2).png" alt="">
                       </div>
                     </div>
 
@@ -213,14 +272,14 @@ Reason: We are using a recursion stack space(O(N))<br><br>
                     <div class="item">
                       <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L14memocode (1).png" alt="">
+                        <img src="./Notes/L15memocode (1).png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L14memocode (2).png" alt="">
+                        <img src="./Notes/L15memocode (2).png" alt="">
                       </div>
                     </div>
 
@@ -237,9 +296,9 @@ Reason: We are using a recursion stack space(O(N))<br><br>
 
                   <h3>Time & Space Complexity</h3>
                   
-                    <b>Time Complexity:O(N*K)</b> <br>
+                    <b>Time Complexity:O(N*K) + O(N)</b> <br>
                     
-                    Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved.<br>
+                    Reason: There are N*K states therefore at max ‘N*K’ new problems will be solved and we are running a for loop for ‘N’ times to calculate the total sum.<br>
 
 <b>Space Complexity: O(N*K) + O(N)</b> <br>
 
@@ -282,14 +341,14 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
   <div class="item">
     <div class="title"><b>Tabulation Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L14tabcode (1).png" alt="" />
+      <img src="./Notes/L15tabcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>Tabulation C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L14tabcode (2).png" alt="" />
+      <img src="./Notes/L15tabcode (2).png" alt="" />
     </div>
   </div>
 
@@ -305,9 +364,9 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
 <br>
 
 <h3>Time & Space Complexity</h3>
-                    <b>Time Complexity:  O(N*K)</b> <br>
+                    <b>Time Complexity:  O(N*K) +O(N)</b> <br>
 
-                    Reason:There are 2 nested loops<br>
+                    Reason:There are two nested loops that account for O(N*K) and at starting we are running a for loop to calculate totSum.<br>
 
 <b>Space Complexity: O(N*K)</b> <br>
 
@@ -336,14 +395,14 @@ Reason: We are using an external array of size ‘N*K’’.<br><br>
   <div class="item">
     <div class="title"><b>SpaceOptmized Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L14spcode (1).png" alt="" />
+      <img src="./Notes/L15spcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>SpaceOptmized C++ Code</b></div>
     <div class="content">
-        <img src="./Notes/L14spcode (2).png" alt="" />
+        <img src="./Notes/L15spcode (2).png" alt="" />
     </div>
   </div>
 
@@ -359,9 +418,9 @@ Reason: We are using an external array of size ‘N*K’’.<br><br>
 <br>
 
 <h3>Time & Space Complexity</h3>
-                    <b>Time Complexity:O(N*K)</b> <br>
+                    <b>Time Complexity: O(N*K) +O(N)</b> <br>
 
-                    Reason: There are three 2 nested loops<br>
+                    Reason: There are two nested loops that account for O(N*K) and at starting we are running a for loop to calculate totSum.<br>
 
 <b>Space Complexity: O(K)</b> <br>
 

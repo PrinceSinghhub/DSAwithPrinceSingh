@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL14 Subset Sum Equals to Target 🔥</title>
+    <title>DPL17 Count Subsets with Sum K</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,35 +74,30 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL14 Subset Sum Equals to Target 🔥
+                    DPL17 Count Subsets with Sum K
                   </h1>
 
                   <!-- Problem Statements  -->
+
                   <p>
-                    You are given an array/list ‘ARR’ of ‘N’ positive integers and an integer ‘K’. Your task is to check if there exists a subset in ‘ARR’ with a sum equal to ‘K’. <br><br>
-                    Note: Return true if there exists a subset with sum equal to ‘K’. Otherwise, return false.
-
+                    We are given an array ‘ARR’ with N positive integers and an integer K. We need to find the number of subsets whose sum is equal to K.
                   </p>
 
-                   <p><b>what a Subsequence/Subset?</b>
+                  <img src="./Notes/L17expImg.jpg" alt="">
 
-                    A subset/subsequence is a contiguous or non-contiguous part of an array, where elements appear in the same order as the original array. <br>
-                    For example, for the array: [2,3,1] , the subsequences will be [{2},{3},{1},{2,3},{2,1},{3,1},{2,3,1}] <b>but {3,2} is not a subsequence because its elements are not in the same order as the original array.</b></p>
+                  <p>Basically This Problem is the UpDated Varient of the <b>DPL14</b> in DPL14 we Just Return the 
+                True of False <b>if the any Subset Present or Not that is == k</b> but in this Problem We Count <b>All the Subsets that Sum is == k</b></p>
 
-                  <center><img src="./Notes/L14expImg.jpg" alt="" style="height: 200px;"></center>
+                <b>Here is the Only Few Changes that we Do in this Problem</b>
+                <br><b>In DPL14</b>
+                <li>Deal With True or False</li>
+                <li>At the End Return <b>Take || notTake</b> </li>
+                <br><b>In DPL17</b>
+                <li>Deal With 0 and 1</li>
+                <li>At the End Return <b>Take + notTake</b></li> <br>
 
-                  <br>
-                  <p>In this Question first thing Comes into the My Mind is <b>Generate all the Possible Subsecquance</b> and check if any sum(subset) == k or not</p>
-
-                  <p>I Have Two Option for this Question
-                    <li>Power Set Concept</li>
-                    <li>Recursion Concept</li>
-                  </p>
-
-                  <p><b>But in this Problem we Just Required the Only One Subset no Need to Check All the Subsetst
-                    thats why I go with the Recursion Approch
-                  </b></p>
-                 
+                 <b><h5>Now remaining Entire 👇 Process will Be Same As Like in DPL14</h5></b>
+      
                   <h3>Recursice Approch</h3>
 
                   <b>Steps to form the Recursive Solution</b> <br>
@@ -118,8 +113,8 @@
 <center><img src="./Notes/L14resImg1.jpg" alt="" style="height: 100px;"></center>
 
 <b>Our Base</b>
-<li>If target == 0, it means that we have already found the subsequence from the previous steps, so we can return true.</li>
-<li>If ind==0, it means we are at the first element, so we need to return arr[ind]==target. If the element is equal to the target we return true else false.</li>
+<li>If target == 0, it means that we have already found the subsequence from the previous steps, so we can return 1.</li>
+<li>If ind==0, it means we are at the first element, so we need to return arr[ind]==target. If the element is equal to the target we return true else 0.</li>
 <br>
 <b><p>The Recursive Function is</p></b>
 
@@ -140,9 +135,9 @@
 <br>
 <center><img src="./Notes/L14resImg3.jpg" alt="" style="height: 300px;"><br></center>
 
-<b>Step 3: Return (taken || notTaken)</b> <br>
+<b>Step 3: Return sum of taken and notTaken</b> <br>
 
-<li>As we are looking for only one subset, if any of the one among taken or not taken returns true, we can return true from our function. Therefore, we return ‘or(||)’ of both of them.
+<li>As we have to return the total count of subsets with the target sum, we will return the sum of taken and notTaken from our recursive call.
 </li>
 <p>The final pseudocode after steps 1, 2, and 3:</p>
 <br>
@@ -154,7 +149,7 @@
 <li>If ind==0, it means we are at the first element, so we need to return arr[ind]==target. If the element is equal to the target we return true else false.</li>
 <br>
 <b>Recursion Tree</b>
-<img src="./Notes/L14rtree.jpg" alt=""> <br>
+<img src="./Notes/L17rtree.jpg" alt=""> <br>
 
         <div class="container">
                     <div class="item">
@@ -196,7 +191,7 @@ Reason: We are using a recursion stack space(O(N))<br><br>
     If we observe in the recursion tree, we will observe a many number of overlapping subproblems. Therefore the recursive solution can be memoized for to reduce the time complexity.
 </p>
 
-<img src="./Notes/L14rtree.jpg" alt=""> <br>
+<img src="./Notes/L17rtree.jpg" alt=""> <br>
 
 <b>Steps to convert Recursive code to memoization solution:</b> <br><br>
 
@@ -255,20 +250,20 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
 
 <b>Steps to convert Recursive Solution to Tabulation one.</b><br>
 
-<li>To convert the memoization approach to a tabulation one, create a dp array with the same size as done in memoization. We can set its type as bool and initialize it as false.</li>
+To convert the memoization approach to a tabulation one, create a dp array with the same size as done in memoization. We can initialize it as 0.</li>
 <br>
-<center><img src="./Notes/L14tabImg1.jpg" alt="" style="width: 700px;"></center>
+<center><img src="./Notes/L17tabImg1.jpg" alt="" style="width: 600px;"></center>
 <br>
 <li>First, we need to initialize the base conditions of the recursive solution.</li>
 <br>
-<center><img src="./Notes/L14tabImg2.jpg" alt="" style="width: 700px;"></center>
+<center><img src="./Notes/L17tabImg2.jpg" alt="" style="width: 600px;"></center>
 <br>
-<li>If target == 0, ind can take any value from 0 to n-1, therefore we need to set the value of the first column as true.</li>
+<li>If target == 0, ind can take any value from 0 to n-1, therefore we need to set the value of the first column as 1.</li>
 <br>
-<center><img src="./Notes/L14tabImg3.jpg" alt="" style="width: 700px;"></center>
+<center><img src="./Notes/L17tabImg3.jpg" alt="" style="width: 600px;"></center>
 <br>
 <li>
-    The first row dp[0][] indicates that only the first element of the array is considered, therefore for the target value equal to arr[0], only cell with that target will be true, so explicitly set dp[0][arr[0]] =true, (dp[0][arr[0]] means that we are considering the first element of the array with the target equal to the first element itself). Please note that it can happen that arr[0]>target, so we first check it: if(arr[0]<=target) then set dp[0][arr[0]] = true.
+    The first row dp[0][] indicates that only the first element of the array is considered, therefore for the target value equal to arr[0], only cell with that target will be true, so explicitly set dp[0][arr[0]] =1, (dp[0][arr[0]] means that we are considering the first element of the array with the target equal to the first element itself). Please note that it can happen that arr[0]>target, so we first check it: if(arr[0]<=target) then set dp[0][arr[0]] = 1.
 </li>
 <br>
 <li>
@@ -321,15 +316,15 @@ Reason: We are using an external array of size ‘N*K’’.<br><br>
 
 <b>Golden Rule</b>
 <li>If we required only Prev row and Prev Collom then definetly we can Space Optimized</li> <br>
-<img src="./Notes/L14spImg1.jpg" alt="">
+<img src="./Notes/L17spImg1.jpg" alt="">
 
 <p>
 
   <li>We see that we only need the previous row and column, in order to calculate curr[i]. Therefore we can space optimize it.</li> <br>
-  <li>Initially, we can take a dummy row ( say prev) and initialize it as False.</li> <br>
+  <li>Initially, we can take a dummy row ( say prev) and initialize it as 0.</li> <br>
 
     <li><b>Now the current row(say temp) only needs the previous row value and the current row’s value in order to curr[i].</b></li> <br>
-    <li>Whenever we create a new row ( say cur), we need to explicitly set its first element is true according to our base condition.</li> <br>
+    <li>Whenever we create a new row ( say cur), we need to explicitly set its first element is 1 according to our base condition.</li> <br>
     <li>At last prev[k] will give us the required answer.</li> 
 </p>
 <div class="container">
