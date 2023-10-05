@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL20 Minimum Coins I "Infinite Supplies Pattern"</title>
+    <title>DPL21 Coin Change II "Infinite Supplies Pattern"</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -144,19 +144,22 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL20 Minimum Coins I "Infinite Supplies Pattern"
+                    DPL21 Coin Change II "Infinite Supplies Pattern"
                   </h1>
 
                   <!-- Problem Statements  -->
                   <p>
-                    We are given a target sum of ‘X’ and ‘N’ distinct numbers
-                    denoting the coin denominations. We need to tell the minimum
-                    number of coins required to reach the target sum. We can
-                    pick a coin denomination for <b>any number of times</b> we
-                    want.
+                    We are given an array Arr with N distinct coins and a target. We have an <b>infinite supply</b> of each coin denomination. We need to find the number of ways we sum up the coin values to give us the target, <b>Each coin can be used any number of times</b>.
                   </p>
 
-                  <img src="./Notes/L20expImg.jpg" alt="" />
+                  <img src="./Notes/L21expImg.jpg" alt="" /> <br>
+
+                  <li>This Problem is the Extended Version of the <b>DPL20</b></li>
+                  <li>In <b>DPL20</b> Our Task is find the Minimum Coins that Sum is == Target</li>
+                  <li>In this Problem Our Task is <b>Final All the Possible Way that Sum == Target</b></li> <br>
+
+
+                  <b><h5>Now remaining Entire 👇 Process will Be Same As Like in DPL20</h5></b>
 
                   <b>Why a Greedy Solution doesn’t work?</b>
                   <p>
@@ -198,41 +201,28 @@
                   <b>Step 1: Express the problem in terms of indexes.</b><br />
 
                   <li>
-                    We are given ‘n’ distinct numbers. Their denomination is
-                    represented by the ‘arr’ array. So clearly one parameter
-                    will be ‘ind’, i.e index up to which the array items are
-                    being considered.<br />
+                    We are given ‘n’ coins. Their denomination value is given by the array ‘arr’.So clearly one parameter will be ‘ind’, i.e index up to which the array items are being considered.<br />
 
-                    There is one more parameter “Target”. We need to know the
-                    given target that we want to achieve<br />
+                    There is one more parameter, the given target value “Target” which we want to achieve so that while generating subsequences, we can decide whether we want to include a particular coin or not. <br />
 
-                    So, we can say that initially, we need to find fun(n-1,
-                    Target) where T is the initial target given to us. fun(n-1,
-                    Target) means we are finding the minimum number of coins
-                    required to form the target sum by considering coins from
-                    index 0 to n-1.
+                    So, we can say that initially, we need to find fun(n-1, Target) where T is the initial target given to us in the question. fun(n-1, Target) means we are finding the total number of ways to form the target T by considering coins from index 0 to index n-1 of the arr array.
                   </li>
                   <br />
 
-                  <img src="./Notes/L20refun1.jpg" alt="" />
+                  <img src="./Notes/L22refun1.jpg" alt="" /> <br>
 
                   <b>Our Base Case</b>
                   <li>
-                    If ind==0, it means we are at the first item, so in that
-                    case, the following cases can arise.
+                    If ind==0, it means we are at the first item so we have only one coin denomination, therefore the following two cases can arise
                   </li>
                   <li>
-                    <b>arr[0] = 4 and T = 12</b>In such a case where the target
-                    is divisible by the coin element (T%arr[0]==0), we will
-                    return <b>T // arr[0]</b>
+                    <b>T is divisible by arr[0]  (eg: arr[0] = 4 and T = 12)</b>In such a case where the target is divisible by the coin element value, we will <b>return 1</b> as we will be able to form the target.
                   </li>
                   <li>
-                    <b>arr[0] =4 and T=1 , arr[0]=3 T=10</b>In all other cases,
-                    we will not be able to form a solution (T%arr[0]!=0), so we
-                    will return a big number like <b>1e9</b>
+                    <b>T is not divisible by arr[0] (eg: arr[0] = 4 and T = 7)</b> In all other cases, we will not be able to form the target, so we will <b>return 0</b>
                   </li> <br>
 
-                  <img src="./Notes/L20refun2.jpg" alt="" />
+                  <img src="./Notes/L22refun2.jpg" alt="" />
 
                   <br />
                   <b>Step 2: Try out all possible choices at a given index.</b>
@@ -245,19 +235,10 @@
                   </p>
                   <b>We have two choices:</b>
                   <li>
-                    <b>Exclude the current element in the subsequence:</b> We
-                    first try to find a subsequence without considering the
-                    current index coin. If we exclude the current coin, the
-                    target sum will not be affected and the number of coins
-                    added to the solution will be <b>0</b>. So we will call the
-                    recursive function fun(ind-1,Target)
+                    <b>Exclude the current element in the subsequence:</b> We first try to find a subsequence without considering the current index coin. If we exclude the current coin, the target sum will not be affected. So we will call the recursive function <b>fun(ind-1,Target)</b> to find the remaining answer.
                   </li>
                   <li>
-                    <b>Include the current element in the subsequence:</b> We
-                    will try to find a subsequence by considering the current
-                    ith coin. As we have included the coin, the target sum will
-                    be updated to T-arr[ind] and we have considered
-                    <b>1</b> coin to our solution.
+                    <b>Include the current element in the subsequence:</b>We will try to find a subsequence by considering the current icoin. As we have included the coin, the target sum will be updated to <b>Target-arr[ind]</b>.
                   </li>
                   <br />
                   <b>VVVV Important Point</b> <br />
@@ -265,9 +246,9 @@
                     <b
                       >Now here is the catch, as there is an unlimited supply of
                       coins, we want to again form a solution with the same coin
-                      value. So we will not recursively call for f(ind-1,
-                      T-arr[ind]) rather we will stay at that index only and
-                      call for f(ind, T-arr[ind]) to find the answer.</b
+                      value. So we will not recursively call for fun(ind-1,
+                      Target-arr[ind]) rather we will stay at that index only and
+                      call for fun(ind, Target-arr[ind]) to find the answer.</b
                     >
                   </li>
                   <br />
@@ -277,18 +258,17 @@
                     target.
                   </p>
                   <br />
-                  <img src="./Notes/L20refun3.jpg" alt="" /> <br />
+                  <img src="./Notes/L22refun3.jpg" alt="" /> <br />
 
-                  <b>Step 3: Return the maximum of take and notTake</b> <br />
+                  <b>Step 3: Return the Sum of take and notTake</b> <br />
 
                   <li>
-                    As we have to return the minimum number of coins, we will
-                    return the minimum of take and notTake as our answer.
+                    As we have to return the total number of ways we can form the target, we will return the sum of notTake and take as our answer.
                   </li>
                   <p>The final pseudocode after steps 1, 2, and 3:</p>
                   <br />
-                  <img src="./Notes/L20refun4.jpg" alt="" />
-                  <b>Recursion Tree</b>
+                  <img src="./Notes/L22refun4.jpg" alt="" />
+                  <b>Recursion Tree of DPL20</b>
                   <img src="./Notes/L20rtree.jpg" alt="" /> <br />
 
                   <div class="container">
@@ -430,26 +410,19 @@
                   </li>
                   <br />
                   <li>
-                    At ind==0, we are considering the first element, if T%arr[0]
-                    ==0, we initialize it to T/arr[0] else we initialize it to
-                    1e9.
+                    At ind==0, we are considering the first element, if the target value is divisible by the first coin’s value, we set the cell’s value as 1 or else 0.
                   </li>
                   <br />
                   <li>
-                    Next, we are done for the first row, so our ‘ind’ variable
-                    will move from 1 to n-1, whereas our ‘target’ variable will
-                    move from 0 to ‘T’. We will set the nested loops to traverse
-                    the dp array.
+                    Next, we are done for the first row, so our ‘ind’ variable will move from 1 to n-1, whereas our ‘target’ variable will move from 0 to ‘T’. We will set the nested loops to traverse the dp array.
                   </li>
                   <br />
                   <li>
-                    Inside the nested loops we will apply the recursive logic to
-                    find the answer of each cell.
+                    Inside the nested loops, we will apply the recursive logic to find the answer of the cell.
                   </li>
                   <br />
                   <li>
-                    When the nested loop execution has ended, we will return
-                    dp[n-1][T] as our answer.
+                    When the nested loop execution has ended, we will return dp[n-1][T] as our answer.
                   </li>
                   <br />
 
@@ -495,8 +468,7 @@
                     If we closelly Observed
                     <b
                       >if any Tabulation Approch we used the Some Limited Stuff
-                      like: dp[ind][target] = dp[ind-1][target] +
-                      dp[ind-1][target-arr[ind]]</b
+                      like: dp[ind][target] =  dp[ind-1][target] ,dp[ind-1][target-arr[ind]]</b
                     >
                     for the finding the our ans then definetly here
                     <b>Spaced Optimization</b> is Possible in that types of
