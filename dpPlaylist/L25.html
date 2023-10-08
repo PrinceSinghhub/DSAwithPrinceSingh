@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+  <head>
+    <title>DPL25 Longest Common Subsequence</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg" />
+
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3"
+      type="text/css"
+      media="all"
+    />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link
+      rel="stylesheet"
+      id="wd_s-css"
+      href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+      type="text/css"
+      media="all"
+    />
+
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+
+  <body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js"
+  >
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+      <main id="main" class="content-container">
+        <article
+          id="post-2597"
+          class="post-2597 page type-page status-publish hentry"
+        >
+          <div class="entry-content">
+            <div
+              id="section-block_627ed6b337646"
+              class="block-section relative overflow-hidden 0"
+            >
+              <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                <div class="relative container-narrow">
+                  <h5 class="has-text-align-center">
+                    <mark
+                      style="background-color: rgba(0, 0, 0, 0)"
+                      class="has-inline-color has-nebula-color"
+                    >
+                      JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    </mark>
+
+                    <br><br>
+
+                    <div class="dsa">
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img src="../dsaProfileImg/lc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img src="../dsaProfileImg/cn.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.interviewbit.com/profile/princesingh2002"><img src="../dsaProfileImg/ib.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img src="../dsaProfileImg/hr.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img src="../dsaProfileImg/he.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.codechef.com/users/princesingh001"><img src="../dsaProfileImg/cc.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://codeforces.com/profile/thisisPrinceSingh"><img src="../dsaProfileImg/cf.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://workat.tech/profile/itsprincesingh"><img src="../dsaProfileImg/wk.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://www.linkedin.com/in/prince-singh-314a65187/"><img src="../dsaProfileImg/lin.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img src="../dsaProfileImg/gh.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img src="../dsaProfileImg/tw.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://stackoverflow.com/users/16512708/prince-singh"><img src="../dsaProfileImg/st.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img src="../dsaProfileImg/topm.png" alt=""></a></div>
+                      <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                    </div>
+                  </h5>
+
+                  <h1 class="has-text-align-center mb-60">
+                    DPL25 Longest Common Subsequence
+                  </h1>
+
+                  <!-- Problem Statements  -->
+                  <p>Given two strings text1 and text2, return the length of their <b>longest common subsequence.</b> If there is no <b>common subsequence</b>, return 0. <br> <br>
+
+                   <b> A Subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.</b>
+                    <br><br>
+                    For example, "ace" is a subsequence of "abcde".
+                    <br>
+                    A common subsequence of two strings is a subsequence that is common to both strings.</p>
+
+                    <img src="./Notes/L25expImg.jpg" alt=""> <br>
+
+                    <p>In This Part we Discuss about <b>DP on String</b> and we form the</p>
+                    <li>Comparision</li>
+                    <li>edit/delet</li>
+                    <li>Replacement</li> <br>
+
+                    <p>
+                        <b>VVVV Imp Always Remember</b>
+                    <b>For a string of length n, the number of subsequences will be 2^n.</b>
+                    <br>
+                    if we want to generate of find all the possible <b>Subsequences</b> then we have 2 different Approch. 
+                    <li>Power Set</li>
+                    <li>Recursion</li>
+                    </p>
+
+                    <br>
+                    <p>
+                        <b>Algorithm / Intuition</b>
+                        If We Talk About the Brute Force Approch then, We are given two strings, S1, and S2 (suppose of same length n), the simplest approach will be to generate all the subsequences and store them, then manually find out the longest common subsequence. <br><br>
+
+                        This Approach will give us the correct answer but to generate all the subsequences, we will require exponential <b>( 2n ) time</b>. Therefore we will try some other approaches.
+
+                    </p>
+                    <p>Now here we go with the <b>Dynamic Programming and Recursion</b> To generate all subsequences we will use recursion and in the recursive logic</p>
+
+             
+                 
+                  <h3>Recursice Approch</h3>
+
+                  <b>Steps to form the Recursive Solution</b> <br>
+
+                  <b>Step 1: Express the problem in terms of indexes.</b><br>
+
+<li>
+    Here Have a 2 String <b>String1 & String2</b> thats why we required the 2 indexes foe the recursion Solution <b>index1 & index2</b>
+</li> <br>
+
+<img src="./Notes/L25rfun1.jpg" alt="">
+<br>
+
+<p>
+    A single variable can’t express both the strings at the same time, so we will use two variables ind1 and ind2. They mean that we are considering string S1 from index 0 ind1 and string S2 from index 0 to S2. So our recursive function will look like this <br>
+    <img src="./Notes/L25rfun2.jpg" alt="">
+</p>
+
+<b>Step 2: Try out all possible choices at a given index.</b> <br>
+
+<b>Intuition for Recursive Logic</b>
+<li>In the function f(ind1,ind2), ind1 and ind2 are representing two characters from strings S1 and S2 respectively.  For example: </li>
+<br>
+<img src="./Notes/L25refun3.jpg" alt=""> <br>
+
+<li>Now, there can be two possibilities</li> <br>
+
+<li>
+    <b>if(S1[ind1] == S2[ind2])</b> as in the figure below. In this case this common element will represent a unit length common subsequence, so we can say that we have found one character and we can shrink both the strings by 1 to find the longest common subsequence in the remaining pair of strings.
+</li>
+<br>
+<img src="./Notes/L25refun4.jpg" alt=""><br>
+
+<li>
+   <b> if(S1[ind1] != S2[ind2])</b> as in the figure given below. In this case we know that the current characters represented by ind1 and ind 2 will be different. So, we need to compare the ind1 character with shrunk S2 and ind2 with shrunk S1. But how do we make this comparison ?  If we make a single recursive call as we did above to f(ind1-1,ind2-1), we may lose some characters of the subsequence. Therefore we make two recursive calls: one to f(ind1,ind2-1) (shrinking only S1) and one to f(ind1-1,ind2) (shrinking only S2). Then when we return max of both the calls.
+</li>
+<br>
+<img src="./Notes/L25refun5.jpg" alt=""><br>
+
+<b>Step 3: Return the maximum of Pick and notPick</b> <br>
+
+<li>In the first case, we have only one choice but in the second case we have two choices, as we have to return the longest common subsequences, we will return the maximum of both the choices in the second case.
+</li>
+<b>Base Case</b>
+<img src="./Notes/L25refun6.jpg" alt=""><br>
+<b>if S1[ind1] != S2[ind2]</b> 
+<li>
+    We will make a call to function(0-1,1), i.e function(-1,1) but a negative index simply means that there are no more indexes to be explored, so we simply return 0. Same is the case when S1[ind1]==S2[ind2]
+</li>
+<li>If (ind1 < 0 || ind2 < 0 ) return 0.</li>
+<p>
+    The final pseudocode after steps 1, 2, and 3
+</p>
+<img src="./Notes/L25rfun7.jpg" alt=""><br>
+<b>Recursion Tree</b>
+<img src="./Notes/L25rtree.png" alt=""><br>
+
+
+        <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Recursion Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L23rcode (1).png" alt="" />
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L23rcode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Recursion Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  <b>Time Complexity: O(2^N)</b> <br>
+
+Reason: Exponential Time we find out the all the Possible Path<br>
+
+<b>Space Complexity: O(N)</b> <br>
+
+Reason: We are using a recursion stack space(O(N))<br><br>
+
+<h3>Memoization Approch</h3>
+
+<p>
+    If we observe in the recursion tree, we will observe a many number of overlapping subproblems. Therefore the recursive solution can be memoized for to reduce the time complexity.
+</p>
+
+<img src="./Notes/L25rtree.png" alt="">
+
+<b>Steps to convert Recursive code to memoization solution:</b> <br><br>
+
+<li>Create a dp array of size [N][M] where N and M are lengths of S1 and S2 respectively. It will store all the possible different states that our recursive function will take.</li> <br>
+<li>We initialize the dp array to -1.</li> <br>
+<li>Whenever we want to find the answer of particular parameters (say f(ind1,ind2)), we first check whether the answer is already calculated using the dp array(i.e dp[ind1][ind2]!= -1 ). If yes, simply return the value from the dp array.</li> <br>
+<li>If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[ind1][ind2] to the solution we get.</li>
+<br>
+
+
+
+
+                  <div class="container">
+                    <div class="item">
+                      <div class="title"><b>Memoization Python Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L23memocode (1).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization C++ Code</b></div>
+                      <div class="content">
+                        <img src="./Notes/L23memocode (2).png" alt="">
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="title"><b>Memoization Java Code</b></div>
+                      <div class="content">
+                        <h5>Sb Mai He Kru ...</h5>
+                        <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br>
+
+                  <h3>Time & Space Complexity</h3>
+                  
+                    <b>Time Complexity:O(N*M)</b> <br>
+                    
+                    Reason: There are N*M states therefore at max ‘N*M’ new problems will be solved.<br>
+
+<b>Space Complexity: O(N*M) + O(N+M)</b> <br>
+
+Reason: We are using an auxiliary recursion stack space(O(N+M)) (see the recursive tree, in the worst case, we will go till N+M calls at a time) and a 2D array ( O(N*M)).<br><br>
+
+<h3>Tabulation Approch</h3>
+
+Tabulation is a <b>‘bottom-up’</b> approach where we start from the base case and reach the final answer that we want and Memoization is the <b>Top-down</b> Approch.
+<br>
+<p>
+    In Tabulation Approch We Just Creat a DP Array Same as Memoization and Simply Convert the <b>Recurance Relation into the form of the Looping</b>
+</p>
+
+<b>Steps to convert Recursive Solution to Tabulation one.</b><br>
+
+<li>To convert the memoization approach to a tabulation one, create a dp array with the same size as done in memoization. We can initialize it as 0.</li>
+<b>Initialization: Shifting of indexes</b>
+<br>
+<li>In the recursive logic, we set the base case to if(ind1 < 0 || ind2 < 0) but we can’t set the dp array’s index to -1. Therefore a hack for this issue is to shift every index by 1 towards the right.</li>
+<br>
+<img src="./Notes/L25tabImg.jpg" alt="">
+<br>
+<li>Therefore, now the base case will be if(ind1==0 || ind2==0).</li><br>
+<li>Similarly, we will implement the recursive code by keeping in mind the shifting of indexes, therefore S1[ind1] will be converted to S1[ind1-1]. Same for others.</li><br>
+<li>At last we will print dp[N][M] as our answer.</li><br>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>Tabulation Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L23tabcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation C++ Code</b></div>
+    <div class="content">
+      <img src="./Notes/L23tabcode (2).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>Tabulation Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity: O(N*M)</b> <br>
+
+                    Reason:There are 2 nested loops<br>
+
+<b>Space Complexity: O(N*M)</b> <br>
+
+Reason: We are using an external array of size ‘N*M)’. Stack Space is eliminated.<br><br>
+
+<h3>Space Optimization</h3>
+
+<p>
+    If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: dp[ind1-1][ ], dp[ind][ ]</b> for the finding the our ans then definetly here <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
+</p>
+
+<b>Golden Rule</b>
+<li>If we required only Prev row and Prev Collom then definetly we can Space Optimized</li> <br>
+<li>So we are not required to contain an entire array, we can simply have two rows prev and cur where prev corresponds to dp[ind-1] and cur to dp[ind].</li> <br>
+<li>After declaring prev and cur, replace dp[ind-1] to prev and dp[ind] with cur and after the inner loop executes, we will set prev = cur, so that the cur row can serve as prev for the next index.</li>
+<br>
+<div class="container">
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Python Code</b></div>
+    <div class="content">
+      <img src="./Notes/L23spcode (1).png" alt="" />
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized C++ Code</b></div>
+    <div class="content">
+        <img src="./Notes/L23spcode (2).png" alt="" />
+    </div>
+  </div>
+  
+
+  <div class="item">
+    <div class="title"><b>SpaceOptmized Java Code</b></div>
+    <div class="content">
+      <h5>Sb Mai He Kru ...</h5>
+      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<h3>Time & Space Complexity</h3>
+                    <b>Time Complexity: O(N*M)</b> <br>
+
+                    Reason: There are three 2 nested loops<br>
+
+<b>Space Complexity: O(M)</b> <br>
+
+Reason: We are using an external array of size ‘M+1’ to store only two rows.<br><br>
+
+                </div>
+                <br />
+
+                <center>Happy Coding❤️</center>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- #post-## -->
+      </main>
+
+      <!-- #main -->
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
