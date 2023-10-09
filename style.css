@@ -300,6 +300,18 @@ center{
   top: 8px;
 }
 
+/* ------------------------------------------------------------------- */
+
+.bannerVideo{
+  display:flex;
+  gap: 10px;
+}
+
+#myVideo{
+  border-radius: 2%;
+  width: 500rem;
+}
+
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
