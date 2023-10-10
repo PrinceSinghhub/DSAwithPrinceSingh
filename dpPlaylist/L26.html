@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US" oncontextmenu="return false">
+
+<head>
+    <title>DPL26 Print Longest Common Subsequence</title>
+    <link rel="icon" type="image/x-icon" href="../photo.jpg" />
+
+    <link rel="stylesheet" id="wp-block-library-css"
+        href="https://www.lexalytics.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0.3" type="text/css"
+        media="all" />
+    <style id="global-styles-inline-css" type="text/css"></style>
+
+    <link rel="stylesheet" id="wd_s-css"
+        href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
+        type="text/css" media="all" />
+
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+
+<body
+    class="page-template-default page page-id-2597 page-child parent-pageid-2342 wp-embed-responsive site-wrapper page-machine-learning group-blog no-js">
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+    <div class="site-main">
+        <main id="main" class="content-container">
+            <article id="post-2597" class="post-2597 page type-page status-publish hentry">
+                <div class="entry-content">
+                    <div id="section-block_627ed6b337646" class="block-section relative overflow-hidden 0">
+                        <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat">
+                            <div class="relative container-narrow">
+                                <h5 class="has-text-align-center">
+                                    <mark style="background-color: rgba(0, 0, 0, 0)"
+                                        class="has-inline-color has-nebula-color">
+                                        JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                                    </mark>
+
+                                    <br><br>
+
+                                    <div class="dsa">
+                                        <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh1/"><img
+                                                    src="../dsaProfileImg/lc.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a href="https://leetcode.com/PrinceSingh2/"><img
+                                                    src="../dsaProfileImg/lc.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://auth.geeksforgeeks.org/user/itsprince/practice"><img
+                                                    src="../dsaProfileImg/gfg.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://www.codingninjas.com/codestudio/profile/b7191958-3dea-4d59-a909-70a6bd5400c8"><img
+                                                    src="../dsaProfileImg/cn.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://www.interviewbit.com/profile/princesingh2002"><img
+                                                    src="../dsaProfileImg/ib.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://www.hackerrank.com/dsawithprince?hr_r=1"><img
+                                                    src="../dsaProfileImg/hr.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a href="https://www.hackerearth.com/@prince1033"><img
+                                                    src="../dsaProfileImg/he.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://www.codechef.com/users/princesingh001"><img
+                                                    src="../dsaProfileImg/cc.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://codeforces.com/profile/thisisPrinceSingh"><img
+                                                    src="../dsaProfileImg/cf.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://workat.tech/profile/itsprincesingh"><img
+                                                    src="../dsaProfileImg/wk.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://www.linkedin.com/in/prince-singh-314a65187/"><img
+                                                    src="../dsaProfileImg/lin.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a href="https://github.com/PrinceSinghhub"><img
+                                                    src="../dsaProfileImg/gh.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a href="https://twitter.com/NowPrinceSingh"><img
+                                                    src="../dsaProfileImg/tw.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a
+                                                href="https://stackoverflow.com/users/16512708/prince-singh"><img
+                                                    src="../dsaProfileImg/st.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img
+                                                    src="../dsaProfileImg/topm.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img
+                                                    src="../dsaProfileImg/hn.png" alt=""></a></div>
+                                    </div>
+                                </h5>
+
+                                <h1 class="has-text-align-center mb-60">
+                                    DPL26 Print Longest Common Subsequence
+                                </h1>
+
+                                <!-- Problem Statements  -->
+                                <p>In the previous Question <b>DPL25 Longest Common Subsequence</b>, we learned to print
+                                    the length of the longest common subsequence of two strings. In this Question, we
+                                    will learn to print the actual string of the <b>longest common subsequence</b>. </p>
+
+                                <br>
+                                <img src="./Notes/L26expImg.jpg" alt="">
+                                <br>
+
+
+                                
+                                <li>In This Question We Implement the Concept of the <b>Backtracking</b></li>
+                                <li>Here We Can not used <b>Recursion & Memoization & Space Optimization Approch</b> Becouse We Required the previous Data</li>
+                                <li>This Types of Question Based on <b>Tabulation Approch</b></li>
+
+                                <br>
+                                <b>Remaining Concept and Logic Will Be Same As We Follow in the DPL25 Only here we print the LCS</b>
+
+                                <br>
+
+                                <b>Intuition & Algorithm</b>
+                                <li>Let us consider the following example</li>
+                                <img src="./Notes/L26expImg.jpg" alt=""> <br>
+                                <p>
+                                    In <b>DP25</b> There in the tabulation approach, we declared a dp array and dp[n][m] will have the length of the longest common subsequence., i.e <b>dp[n][m] = 3</b>.
+<br>
+Now, with help of two nested loops, if we print the dp array, it will look like this
+                                </p>
+
+                                <img src="./Notes/L26tabImg1.jpg" alt=""> <br>
+
+                                <p>
+                                    Here dp[5][5] gives us the length of the longest common subsequence: 3. <br>
+
+Now let us try to form the string itself. We know its length already. We give it the name StringArray.
+                                </p>
+
+                                <img src="./Notes/L26tabImg2.jpg" alt=""> <br>
+
+                                <li>We will use the dp array to form the LCS string. For that, we need to think, about how did the dp array was originally filled. The tabulation approach used <b>1-based indexing</b>. We also write the characters corresponding to the indexes of the dp array</li>
+
+                                <br>
+                                <img src="./Notes/L26tabImg3.jpg" alt=""> <br>
+                                <p>
+                                    Now, let us see what were the 2 conditions that we used while forming the dp array and Store the Ans on the Basis of these Condition
+                                </p>
+
+
+                                <li><b>if(S1[i-1] == S2[j-1])</b>, then return 1 + dp[i-1][j-1]</li>
+                                <li><b>if(S1[i-1] != S2[j-1])</b>, then return 0 + max(dp[i-1][j],dp[i][j-1])</li> <br>
+
+                                <p>These two conditions along with the dp array give us all the required information required to print the LCS string.</p>
+
+                                <h4>Approach</h4>
+                                <p>The algorithm approach is stated below</p>
+
+                                <li>We will fill the string str from the last by maintaining a pointer. </li>
+                                <li>We will start from the right most cell of the dp array, initially i=n and j=m.</li>
+                                <li>At every cell, we will check if S1[i-1] == S2[j-1], if it is then it means this character is a part of the longest common substring. So we will push it to the str (at last). Then we will move to the diagonally top-left(↖️)  cell by assigning i to i-1 and j to j-1.</li>
+                                <li>Else, this character is not a part of the longest common subsequence. It means that originally this cell got its value from <b>its left cell (←) or from its top cell (↑)</b>. Whichever cell’s value will be more of the two, we will move to that cell.</li>
+                                <li>We will continue till i>0 and j>0, failing it we will break from the loop.</li>
+                                <li>At last we will get our lcs string in “str”.</li>
+
+                                <br>
+                                <h4>Let's Dry Run and Understand the Concept Behind the Logic</h4>
+
+                                <img src= "./Notes/L26drImg1.jpg" alt=""> <br>
+                                <b>At starting i=5 and j=5</b>
+
+                                <li>As S1[4] != S2[4], we move to the left side (←) as it’s value is greater than the top value(↑), therefore i=5 and j=4</li>
+                                <li>As S1[4] == S2[3], we add the current character to the str string(at last) and move to i-1 and j-1 cell i.e top-left(↖️), therefore i=4 and j=3.</li>
+
+                                
+                                <br>
+                                <img src="./Notes/L26drImg2.jpg" alt="">
+                                <br>
+
+                                <li>As S1[3] != S2[2], we move to the left cell (←) as its value is larger than the top cell(↑), i becomes 4 and j becomes 2.</li>
+                                <li>As S1[3] == S2[1], we will add this character to str string and we will move to the top-left cell (↖️) i becomes 3 and j becomes 1</li>
+
+                                <br>
+                                <img src="./Notes/L26drImg3.jpg" alt="">
+                                <br>
+
+                                <li>As S1[2] != S2[1], we will move to the top cell (↑) as its value is greater than the left cell (←). Now i become 2 and j remains 1.</li>
+                                <li>As S1[1] == S2[0], we will add this character to str string and we will move to the top-left cell (↖️) i becomes 1 and j becomes 1 and j becomes 0.</li>
+                                <li><b>As j is zero, we have hit the exit condition so we will break out of the loop and str contains the longest common subsequence.</b></li>
+
+
+                        
+                                <br>
+
+                                <h3>Tabulation Approch</h3>
+                                <b>Similer As DPL25</b>
+
+                                Tabulation is a <b>‘bottom-up’</b> approach where we start from the base case and reach
+                                the final answer that we want and Memoization is the <b>Top-down</b> Approch.
+                                <br>
+                                <p>
+                                    In Tabulation Approch We Just Creat a DP Array Same as Memoization and Simply
+                                    Convert the <b>Recurance Relation into the form of the Looping</b>
+                                </p>
+
+                                <b>Steps to convert Recursive Solution to Tabulation one.</b><br>
+
+                                <li>To convert the memoization approach to a tabulation one, create a dp array with the
+                                    same size as done in memoization. We can initialize it as 0.</li>
+                                <b>Initialization: Shifting of indexes</b>
+                                <br>
+                                <li>In the recursive logic, we set the base case to if(ind1 < 0 || ind2 < 0) but we
+                                        can’t set the dp array’s index to -1. Therefore a hack for this issue is to
+                                        shift every index by 1 towards the right.</li>
+                                        <br>
+                                        <img src="./Notes/L25tabImg.jpg" alt="">
+                                        <br>
+                                <li>Therefore, now the base case will be if(ind1==0 || ind2==0).</li><br>
+                                <li>Similarly, we will implement the recursive code by keeping in mind the shifting of
+                                    indexes, therefore S1[ind1] will be converted to S1[ind1-1]. Same for others.</li>
+                                <br>
+                                <li>At last we will print dp[N][M] as our answer.</li><br>
+                                <div class="container">
+                                    <div class="item">
+                                        <div class="title"><b>Tabulation Python Code</b></div>
+                                        <div class="content">
+                                            <img src="./Notes/L26tabcode (1).png" alt="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="title"><b>Tabulation C++ Code</b></div>
+                                        <div class="content">
+                                            <img src="./Notes/L26tabcode (2).png" alt="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="title"><b>Tabulation Java Code</b></div>
+                                        <div class="content">
+                                            <h5>Sb Mai He Kru ...</h5>
+                                            <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <h3>Time & Space Complexity</h3>
+                                <b>Time Complexity: O(N*M)</b> <br>
+
+                                Reason:There are 2 nested loops<br>
+
+                                <b>Space Complexity: O(N*M)</b> <br>
+
+                                Reason: We are using an external array of size ‘N*M)’. Stack Space is
+                                eliminated.<br><br>
+
+
+                                <center>Happy Coding❤️</center>
+                            </div>
+                        </div>
+                    </div>
+            </article>
+            <!-- #post-## -->
+        </main>
+
+        <!-- #main -->
+    </div>
+    <script src="../script.js"></script>
+</body>
+
+</html>
