@@ -75,6 +75,39 @@
   font-weight:bold
 }
 
+
+.problemList {
+	padding: 0;
+	margin: 0;
+	max-width: 700px;
+	position: relative;
+}
+.problemList::before {
+	content: '';
+	width: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 8%;
+	background: peachpuff;
+	z-index: -1;
+}
+
+.prbmName {
+	padding: 0.5rem 1.5rem 1rem;
+	border-radius: 1rem;
+	background: peachpuff;
+}
+
+.problemList{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prbmName a{
+  color: black;
+}
+
 /* ----------------------------------------status bar css  ----------------------------------*/
 @keyframes progress {
   0% { --percentage: 0; }
