@@ -71,6 +71,9 @@
   gap: 10px;
 }
 
+.titleHead{
+  font-weight:bold
+}
 
 /* ----------------------------------------status bar css  ----------------------------------*/
 @keyframes progress {
