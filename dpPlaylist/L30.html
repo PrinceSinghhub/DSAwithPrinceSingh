@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL25 Longest Common Subsequence</title>
+    <title>DPL30 Minimum Insertions & Deletions to Convert String A to String B</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,19 +74,57 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL25 Longest Common Subsequence
+                    DPL30 Minimum Insertions & Deletions to Convert String A to String B
                   </h1>
 
                   <!-- Problem Statements  -->
-                  <p>Given two strings text1 and text2, return the length of their <b>longest common subsequence.</b> If there is no <b>common subsequence</b>, return 0. <br> <br>
+                  <p>Minimum Insertions or Deletions to Convert String A to String B
 
-                   <b> A Subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.</b>
-                    <br><br>
-                    For example, "ace" is a subsequence of "abcde".
-                    <br>
-                    A common subsequence of two strings is a subsequence that is common to both strings.</p>
+                    We are given two strings, str1 and str2. We are allowed the following operations</p>
 
-                    <img src="./Notes/L25expImg.jpg" alt=""> <br>
+                <li>Delete any number of characters from string str1.</li>
+                <li>Insert any number of characters in string str1.</li> <br>
+
+                <img src="./Notes/L30expImg.jpg" alt="">
+
+                <br>
+
+
+                <b>Again this Question is the Replica of the DPL25 Just Try to Catch the Pattern</b> <br>
+
+                <p>According to the BruteForce Approch The easiest way is to remove all the characters of str1 and then insert all the characters of str2. In this way, we will convert str1 to str2 with ‘n+m’ operations. (Here n and m are the length of strings str1 and str2 respectively)</p>
+
+                <b>The Question is Always to Convert Str1 to Str2, the Answer is "Yes"</b>
+                <p>Remove the All the Character from the Str1 and Put all the Character of Str2 in Str1</p>
+                
+                <img src="./Notes/L30AprImg1.jpg" alt="">
+                <br>
+
+                <li>But this is the Maximum Deletion and Insertion Approch</li>
+                <li>In This Question we want to the <b>Minimum Deletion and Insertion</b> to make the Str1 == Str2</li>
+
+                <p>In this Question, the Question is What Can i Not Touch? <br>
+                Answer is <b> longest common subsequence</b> let's Talk About the Approch How Can we Related this Problem with the <b>DPL25</b>.</p>
+
+                <li>First Thing is We Track the <b>longest common subsequence</b> that are same in the Both String, Keep Track.</li>
+                <li>We will first keep the longest common subsequence of the str1 and str2 intact in str1 and <b>delete all other characters from str1.</b></li>
+                <img src="./Notes/L30AprImg2.jpg" alt=""> <br>
+
+
+                <li>Next, we will <b>insert</b> all the remaining characters of str2 to str1.</li>
+                <img src="./Notes/L30AprImg3.jpg" alt=""> <br>
+
+                <p>If We Observed very Carefuly then we need to <b>longest Common Subsequence</b> and remaining Operation on the <b>Str1 and Str2</b> then we easily Say that</p>
+                
+                <b>Minimum Operations Required Based on the Observersation</b>
+                <li><b>numberOfDeletion = n - LCS</b> Where: n is the len(Str1)</li>
+                <li><b>numberOfInsertion = m - LCS</b> Where: m is the len(Str2)</li>
+                <li><b>totalNumberOfOperation = (n + m) - (2 * LCS)</b></li>
+                <li>return <b>totalNumberOfOperation</b></li>
+
+                <br>
+
+                  <b><h5>Now Remaining Entire 👇 Process will Be Same As Like in DPL25</h5></b>
 
                     <p>In This Part we Discuss about <b>DP on String</b> and we form the</p>
                     <li>Comparision</li>
@@ -175,14 +213,14 @@
                     <div class="item">
                       <div class="title"><b>Recursion Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25rcode (1).png" alt="" />
+                        <img src="./Notes/L30rcode (1).png" alt="" />
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Recursion C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25rcode (2).png" alt="">
+                        <img src="./Notes/L30rcode (2).png" alt="">
                       </div>
                     </div>
 
@@ -228,14 +266,14 @@ Reason: We are using a recursion stack space(O(N))<br><br>
                     <div class="item">
                       <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25memocode (1).png" alt="">
+                        <img src="./Notes/L30memocode (1).png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25memocode (2).png" alt="">
+                        <img src="./Notes/L30memocode (2).png" alt="">
                       </div>
                     </div>
 
@@ -284,14 +322,14 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
   <div class="item">
     <div class="title"><b>Tabulation Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L25tabcode (1).png" alt="" />
+      <img src="./Notes/L30tabcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>Tabulation C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L25tabcode (2).png" alt="" />
+      <img src="./Notes/L30tabcode (2).png" alt="" />
     </div>
   </div>
 
@@ -313,7 +351,7 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
 
 <b>Space Complexity: O(N*M)</b> <br>
 
-Reason: We are using an external array of size ‘N*M)’. Stack Space is eliminated.<br><br>
+Reason: We are using an external array of size ‘(N*M)’. Stack Space is eliminated.<br><br>
 
 <h3>Space Optimization</h3>
 
@@ -330,14 +368,14 @@ Reason: We are using an external array of size ‘N*M)’. Stack Space is elimin
   <div class="item">
     <div class="title"><b>SpaceOptmized Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L25spcode (1).png" alt="" />
+      <img src="./Notes/L30spcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>SpaceOptmized C++ Code</b></div>
     <div class="content">
-        <img src="./Notes/L25spcode (2).png" alt="" />
+        <img src="./Notes/L30spcode (2).png" alt="" />
     </div>
   </div>
   

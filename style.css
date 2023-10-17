@@ -9,6 +9,7 @@
   .aboutMe{
     flex-direction: column;
   }
+  
 }
 
 .dsa{
@@ -72,7 +73,7 @@
 }
 
 .titleHead{
-  font-weight:bold
+  font-weight:bold;
 }
 
 

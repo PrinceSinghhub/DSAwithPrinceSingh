@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL25 Longest Common Subsequence</title>
+    <title>DPL29 Minimum Insertions to Make String Palindrome</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,19 +74,80 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL25 Longest Common Subsequence
+                    DPL29 Minimum Insertions to Make String Palindrome
                   </h1>
 
                   <!-- Problem Statements  -->
-                  <p>Given two strings text1 and text2, return the length of their <b>longest common subsequence.</b> If there is no <b>common subsequence</b>, return 0. <br> <br>
+                   <p>A palindromic string is a string that is the same as its reverse. For example: “nitin” is a palindromic string. Now the question states that we are given a string, we need to find the minimum insertions that we can make in that string to make it a palindrome. <b>We insert the any character any where that is the Important Point</b></p>
+                   <br>
+                   <img src="./Notes/L29expImg.jpg" alt=""> <br>+
 
-                   <b> A Subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.</b>
-                    <br><br>
-                    For example, "ace" is a subsequence of "abcde".
+                   <p><b>This Problem is the Extended Versiojn of the DPL25 & DPL28</b></p>
+
+                   <p>If we Go with the BruteForce Approch then what we do is, I just put the String + <b>reverse(String)</b> that is the My Answer.<br><br>
+
+                    <img src="./Notes/L29expImg1.jpg" alt="">
+
+                    <li>Number of Operation is len(S1)</li>
+                </p>
+                <p>
+                    But this is Not the Question, Our Question is <B>Minimum Operation Required</B> not the <b>Maximum Operation Required</b><br>
+
                     <br>
-                    A common subsequence of two strings is a subsequence that is common to both strings.</p>
+                    <img src="./Notes/L29expImg2.jpg" alt="">
+                </p>
 
-                    <img src="./Notes/L25expImg.jpg" alt=""> <br>
+                <h3>Approch</h3>
+
+                <li>We need to find the minimum insertions required to make a string palindrome. Let us keep the “minimum” criteria aside and think, how can we make any given string palindrome by inserting characters?</li> <br>
+                <li>To minimize the insertions, we will first try to refrain from adding those characters again which are already making the given string palindrome. Track the Longest Plandromic portion of the String</li>
+                <br>
+                <img src="./Notes/L29apImg1.jpg" alt="">
+                <br>
+                <li>So what we do is we just <b>Double</b> the match string portion of the string and feed between the every char of the <b>Longest Palindromic Portion</b> first part feed as it is and feed second part in the <b>Reverse Order</b> for the left and right Match</li>
+
+                <br>
+                <img src="./Notes/L29apImg2.jpg" alt="">
+                <br>
+                <li>Just Take the Example of the <b>"codingninjas</b> the <b>Longest Palindromic Portion</b> is the <b>"ingni"</b> and we have remaining portion are not match.</li>
+                <li>Follow the Same Approch Again <b>Dnouble the Non Match</b> Portion of the String, first feed as itis and Second put in the <b>Reverse</b> order for the Match</li>
+<br>
+                <img src="./Notes/L29apImg3.jpg" alt="">
+                <br>
+
+                <p>So what we Observed in this Entire Process <b>Excluding the Longest Palindromic Portion</b> we Double the Remaining. part of the String So we can Say that, <b>len(S) - Longest Palindromic Subsequence</b> is my Answer.</p>
+
+                <b><h5>Now Remaining Entire 👇 Process will Be Same As Like in DPL29</h5></b> <br>
+
+
+                   <b>Let's Try To Conncet this Problem with the DPL25</b>
+                   <p>No the Question is <b>Why we Want to Connect this Question with the DLP25?</b> becouse we want to creat the problrm patters.</p>
+
+                   <p>
+                    If We Closely Observed then this Problem is the Replica of the <B>DPL25</B> becouse Our task is Find the <b>Longest Palindromic Subsequence</b> and what is the <b>Longest Palindromic Subsequence?</b> those String that <b>equla to the its Reverse</b> String that is Palindromic String.
+                   </p>
+
+                   <li>Now if we go with the <b>DPL25</b> then we required the 2 string but here is the we have only one string(S1) so what we do is <b>Reverse the String(S2)</b>.</li>
+
+                   <p>
+                    <b>Why we Wnat to Reverse the String?</b> <br>
+                    Becouse we Try to Convert this Problem into the <b>DPL25</b>, After Converting the Our Given String into the <b>S1 and S2</b>
+                    <li>S1: String</li>
+                    <li>S2: reverse(String)</li>
+                    <br>
+
+                    if we Observed very carefully then this is nothing but this is the <b>Longest Common Subsequence</b> in the Both String.
+
+                    <br><br>
+
+                    <b>Longest Common Subsequence</b> is the the Our Ans, becouse we know that the Defination of the <b>Palindromic String</b> we have <b>S1 and reverse(S1)</b> if Some part of the both String is Common that is the Our ans.
+
+                    <br><br>
+                    Thst's why we try to Convert this Problem into the <b>DPL25</b>
+                   </p>
+
+
+                   <b><h5>Now Remaining Entire 👇 Process will Be Same As Like in DPL25</h5></b> <br>
 
                     <p>In This Part we Discuss about <b>DP on String</b> and we form the</p>
                     <li>Comparision</li>
@@ -175,14 +236,14 @@
                     <div class="item">
                       <div class="title"><b>Recursion Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25rcode (1).png" alt="" />
+                        <img src="./Notes/L29rcode (1).png" alt="" />
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Recursion C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25rcode (2).png" alt="">
+                        <img src="./Notes/L29rcode (2).png" alt="">
                       </div>
                     </div>
 
@@ -228,14 +289,14 @@ Reason: We are using a recursion stack space(O(N))<br><br>
                     <div class="item">
                       <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25memocode (1).png" alt="">
+                        <img src="./Notes/L29memocode (1).png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L25memocode (2).png" alt="">
+                        <img src="./Notes/L29memocode (2).png" alt="">
                       </div>
                     </div>
 
@@ -284,14 +345,14 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
   <div class="item">
     <div class="title"><b>Tabulation Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L25tabcode (1).png" alt="" />
+      <img src="./Notes/L29tabcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>Tabulation C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L25tabcode (2).png" alt="" />
+      <img src="./Notes/L29tabcode (2).png" alt="" />
     </div>
   </div>
 
@@ -330,14 +391,14 @@ Reason: We are using an external array of size ‘N*M)’. Stack Space is elimin
   <div class="item">
     <div class="title"><b>SpaceOptmized Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L25spcode (1).png" alt="" />
+      <img src="./Notes/L29spcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>SpaceOptmized C++ Code</b></div>
     <div class="content">
-        <img src="./Notes/L25spcode (2).png" alt="" />
+        <img src="./Notes/L29spcode (2).png" alt="" />
     </div>
   </div>
   
