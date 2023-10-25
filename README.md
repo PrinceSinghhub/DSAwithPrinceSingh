@@ -1,10 +1,13 @@
 # DSAwithPrinceSingh
 
-## Demo 🎥
 
 ## Introduction
 
 Welcome to DSAwithPrinceSingh, a comprehensive resource for learning Data Structures and Algorithms. This project is aimed at helping you improve your efficiency, problem-solving skills, and interview performance in the world of computer science and software development. DSA forms the foundation for advanced topics and is crucial for building robust and efficient applications.
+
+## Demo 🎥
+https://github.com/PrinceSinghhub/DSAwithPrinceSingh/assets/71000042/0af6034d-8b55-4881-9585-876ce52c6227
+
 
 ## About the Project
 
@@ -49,4 +52,4 @@ Explore, learn, and start revising the concepts today. Let's crack those technic
 - JavaScript
 
 For more information and to access the resources, visit [DSAwithPrinceSingh](#). Good luck with your DSA journey! 🚀
-## ~ It's All About Consistency & Dedication & HardWork Happy Coding❤️ ~
+### ~ It's All About Consistency & Dedication & HardWork Happy Coding❤️ ~
