@@ -51,5 +51,16 @@ Explore, learn, and start revising the concepts today. Let's crack those technic
 - HTML
 - JavaScript
 
+# Different Different Devices View of this Website 👇
+
+## For Windows 💻
+https://github.com/PrinceSinghhub/DSAwithPrinceSingh-README/assets/71000042/4d721048-5488-45e0-bdee-f94b86cb6a23
+
+## For Tablets 💊
+https://github.com/PrinceSinghhub/DSAwithPrinceSingh-README/assets/71000042/aa02d38e-42f8-4aee-b942-9817379d6549
+
+## For Mobiles 📱
+https://github.com/PrinceSinghhub/DSAwithPrinceSingh-README/assets/71000042/ca8109b2-9a69-491a-b5b1-4da293ce3fea
+
 For more information and to access the resources, visit [DSAwithPrinceSingh](#). Good luck with your DSA journey! 🚀
 ### ~ It's All About Consistency & Dedication & HardWork Happy Coding❤️ ~
