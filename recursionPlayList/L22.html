@@ -78,7 +78,8 @@
                                                     src="../dsaProfileImg/st.png" alt=""></a></div>
                                         <div class="dsaProfile"><a href="https://topmate.io/itsprincesingh"><img
                                                     src="../dsaProfileImg/topm.png" alt=""></a></div>
-                                                    <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img src="../dsaProfileImg/hn.png" alt=""></a></div>
+                                        <div class="dsaProfile"><a href="https://hashnode.com/@itsPrinceSingh"><img
+                                                    src="../dsaProfileImg/hn.png" alt=""></a></div>
                                     </div>
                                 </h5>
 
@@ -111,6 +112,7 @@
                                     {1, 1, 0, 0}, <br>
                                     {0, 1, 1, 1}}
                                     <br>
+                                </p>
 
                                 <p>
                                     Output: <br>
@@ -149,34 +151,42 @@
                                     <br>
 
                                     <p>
-                                        
+
                                         <li>
                                             The best way to solve such problems is using recursion.
                                         </li> <br>
 
                                         <b>Approach:</b> <br><br>
 
-<li>
-    Start at the source(0,0) with an empty string and try every possible path i.e upwards(U), downwards(D), leftwards(L) and rightwards(R).
-</li> <br>
-<li>
-    As the answer should be in lexicographical order so it’s better to try the directions in lexicographical order i.e (D,L,R,U)
-</li> <br>
-<li>
-    Declare a 2D-array named visited because the question states that a single cell should be included only once in the path,so it’s important to keep track of the visited cells in a particular path.
-</li> <br>
-<li>
-    If a cell is in path, mark it in the visited array.
-</li> <br>
-<li>
-    Also keep a check of the “out of bound” conditions while going in a particular direction in the matrix. 
-</li> <br>
-<li>
-    Whenever you reach the destination(n,n) it’s very important to get back as shown in the recursion tree.
-</li> <br>
-<li>
-    While getting back, keep on unmarking the visited array for the respective direction.Also check whether there is a different path possible while getting back and if yes, then mark that cell in the visited array.
-</li>
+                                        <li>
+                                            Start at the source(0,0) with an empty string and try every possible path
+                                            i.e upwards(U), downwards(D), leftwards(L) and rightwards(R).
+                                        </li> <br>
+                                        <li>
+                                            As the answer should be in lexicographical order so it’s better to try the
+                                            directions in lexicographical order i.e (D,L,R,U)
+                                        </li> <br>
+                                        <li>
+                                            Declare a 2D-array named visited because the question states that a single
+                                            cell should be included only once in the path,so it’s important to keep
+                                            track of the visited cells in a particular path.
+                                        </li> <br>
+                                        <li>
+                                            If a cell is in path, mark it in the visited array.
+                                        </li> <br>
+                                        <li>
+                                            Also keep a check of the “out of bound” conditions while going in a
+                                            particular direction in the matrix.
+                                        </li> <br>
+                                        <li>
+                                            Whenever you reach the destination(n,n) it’s very important to get back as
+                                            shown in the recursion tree.
+                                        </li> <br>
+                                        <li>
+                                            While getting back, keep on unmarking the visited array for the respective
+                                            direction.Also check whether there is a different path possible while
+                                            getting back and if yes, then mark that cell in the visited array.
+                                        </li>
 
 
 
@@ -216,10 +226,12 @@
                                     </div>
                                     <br>
                                     <p>
-                                        <b>Time Complexity:O(4^(m*n))</b>because on every cell we need to try 4 different directions.
+                                        <b>Time Complexity:O(4^(m*n))</b>because on every cell we need to try 4
+                                        different directions.
                                         <br><br>
 
-                                        <b>Space Complexity:O(m*n) </b>Reason: Maximum Depth of the recursion tree(auxiliary space).
+                                        <b>Space Complexity:O(m*n) </b>Reason: Maximum Depth of the recursion
+                                        tree(auxiliary space).
 
                                         <br>
 
@@ -227,7 +239,9 @@
 
 
                                     <b>
-                                        But, writing an individual code for every direction is a lengthy process therefore we truncate the 4 “if statements” into a single for loop using the following approach.
+                                        But, writing an individual code for every direction is a lengthy process
+                                        therefore we truncate the 4 “if statements” into a single for loop using the
+                                        following approach.
 
 
                                     </b>
@@ -265,22 +279,24 @@
                                     </div>
                                     <br>
                                     <p>
-                                        <b>Time Complexity:O(4^(m*n))</b>because on every cell we need to try 4 different directions.
+                                        <b>Time Complexity:O(4^(m*n))</b>because on every cell we need to try 4
+                                        different directions.
                                         <br><br>
 
-                                        <b>Space Complexity:O(m*n) </b>Reason: Maximum Depth of the recursion tree(auxiliary space).
+                                        <b>Space Complexity:O(m*n) </b>Reason: Maximum Depth of the recursion
+                                        tree(auxiliary space).
 
                                         <br>
 
                                     </p>
-                                    
+
 
 
 
                             </div>
                             <br />
 
-                            <center>Happy Coding❤️</center>
+                            <center> It's All About Consistency📈 Dedication🎯 HardWork💪 Happy Coding❤️ </center>
                         </div>
                     </div>
                 </div>
