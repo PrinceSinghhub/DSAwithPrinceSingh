@@ -169,6 +169,54 @@
   color: var(--primary);
 }
 
+[role="easyprogressbar"] {
+  --percentage: var(--value);
+  --primary: green;
+  --secondary: rgba(0, 128, 0, 0.274);
+  --size: 100px;
+  top: -40px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  -webkit-animation: progress 2s 0.5s forwards;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+[role="easyprogressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  width: 70%;
+  height: 70%;
+  border-radius: 40px;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+[role="easyprogressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
 /* ---------------------------- bar 2  ----------------------------- */
 
 [role="progressbar1"] {
@@ -215,20 +263,126 @@
   color: var(--primary);
 }
 
+
+[role="mediumprogressbar"] {
+  --percentage: var(--value);
+  --primary: orange;
+  --secondary: rgba(255, 166, 0, 0.363);
+  --size: 100px;
+  top: -40px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  -webkit-animation: progress 2s 0.5s forwards;
+}
+
+[role="mediumprogressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  width: 70%;
+  height: 70%;
+  border-radius: 40px;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+[role="mediumprogressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
+[role="hardprogressbar"] {
+  --percentage: var(--value);
+  --primary: orangered;
+  --secondary: rgba(255, 68, 0, 0.507);
+  --size: 100px;
+  top: -40px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  -webkit-animation: progress 2s 0.5s forwards;
+}
+
+[role="hardprogressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  width: 70%;
+  height: 70%;
+  border-radius: 40px;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+[role="hardprogressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
 /* --------------------------------------------------------------- */
 
 .statusBar{
   display: flex;
 }
 
+.QuestionBar{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
 .QuestionStatus{
   color: #ff070798;
+}
+
+.eastQst{
+  color: green;
 }
 
 .InterviewImp{
   color: rgba(0, 128, 0, 0.747);
 }
 
+.MediumQST{
+  color: orange;
+}
+
+.HardQST{
+  color: orangered;
+}
 /* --------------------------------------------------------------------- */
 
 .dsaHeading{
@@ -434,6 +588,163 @@ center{
 }
 .bannerImg img{
   border-radius: 10px;
+}
+
+
+/* CSS of the Question Tag Buttons */
+
+.allBTNGroups{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  justify-items: center;
+  gap: 10px;
+  bottom: 40px;
+}
+.easyQst {
+background-color: #c2fbd7;
+border-radius: 100px;
+/*box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+*/color: green;
+cursor: pointer;
+display: inline-block;
+font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+padding: 7px 20px;
+text-align: center;
+text-decoration: none;
+transition: all 250ms;
+border: 0;
+font-size: 16px;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+
+.mediumQst {
+  background-color:rgba(255, 166, 0, 0.425);
+  border-radius: 100px;
+  /* box-shadow: rgba(241, 181, 69, 0.247) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; */
+  color: orange;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.hardQst {
+  background-color: rgba(255, 68, 0, 0.37);
+  border-radius: 100px;
+  /* box-shadow: rgba(241, 181, 69, 0.247) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; */
+  color: orangered;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.leetcodelink{
+  background-color:lightblue;
+  border-radius: 100px;
+  /* box-shadow: rgba(241, 181, 69, 0.247) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; */
+  color: rgb(21, 175, 226);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.leetcodelink:hover {
+  /* box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px; */
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.imgQstDiv{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  gap: 5px;
+  
+}
+
+
+.imgQstDiv img{
+  height: 30px;
+  width: 30px;
+}
+
+.gfgQstlink{
+  background-color:rgba(38, 185, 38, 0.678);
+  border-radius: 100px;
+  /* box-shadow: rgba(241, 181, 69, 0.247) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; */
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.gfgQstlink:hover {
+  /* box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px; */
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.codslink{
+  background-color:rgba(255, 166, 0, 0.534);
+  border-radius: 100px;
+  /* box-shadow: rgba(241, 181, 69, 0.247) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; */
+  color: rgba(0, 0, 0, 0.767);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.codslink:hover {
+  /* box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px; */
+  transform: scale(1.05) rotate(-1deg);
 }
 
 body {
