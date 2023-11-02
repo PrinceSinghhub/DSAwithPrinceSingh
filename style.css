@@ -172,7 +172,7 @@
 [role="easyprogressbar"] {
   --percentage: var(--value);
   --primary: green;
-  --secondary: rgba(0, 128, 0, 0.274);
+  --secondary: #c2fbd7;
   --size: 100px;
   top: -40px;
   animation: progress 2s 0.5s forwards;
@@ -267,7 +267,7 @@
 [role="mediumprogressbar"] {
   --percentage: var(--value);
   --primary: orange;
-  --secondary: rgba(255, 166, 0, 0.363);
+  --secondary: rgba(255, 166, 0, 0.425);
   --size: 100px;
   top: -40px;
   animation: progress 2s 0.5s forwards;
@@ -311,7 +311,7 @@
 [role="hardprogressbar"] {
   --percentage: var(--value);
   --primary: orangered;
-  --secondary: rgba(255, 68, 0, 0.507);
+  --secondary: rgba(255, 68, 0, 0.37);
   --size: 100px;
   top: -40px;
   animation: progress 2s 0.5s forwards;
@@ -362,6 +362,8 @@
   display: flex;
   justify-content: center;
   justify-items: center;
+  gap: 100px;
+  
 }
 
 .QuestionStatus{
@@ -746,6 +748,46 @@ touch-action: manipulation;
   /* box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px; */
   transform: scale(1.05) rotate(-1deg);
 }
+
+.companyLogo{
+  
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+  gap: 10px;
+
+}
+
+.companyLogo1{
+  height: 30px;
+  width: auto;
+
+}
+.companyLogo2{
+  height: 35px;
+  width: auto;
+
+}
+.companyLogo3{
+  margin-top: -9px;
+  height: 40px;
+  width: auto;
+
+}
+.companyLogo4{
+  margin-top: -2px;
+  height: 30px;
+  width: auto;
+
+}
+.companyLogo5{
+  margin-top: -7px;
+  height: 45px;
+  width: auto;
+
+}
+
+
 
 body {
     --wp--preset--color--black: #001d30;
