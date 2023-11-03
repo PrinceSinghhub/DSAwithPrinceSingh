@@ -21,7 +21,6 @@
   height: 100px;
 }
 
-
 .container
 {
   width:100%;
@@ -786,8 +785,6 @@ touch-action: manipulation;
   width: auto;
 
 }
-
-
 
 body {
     --wp--preset--color--black: #001d30;
