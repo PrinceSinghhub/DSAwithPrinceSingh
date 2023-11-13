@@ -786,6 +786,10 @@ touch-action: manipulation;
 
 }
 
+.intro{
+  margin-top: -20px;
+}
+
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
