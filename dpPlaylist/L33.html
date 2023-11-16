@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" oncontextmenu="return false">
   <head>
-    <title>DPL32 Distinct Subsequences 🔥</title>
+    <title>DPL33 Edit Distance 🔥</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link
@@ -74,7 +74,7 @@
                   </h5>
 
                   <h1 class="has-text-align-center mb-60">
-                    DPL32 Distinct Subsequences 🔥
+                    DPL33 Edit Distance 🔥
                   </h1>
 
                   <div class="allBTNGroups">
@@ -101,21 +101,44 @@
                 </div>
 
                   <!-- Problem Statements  -->
-                  <p>We are given two strings S1 and S2, we want to know how many distinct subsequences of S2 are present in S1.</p>
+                  <p>
+                    Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. <br>
 
-                  <img src="./Notes/L32expImg.jpg" alt=""> <br>
+You have the following three operations permitted on a word: <br>
+<li>Insert a character</li>
+<li>Delete a character</li>
+<li>Replace a character</li>
+                  </p>
 
-                  <li>Again this Problem is based on the <b>DP on String</b> in Prevesilly Some problem we solved the Problem using the concept of the <b>Longest Common Subsequence</b></li>
-                  <li>Now his portion we moved on the <b>String Matching on DP on String</b></li>
-                  <li>Now we solved the 3 Upcomming Problems and this Problmes are based on the <b>DP on String Matchinbg</b> and the Problem Level is <b>LeetCode Hard</b></li>
-                  <br>
+                  <p>Again Very Famus Probelm Based on the <b>DP on String</b>, Basically we have a 3 Operation and our task to Convert S1 to S2 with the Minimum Number of the Operations</p>
 
-                  <p>If we Talk about this Typle of Problem then only one things Comes into the Our Mind that is Recursion becouse only the Recursion is the Only Method to Find the all the <b>Possible Ways</b></p>
+                  <img src="./Notes/L33expImg1.jpg" alt=""> <br>
 
-                  <li>Now in the Recursion Portion we Discuss <b>Lecture 6 and Lecture 7</b> we learned how to the count all the possible Ways</li>
-                  <br>
-                  <p>This is the Frame of the Recursion that we used in the Recursion Portion</p>
-                  <img src="./Notes/L32expImg1.jpg" alt=""> <br>
+                  <p>
+                    <b>Insertaion and Deletion</b> we learned in the DPL30, but in this Question we have one more operation that is Replacement, that makes a Bit Harder Problem as Compare to the DPL30. <br>
+
+                    <b>Now the Question is is Every Time Possible to Make A Sting1 to String2</b> and the Answer is <b>Yes</b> who ? <br>
+
+                    <li>Delete the All Char from the S1</li>
+                    <li>Inseret the All Char from the S2 to S1</li>
+                    <li>That Way to Every Time Possible to Make A Sting1 to String2</li> <br>
+
+                    <img src="./Notes/L33expImg2.jpg" alt=""> <br>
+
+                    But the Our Task is <b>Minimum Operation</b> To Make A S1 == S2 <br>
+                    <img src="./Notes/L33expImg3.jpg" alt="">
+                  </p>
+
+
+
+                  <p><b>Hoe To Solved this Problem</b> <br>
+
+                    For every index of string S1, we have three options to match that index with string S2, i.e replace the character, remove the character or insert some character at that index. Therefore, we can think in terms of string matching path as we have done already in previous questions DPL32.
+
+                    <br><br>
+
+                    As there is no uniformity in data, there is no other way to find out than to <b>try out all possible ways</b>. To do so we will need to use <b>recursion</b>.
+                </p>
 
 
 
@@ -128,85 +151,127 @@
                   <b>Step 1: Express the problem in terms of indexes.</b><br>
 
 <li>
-    We are given two strings. We can represent them with the help of two indexes i and j. Initially, i=n-1 and j=m-1, where n and m are lengths of strings S1 and S2. Initially, we will call f(n-1,j-1), which means the count of all subsequences of string S2[0…m-1] in string S1[0…n-1]. We can generalize it as follows:
+    We are given two strings. We can represent them with the help of two indexes i and j. Initially, i=n-1 and j=m-1, where n and m are lengths of strings S1 and S2. Initially, we will call f(n-1,m-1), which means the minimum number of operations required to convert string S1[0…n-1] to string S2[0…m-1].
 </li> <br>
 
-<img src="./Notes/L32resImg1.jpg" alt=""> <br>
+<img src="./Notes/L33resImg1.jpg" alt=""> <br>
 
 <b>Step 2: Try out all possible choices at a given index.</b> <br>
 
-<p>Now, i and j represent two characters from strings S1 and S2 respectively. We want to find distinct subsequences. There are only two options that make sense: either the characters represented matched or Not matched</p>
+<p>Now, i and j represent two characters from strings S1 and S2 respectively. There are only two options that make sense: either the characters represented by i and j match or they don’t match.</p>
 
 <b>Case 1: When the characters match</b>
 
 <li>
-    <b>if(S1[i]==S2[j])</b> then we have 2 Different-Different Senior Occured
+    <b>if(S1[i]==S2[j])</b>
 </li>
-<p>S1[i] == S2[j], now as the characters at i and j match, we would want to check the possibility of the remaining characters of S2 in S1 therefore we reduce the length of both the strings by 1 and call the function recursively.</p>
+<p>S1[i] == S2[j], If this is true, now as the characters at i and j match, we would not want to do any operations to make them match, so we will just decrement both i and j by 1 and recursively find the answer for the remaining string portion. We return <b>0+f(i-1,j-1)</b>. The following figure makes it clear.</p>
 
-<img src="./Notes/L32resImg2.jpg" alt="">
-<br>
-<p>
-    <b>VVVV Important Point</b> <br />
-    Now, if we only make the above single recursive call, we are rejecting the opportunities to find more than one subsequences because it can happen that the jth character may match with more characters in S1[0…i-1], for example where there are more occurrences of ‘g’ in S1 from which also an answer needs to be explored.
-</p>
-
-<img src="./Notes/L32resImg3.jpg" alt="">
-
-<br>
-<p>
-    To explore all such possibilities, we make another recursive call in which we reduce the length of the S1 string by 1 but keep the S2 string the same, i.e we call f(i-1,j).
-</p>
-
-<img src="./Notes/L32resImg4.jpg" alt="">
-<br>
-
-<li>Overall we Can Say that if <b>S1[i] == S2[j] then we have 2 Options that is to Explore the Remaining Porribilities of the occurrences of the <b>Current J</b></b></li>
-<li><b>Picked J and Not Picked J</b> function(i-1,j-1) + function(i-1,j)</li>
-
+<img src="./Notes/L33resImg2.jpg" alt="">
 <br>
 
 <b>Case 2:  When the characters don’t match</b>
 
 <li>
-    <b>if(S1[i] != S2[j])</b>, it means that we don’t have any other choice than to try the next character of S1 and match it with the current character S2.
+    <b>if(S1[i] != S2[j])</b>, is true, then we have to do any of three operations to match the characters. We have three options, we will analyze each of them one by one.
+    <ul>
+        <li><b>Case1: Inserting a character</b></li>
+        <li><b>Case2: Deleting a character</b></li>
+        <li><b>Case3: Replacing a character</b></li>
+    </ul>
 </li>
-<li>Then Simply call the Recursion Function for the moving into the Nect char of the i and J Constant for math if any Possible Occurance of the Current j is Possible of Not, <b>function(i-1,j)</b></li>
-<br>
-<img src="./Notes/L32resImg5.jpg" alt="">
 
-<br>
-<b>Summarized the both Conditions</b>
-<li><b>if(S1[i]==S2[j])</b>, call f(i-1,j-1) and f(i-1,j).</li>
-<li><b>if(S1[i]!=S2[j])</b>, call f(i-1,j).</li>
- <br>
 
-<b>Step 3: Return the sum of choices</b> <br>
+<b>Case 1: Inserting a character</b>
+<p>Consider this example
+    <img src="./Notes/L33resImg3.jpg" alt="">
 
-<li>As we have to return the total count, we will return the sum of f(i-1,j-1) and f(i-1,j) in case 1 and simply return f(i-1,j) in case 2. 
+    <br>
+    Now if we have to match the strings by insertions, what would we do?: 
+
+    <br>
+    <li>We would have placed an ‘s’ at index 5 of S1.</li>
+    <li>Suppose i now point to s at index 5 of S1 and j points are already pointing to s at index j of S2.</li>
+    <li>Now, we hit the condition, where characters do match. (as mentioned in case 1).</li>
+    <li>Therefore, we will decrement i and j by 1. They will now point to index 4 and 1 respectively.</li>
+
+    <br>
+    <img src="./Notes/L33resImg4.jpg" alt="">
+
+    Now, the number of operations we did were only 1 (inserting <b>s</b> at index 5) but do we need to really insert the ‘s’ at index 5 and modify the string? The answer is simply <b>NO</b>. As we see that inserting a character (here ‘s’ at index 5), we will eventually get to the third step. So we can just <b>return 1+ f(i,j-1)</b> as i remains there only after insertion and j decrements by 1. We can say that we have <b>hypothetically</b> inserted character <b>s</b>. <br>
+
+    So the Case 1 is fro the <b>Inserting a character</b>: <b>1 + f(i,j-1)</b>
+
+</p>
+
+<b>Case 2: Deleting a character </b>
+<p>
+    Consider the same example
+
+    <img src="./Notes/L33resImg5.jpg" alt="">
+    <br>
+    We can simply delete the character at index 4 and check from the next index.
+
+    <br>
+    <img src="./Notes/L33resImg6.jpg" alt="">
+
+    <br>
+    Now, j remains at its original index and we decrement i by 1. We perform 1 operation, therefore we will recursively call <b>1 + f(i-1,j).</b>
+
+    <br>
+
+    So the Case 2 is fro the <b>Deleting a character</b>: <b>1 + f(i-1,j)</b>
+</p>
+
+<b>Case 3: Replacing a character</b><br>
+<p>Consider the same example
+
+    <img src="./Notes/L33resImg7.jpg" alt=""> <br>
+
+    If we replace the character ‘e’ at index 4 of S1 with ‘s’, we have matched both the characters ourselves. We again hit the case of character matching, therefore we decrement <b>both</b> i and j by 1. As the number of operations performed is 1, we will return <b>1+f(i-1,j-1)</b>.
+
+    <br>
+    To summarise, these are the three choices we have in case characters don’t match
+
+    <b>
+
+        <li>return 1 + f(i-1,j) for Insertion of character.</li>
+        <li>return 1 + f(i,j-1) for Deletion of character</li>
+        <li>return 1 + f(i-1,j-1) for Replacement of character.</li>
+    </b>
+</p>
+
+<b>Step 3: Return the minimum of all choices</b> <br>
+
+<li>As we have to return the minimum number of operations, we will return the minimum of all operations. 
 </li>
 
 <br>
 <b>Base Cases</b>
-<li>if j < 0, it means we have matched all characters of S2 with characters of S1, so we return 1.</li>
-<li>if i < 0, it means we have checked all characters of S1 but we are not able to match all characters of S2, therefore we return 0.</li>
-<br>
-<p>The final pseudocode after steps 1, 2, and 3:</p>
-<img src="./Notes/L32resImg6.jpg" alt=""> <br>
 
+    We are reducing i and j in our recursive relation, there can be two possibilities, either i becomes -1 or j becomes -1., i,e we exhaust either S1 or S2 respectively.
+
+    <br>
+    <img src="./Notes/L33resImg8.jpg" alt=""> 
+    <br>
+    The final pseudocode after steps 1, 2, and 3 <br>
+
+    <img src="./Notes/L33resImg9.jpg" alt=""> 
+
+    <br>
 
         <div class="container">
                     <div class="item">
                       <div class="title"><b>Recursion Python Code</b></div>
                       <div class="content">
-                        <img src=".//Notes/L32rcode (1).png" alt="" />
+                        <img src="./Notes/L33rcode (1).png" alt="" />
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Recursion C++ Code</b></div>
                       <div class="content">
-                        <img src=".//Notes/L32rcode (2).png" alt="" />
+                        <img src="./Notes/L33rcode (2).png" alt="" />
                       </div>
                     </div>
 
@@ -247,14 +312,14 @@ Reason: We are using a recursion stack space(O(N))<br><br>
                     <div class="item">
                       <div class="title"><b>Memoization Python Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L32memocode (1).png" alt="">
+                        <img src="./Notes/L33memocode (1).png" alt="">
                       </div>
                     </div>
 
                     <div class="item">
                       <div class="title"><b>Memoization C++ Code</b></div>
                       <div class="content">
-                        <img src="./Notes/L32memocode (2).png" alt="">
+                        <img src="./Notes/L33memocode (2).png" alt="">
                       </div>
                     </div>
 
@@ -292,9 +357,9 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
 <li>In the recursive logic, we set the base case too if( i < 0 ) and if( j < 0 ) but we can’t set the dp array’s index to -1. Therefore a hack for this issue is to shift every index by 1 towards the right.</li>
 <br>
 <img src="./Notes/L32tabExp.jpg" alt=""><br>
-<li>To convert the memoization approach to a tabulation one, create a dp array with the same size as done in memoization. We can initialize it as 0.</li>
+<li>To convert the memoization approach to a tabulation one, create a dp array with the same size as done in memoization. We can initialize it as 0. ([n+1][m+1] as zero)</li>
 <br>
-<li>First, we need to initialize the base conditions of the recursive solution.</li>
+<li>First, we need to initialize the base conditions of the recursive solution, <b>(keep in mind 1-based indexing), we set the first column’s value as i and the first row as j(1-based indexing)</b>.</li>
 <br>
 <li>if J == 0 that means we search all the String of the S2 in S1 <b>So we Marked Every j == 0 is 1</b> </li> <br>
 <li>if i == 0 that means we something remaining that not found in the S1 <b>So we Marked Every i == 0 is 0</b></li> <br>
@@ -311,14 +376,14 @@ Tabulation is a <b>‘bottom-up’</b> approach where we start from the base cas
   <div class="item">
     <div class="title"><b>Tabulation Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L32tabcode (1).png" alt="" />
+      <img src="./Notes/L33tabcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>Tabulation C++ Code</b></div>
     <div class="content">
-      <img src="./Notes/L32tabcode (2).png" alt="" />
+      <img src="./Notes/L33tabcode (2).png" alt="" />
     </div>
   </div>
 
@@ -345,7 +410,7 @@ Reason: We are using an external array of size ‘N*M’. Stack Space is elimina
 <h3>Space Optimization</h3>
 
 <p>
-    If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: dp[i][j] =  dp[i-1][j-1] + dp[i-1][j]  or dp[i][j] = dp[i-1][j]</b> for the finding the our ans then definetly here <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
+    If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: dp[i][j] =  min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1])</b> for the finding the our ans then definetly here <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
 </p>
 
 <b>Golden Rule</b>
@@ -354,28 +419,12 @@ Reason: We are using an external array of size ‘N*M’. Stack Space is elimina
 <p>
 
   <li>We see that to calculate a value of a cell of the dp array, we need only the previous row values (say prev). So, we don’t need to store an entire array. Hence we can space optimize it.</li> <br>
-
-  <li>We will be space optimizing this solution using <b>only one row</b>.</li> <br>
-  <p>
-    We have 2 Different Way to Optimized this Problem 
-    <li>using 2 array</li>
-    <li>using 1 array</li> <br>
-    <b>Same like the 0/1 and unbounded Knapsack Problem</b>
-  </p>
-  <li>If we clearly see the values required:  dp[i-1][j-1] and dp[i-1][j], we can say that if we are at a column j, we will only require the values shown in the grey box from the previous row and other values will be from the cur row itself. So why do we need to store an entire array for it?</li> <br>
-
-  <img src="./Notes/L32spImg.jpg" alt="">
-  <br>
-
-  <p>If we need only two values from the prev row, there is no need to store an entire row. We can work a bit smarter.</p>
  
-  <b>We can use the cur row itself to store the required value in the following way:</b>
-  <li>We take a single row ‘prev’.</li> <br>
+  <li>We take two rows ‘prev’ and ‘cur’</li> <br>
   <li>We initialize it to the base condition.</li> <br>
-  <li>Whenever we want to compute a value of the cell prev[j], we take the already existing value (prev[j] before new computation) and prev[j-1] (if required, in case of character match).</li> <br>
-  <li>We perform the above step on all the indexes.</li> <br>
-  <li>So we see how we can space optimize using a single row itself.</li> <br>
-  <li>last our ans is prev[index2]</li>
+  <li>Next, we implement the memoization logic. We replace dp[i-1] with prev and dp[i] by cur</li> <br>
+  <li>After every inner loop execution, we set prev=cur, for the next iteration.</li> <br>
+  <li>last our ans is prev[m]</li>
 </p>
 
 <br>
@@ -383,21 +432,14 @@ Reason: We are using an external array of size ‘N*M’. Stack Space is elimina
   <div class="item">
     <div class="title"><b>SpaceOptmized Python Code</b></div>
     <div class="content">
-      <img src="./Notes/L32spcode (1).png" alt="" />
-    </div>
-  </div>
-
-  <div class="item">
-    <div class="title"><b>Most Optimial Python Code 🔥</b></div>
-    <div class="content">
-      <img src="./Notes/L32motCode.png" alt="" />
+      <img src="./Notes/L33spcode (1).png" alt="" />
     </div>
   </div>
 
   <div class="item">
     <div class="title"><b>SpaceOptmized C++ Code</b></div>
     <div class="content">
-        <img src="./Notes/L32spcode (2).png" alt="" />
+        <img src="./Notes/L33spcode (2).png" alt="" />
     </div>
   </div>
   
@@ -414,13 +456,13 @@ Reason: We are using an external array of size ‘N*M’. Stack Space is elimina
 <br>
 
 <h3>Time & Space Complexity</h3>
-                    <b>Time Complexity: O(N*W)</b> <br>
+                    <b>Time Complexity: O(N*M)</b> <br>
 
                     Reason: There are three 2 nested loops<br>
 
 <b>Space Complexity: O(W)</b> <br>
 
-Reason: We are using an external array of size ‘W+1’ to store only one row.<br><br>
+Reason: We are using an external array of size ‘M+1’ to store only one row.<br><br>
 
                 </div>
                 <br />
