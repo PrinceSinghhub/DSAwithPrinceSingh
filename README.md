@@ -63,4 +63,5 @@ https://github.com/PrinceSinghhub/DSAwithPrinceSingh-README/assets/71000042/aa02
 https://github.com/PrinceSinghhub/DSAwithPrinceSingh-README/assets/71000042/ca8109b2-9a69-491a-b5b1-4da293ce3fea
 
 For more information and to access the resources, visit [DSAwithPrinceSingh](#). Good luck with your DSA journey! 🚀
-### ~ It's All About Consistency & Dedication & HardWork Happy Coding❤️ ~
+### ~ It's All About Consistency📈 Dedication🎯 HardWork💪 Happy Coding❤️ ~
+### Prince Singh (Founder) ©DSAwithPrinceSingh
