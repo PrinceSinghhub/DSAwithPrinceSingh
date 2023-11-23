@@ -52,7 +52,7 @@
 
 .lastmyImg{
   border-radius: 10%;
-  width: 15em;
+  width: 30rem;
 }
 
 .content
@@ -790,6 +790,15 @@ touch-action: manipulation;
   margin-top: -20px;
 }
 
+.abutDiss{
+  text-align: justify;
+  width: 150rem;
+}
+
+.abutDissFooter{
+  text-align: justify;
+  width: 50rem;
+}
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
