@@ -815,6 +815,21 @@ touch-action: manipulation;
   margin-top: 5px;
 }
 
+.intro li{
+  list-style: none;
+  padding: 0;
+}
+
+.intro li::before{
+  content: '💥';
+  margin-right: 8px;
+}
+
+.footerPoss{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
