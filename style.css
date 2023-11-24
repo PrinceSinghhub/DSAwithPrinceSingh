@@ -797,8 +797,24 @@ touch-action: manipulation;
 
 .abutDissFooter{
   text-align: justify;
-  width: 50rem;
+  width: 40rem;
 }
+.footerAch1{
+  margin-top: -20px;
+}
+
+.footerAch2{
+  margin-top: 5px;
+}
+
+.footerAch3{
+  margin-top: 5px;
+}
+
+.footerAch4{
+  margin-top: 5px;
+}
+
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
