@@ -586,6 +586,7 @@ center{
 
 .bannerImg{
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 .bannerImg img{
   border-radius: 10px;
@@ -788,6 +789,7 @@ touch-action: manipulation;
 
 .intro{
   margin-top: -20px;
+  text-align: justify;
 }
 
 .abutDiss{
@@ -830,6 +832,19 @@ touch-action: manipulation;
   justify-content: center;
   align-items: center;
 }
+
+.psStatement{
+  margin-top: -30px;
+}
+
+.whyDSA{
+  margin-top: -20px;
+}
+
+.aboutBannerDiss{
+  text-align: justify;
+}
+
 body {
     --wp--preset--color--black: #001d30;
     --wp--preset--color--cyan-bluish-gray: #abb8c3;
