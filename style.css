@@ -432,7 +432,7 @@
 }
 
 .DPmainDiv{
-  margin-top: -30px;
+  margin-top: 30px;
 }
 .btandbstMainDiv{
   margin-top: -30px;
@@ -843,6 +843,143 @@ touch-action: manipulation;
 
 .aboutBannerDiss{
   text-align: justify;
+}
+
+.totalProblemMainBox{
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  background: rgb(221,254,250);
+  background: linear-gradient(90deg, rgba(170, 229, 223, 0.51) 0%, rgba(255,255,255,0.8939775739397321) 55%);
+  height: 70px;
+  border-radius:10px;
+  margin-top: 15px;
+}
+
+.problemSplit{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.prPart1{
+  display: flex;
+  width: 100px;
+  background: #c2fbb56c;
+  border-radius:10px;
+  flex-direction: column;
+}
+
+.prPart2{
+  width: 100px;
+  background: rgba(255, 166, 0, 0.233);
+  border-radius:10px;
+}
+
+.prPart3{
+  width: 100px;
+  background: rgba(248, 14, 14, 0.123);
+  border-radius:10px;
+}
+
+.pName1{
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: rgba(0, 128, 0, 0.514);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pCount1{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+  margin-top: -5px;
+}
+
+.pName2{
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: orange;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pCount2{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+  margin-top: -5px;
+}
+
+.pName3{
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  color: rgba(255, 0, 0, 0.548);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pCount3{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+  margin-top: -5px;
+}
+
+
+.totalName{
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+  margin-left: 10px;
+}
+
+.totalCount{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+  margin-left: 10px;
+  margin-top: -5px;
+}
+
+#esColor{
+  color: rgba(0, 128, 0, 0.514);
+}
+
+#meColor{
+  color: orange;
+}
+
+#hrColor{
+  color: rgba(255, 0, 0, 0.548);
+}
+
+.DPtotalProblemMainBox{
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  background: rgb(221,254,250);
+  background: linear-gradient(90deg, rgba(170, 229, 223, 0.51) 0%, rgba(255,255,255,0.8939775739397321) 55%);
+  height: 70px;
+  border-radius:10px;
+  margin-top: -40px;
 }
 
 body {
