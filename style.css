@@ -1131,6 +1131,9 @@ center {
   background: #eee;
 }
 
+#filename{
+  background-color: white;
+}
 /*  */
 
 body {
