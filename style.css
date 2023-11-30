@@ -47,12 +47,12 @@
 
 .myImg {
   border-radius: 10%;
-  width: 100rem;
+  width: 70rem;
 }
 
 .lastmyImg {
   border-radius: 10%;
-  width: 30rem;
+  width: 15rem;
 }
 
 .content {
@@ -1015,7 +1015,7 @@ center {
   justify-content: center;
   justify-items: center;
   width: 85rem;
-  margin-left: -20rem;
+  margin-left: -12.5rem;
 
 }
 
@@ -1024,7 +1024,7 @@ center {
   justify-content: center;
   justify-items: center;
   width: 85rem;
-  margin-left: -20rem;
+  margin-left: -12.5rem;
 
 }
 
@@ -1136,7 +1136,7 @@ center {
 }
 /*  */
 
-.StartingDiv{
+/* .StartingDiv{
   margin-top: 10px;
   border-radius: 10px;
   display: flex;
@@ -1148,8 +1148,23 @@ center {
 
 .head4Div{
   background-color: rgba(0, 0, 0, 0.089);
+} */
+
+.StartingDiv{
+  display: flex;
+  width: 85%;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.CodeStartingDiv{
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
 body {
   --wp--preset--color--black: #001d30;
   --wp--preset--color--cyan-bluish-gray: #abb8c3;
