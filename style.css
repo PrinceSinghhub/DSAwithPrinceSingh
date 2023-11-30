@@ -1136,6 +1136,20 @@ center {
 }
 /*  */
 
+.StartingDiv{
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3), 5px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.head4Div{
+  background-color: rgba(0, 0, 0, 0.089);
+}
+
 body {
   --wp--preset--color--black: #001d30;
   --wp--preset--color--cyan-bluish-gray: #abb8c3;
