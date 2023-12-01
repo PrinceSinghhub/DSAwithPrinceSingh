@@ -41,12 +41,15 @@
 .myImg {
   border-radius: 10%;
   /* width: 70rem; */
-  width: 30rem;
+  width: 20rem;
 }
 
 .lastmyImg {
   border-radius: 10%;
-  width: 30rem;
+  /* width: 30rem; */
+  width: 250px;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .content {
@@ -62,6 +65,7 @@
 .aboutMe {
   display: flex;
   gap: 10px;
+  box-sizing: border-box;
 }
 
 .titleHead {
@@ -808,7 +812,16 @@ center {
 
 .abutDiss {
   text-align: justify;
-  width: 105rem;
+  width: 50rem;
+}
+
+.abutDiss li {
+  list-style: none;
+}
+
+.abutDiss li::before {
+  content: '🌟';
+  margin-right: 8px;
 }
 
 .abutDissFooter {
@@ -1131,9 +1144,10 @@ center {
   background: #eee;
 }
 
-#filename{
+#filename {
   background-color: white;
 }
+
 /*  */
 
 /* .StartingDiv{
@@ -1150,7 +1164,7 @@ center {
   background-color: rgba(0, 0, 0, 0.089);
 } */
 
-.StartingDiv{
+.StartingDiv {
   /* display: flex; */
   width: 85%;
   flex-direction: column;
