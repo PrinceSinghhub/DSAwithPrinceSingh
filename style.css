@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-@media (max-width:1000px) {
+@media (max-width:400px) {
   .aboutMe {
     flex-direction: column;
   }
@@ -47,12 +47,12 @@
 
 .myImg {
   border-radius: 10%;
-  width: 22rem;
+  width: 70rem;
 }
 
 .lastmyImg {
   border-radius: 10%;
-  width: 15rem;
+  width: 30rem;
 }
 
 .content {
@@ -814,7 +814,7 @@ center {
 
 .abutDiss {
   text-align: justify;
-  width: 100rem;
+  width: 105rem;
 
 }
 
@@ -1030,7 +1030,7 @@ center {
   justify-content: center;
   justify-items: center;
   width: 85rem;
-  margin-left: -12.5rem;
+  margin-left: -20rem;
 
 }
 
@@ -1157,7 +1157,7 @@ center {
   background-color: rgba(0, 0, 0, 0.089);
 } */
 
-.StartingDiv{
+/* .StartingDiv{
   display: flex;
   width: 85%;
   flex-direction: column;
@@ -1171,7 +1171,7 @@ center {
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 body {
   --wp--preset--color--black: #001d30;
