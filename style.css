@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 
-@media (max-width:400px) {
+@media (max-width:1000px) {
   .aboutMe {
     flex-direction: column;
   }
-
 }
+
 
 .dsa {
   display: flex;
@@ -47,7 +47,7 @@
 
 .myImg {
   border-radius: 10%;
-  width: 70rem;
+  width: 22rem;
 }
 
 .lastmyImg {
@@ -441,6 +441,7 @@
 
 .DPmainDiv {
   margin-top: 30px;
+
 }
 
 .btandbstMainDiv {
@@ -524,6 +525,8 @@ center {
   border-radius: 2%;
   width: 500rem;
 }
+
+
 
 /* ----------------------------------------------------------- */
 
@@ -811,7 +814,8 @@ center {
 
 .abutDiss {
   text-align: justify;
-  width: 150rem;
+  width: 100rem;
+
 }
 
 .abutDissFooter {
@@ -1012,10 +1016,12 @@ center {
 
 .MainIndxmeraInterviewCodeEditior {
   display: flex;
-  justify-content: center;
-  justify-items: center;
-  width: 85rem;
-  margin-left: -12.5rem;
+  background: #000;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  width: 50rem;
+  /* overflow: hidden; */
 
 }
 
@@ -1029,11 +1035,12 @@ center {
 }
 
 .textEditorMainDiv {
-  max-width: 60%;
-  width: 60%;
+  width: auto;
   background: rgba(245, 245, 245, 0.747);
   border-radius: 8px;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .toolbar {
@@ -1165,6 +1172,7 @@ center {
   margin-left: auto;
   margin-right: auto;
 }
+
 body {
   --wp--preset--color--black: #001d30;
   --wp--preset--color--cyan-bluish-gray: #abb8c3;
