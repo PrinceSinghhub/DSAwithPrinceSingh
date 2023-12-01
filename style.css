@@ -41,7 +41,7 @@
 .myImg {
   border-radius: 10%;
   /* width: 70rem; */
-  width: 20rem;
+  width: 40rem;
 }
 
 .lastmyImg {
@@ -64,6 +64,8 @@
 
 .aboutMe {
   display: flex;
+  justify-content: center;
+  justify-items: center;
   gap: 10px;
 }
 
@@ -811,7 +813,7 @@ center {
 
 .abutDiss {
   text-align: justify;
-  width: 50rem;
+  /* width: 50rem; */
 }
 
 .abutDiss li {
@@ -819,7 +821,7 @@ center {
 }
 
 .abutDiss li::before {
-  content: '🌟';
+  content: '•';
   margin-right: 8px;
 }
 
@@ -1178,14 +1180,43 @@ center {
   margin-right: auto;
 }
 
-@media (max-width:500px) {
+.moreAboutPart1{
+  text-align: justify;
+}
+
+.introIMGwalaDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+@media (max-width:412) {
   .aboutMe {
     flex-direction: column;
+  }
+
+  .myImg {
+    width: 40rem;
+  }
+}
+
+@media (max-width:400px) {
+  .myImg {
+    width: 40rem;
+  }
+
+  .aboutMe {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    gap: 10px;
+    height: 16rem;
+    overflow: hidden;
   }
 }
 
 body {
-  --wp--preset--color--black: #001d30;
+  --wp--preset--color--black: #494d50;
   --wp--preset--color--cyan-bluish-gray: #abb8c3;
   --wp--preset--color--white: #ffffff;
   --wp--preset--color--pale-pink: #f78da7;
