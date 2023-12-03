@@ -579,6 +579,13 @@ center {
   color: rgba(51, 48, 48, 0.692);
 }
 
+.AchivementDSAtagSec p {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(51, 48, 48, 0.692);
+}
+
+
 /* --------------------------------------------------------------------------------------------- */
 #AdvancedTitle {
   background: linear-gradient(100deg, rgba(25, 241, 104, 0.4) 0%, rgba(191, 142, 115, 0.4) 79%);
@@ -595,6 +602,14 @@ center {
   background: linear-gradient(90deg, rgba(223, 238, 255, 1) 0%, rgba(216, 233, 253, 1) 10%, rgba(148, 186, 231, 1) 61%);
 
 }
+
+#AchivementTitle {
+  border: none;
+  background: linear-gradient(90deg, rgba(223, 238, 255, 1) 0%, rgba(216, 233, 253, 1) 10%, rgba(148, 186, 231, 1) 61%);
+  height: 5rem;
+
+}
+
 
 .bannerImg {
   margin-bottom: 20px;
@@ -811,10 +826,10 @@ center {
   text-align: justify;
 }
 
-.abutDiss {
+/* .abutDiss {
   text-align: justify;
-  /* width: 50rem; */
-}
+  width: 50rem;
+} */
 
 .abutDiss li {
   list-style: none;
@@ -1189,6 +1204,65 @@ center {
   flex-direction: column;
   gap: 5px;
 }
+
+.storyBehindDSAwithPrinceSingh{
+  position: relative;
+  display: inline-block;
+}
+
+.imageDess{
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.336);
+  border-radius: 10px;
+  width: 85%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.imageDess h4{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.collageImg img{
+  border-radius: 10px;
+
+}
+
+/* .storyBehindDSAwithPrinceSingh:hover .imageDess{
+  opacity: 1;
+} */
+
+.innerImgDiss{
+  display: flex;
+  flex-direction: column;
+}
+
+.headDivImg{
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.innerImgDiss .div{
+margin-left: 20px;
+}
+
+.hrBanner{
+  margin-top: -10px;
+}
+
+.fontHeadSize{
+  font-size: 20px;
+  color: rgba(51, 48, 48, 0.692);
+}
+
 
 @media (max-width:412) {
   .aboutMe {
