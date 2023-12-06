@@ -197,7 +197,7 @@
                 <p>
                     This is an interesting case as now ‘*’ can be replaced with any sequence of characters( of length 0 or more) from S2.
 <br><br>
-We will revisit this example:
+We will revisit this example: <br>
 <img src="./Notes/L34resImg3.PNG" alt=""> <br>
 
 If any of these cases return true, we can say that the characters do match. The next question is <b>how to try all possible ways?</b>
@@ -212,7 +212,7 @@ We are using two pointers i and j to represent characters of strings S1 and S2. 
 <li>Call <b>f(i,j-1). i.e replace ‘*’ with a single character</b> at index j and make the i pointer to still point at index i. In this, we matched it with a single character (one of the many options that need to be tried) and in the next recursive call, as i still point to ‘*’, we get the exact two recursive calls again.</li>  <br>
 
 The following recursive tree will help us to understand the recursion better. <br>
-<img src="./Notes/L34resImg4.PNG" alt=""> <br>
+<img src="./Notes/L34resImg4.png" alt=""> <br>
 So we see how we can tackle all the required cases associated with ‘*’ by using recursion.
                 </p>
 
