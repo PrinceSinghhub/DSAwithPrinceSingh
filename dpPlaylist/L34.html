@@ -2,7 +2,7 @@
 <html lang="en-US" oncontextmenu="return false">
 
 <head>
-  <title>DPL32 Distinct Subsequences 🔥</title>
+  <title>DPL34 Wildcard Matching 🔥</title>
   <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
   <link rel="stylesheet" id="wp-block-library-css"
@@ -14,7 +14,7 @@
     href="https://www.lexalytics.com/wp-content/themes/wd_s/build/index.css?ver=0c4cbca560ded1aeeb10beb9a609f609"
     type="text/css" media="all" />
 
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../style.css" />
 </head>
 
@@ -30,9 +30,23 @@
           <div id="section-block_627ed6b337646" class="block-section relative overflow-hidden 0">
             <div class="bg-white py-100 bg-cover centerbg- bg-no-repeat CodeStartingDiv">
               <div class="CodeStartingDiv">
+
+                <div class="companyLogo">
+                  <img class="companyLogo1" src="https://1000logos.net/wp-content/uploads/2021/10/logo-Meta.png" alt="">
+                  <img class="companyLogo2"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amazon_icon.svg/2500px-Amazon_icon.svg.png"
+                    alt="">
+                  <img class="companyLogo3"
+                    src="https://cdn.freebiesupply.com/images/large/2x/apple-logo-transparent.png" alt="">
+                  <img class="companyLogo4" src="https://cdn-icons-png.flaticon.com/512/732/732228.png" alt="">
+                  <img class="companyLogo5"
+                    src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="">
+
+                </div>
+
                 <h5 class="has-text-align-center">
                   <mark style="background-color: rgba(0, 0, 0, 0)" class="has-inline-color has-nebula-color">
-                    JB TAK FODEGA NHI .... TB TK CHODEGA NHI .... (MAANG)
+                    Jb Tak Fodega Nhi 🎯 Tb Tk Chodega Nhi 📚 (MAANG) 
                   </mark>
 
                   <br><br>
@@ -75,7 +89,7 @@
                 </h5>
 
                 <h1 class="has-text-align-center mb-60">
-                  DPL32 Distinct Subsequences 🔥
+                  DPL34 Wildcard Matching 🔥
                 </h1>
 
                 <div class="allBTNGroups">
@@ -102,26 +116,35 @@
                 </div>
 
                 <!-- Problem Statements  -->
-                <p>We are given two strings S1 and S2, we want to know how many distinct subsequences of S2 are present
-                  in S1.</p>
+                
+                <p>
+                    Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for '?' and '*' where:
 
-                <img src="./Notes/L32expImg.jpg" alt=""> <br>
+                    <li>'?' Matches any single character.</li>
+                    <li>'*' Matches any sequence of characters (including the empty sequence).</li>
 
-                <li>Again this Problem is based on the <b>DP on String</b> in Prevesilly Some problem we solved the
-                  Problem using the concept of the <b>Longest Common Subsequence</b></li>
-                <li>Now his portion we moved on the <b>String Matching on DP on String</b></li>
-                <li>Now we solved the 3 Upcomming Problems and this Problmes are based on the <b>DP on String
-                    Matchinbg</b> and the Problem Level is <b>LeetCode Hard</b></li>
-                <br>
+                    <br>
+                    <!-- <img src="./Notes/L34expImg1.PNG" alt=""> -->
+                    <img src="./Notes/L34expImg2.PNG" alt="">
+                    
+                </p>
 
-                <p>If we Talk about this Typle of Problem then only one things Comes into the Our Mind that is Recursion
-                  becouse only the Recursion is the Only Method to Find the all the <b>Possible Ways</b></p>
 
-                <li>Now in the Recursion Portion we Discuss <b>Lecture 6 and Lecture 7</b> we learned how to the count
-                  all the possible Ways</li>
-                <br>
-                <p>This is the Frame of the Recursion that we used in the Recursion Portion</p>
-                <img src="./Notes/L32expImg1.jpg" alt=""> <br>
+                <p><b>How To Solved this Problem</b> <br>
+
+                    For every index of string S1, we have different options to match that index with string S2. Therefore, we can think in terms of string matching path as we have done already in previous questions. <b>Again this Problem Based on the DP on String Matching</b>
+
+                  <li>Either the characters match already.</li>
+                  <li>Or, if there is a ‘?’, we can explicitly match a single character.</li>
+                  <li>For a ‘*’, the following figure explains the scenario.</li>
+
+                  <br>
+                  <img src="./Notes/L34expImg3.PNG" alt="">
+
+                  <br>
+
+                  As there is no uniformity in data, there is no other way to find out than to <b>try out all possible ways.</b> To do so we will need to use <b>recursion</b>.
+                </p>
 
 
 
@@ -134,134 +157,143 @@
                 <b>Step 1: Express the problem in terms of indexes.</b><br>
 
                 <li>
-                  We are given two strings. We can represent them with the help of two indexes i and j. Initially, i=n-1
-                  and j=m-1, where n and m are lengths of strings S1 and S2. Initially, we will call f(n-1,j-1), which
-                  means the count of all subsequences of string S2[0…m-1] in string S1[0…n-1]. We can generalize it as
-                  follows:
+                    We are given two strings. We can represent them with the help of two indexes i and j. Initially, i=n-1 and j=m-1, where n and m are lengths of strings S1 and S2. Initially, we will call f(n-1,m-1), which means whether string S1[0…n-1] matches with string S2[0…m-1].
                 </li> <br>
 
-                <img src="./Notes/L32resImg1.jpg" alt=""> <br>
+                <img src="./Notes/L34resImg1.PNG" alt=""> <br>
 
                 <b>Step 2: Try out all possible choices at a given index.</b> <br>
 
-                <p>Now, i and j represent two characters from strings S1 and S2 respectively. We want to find distinct
-                  subsequences. There are only two options that make sense: either the characters represented matched or
-                  Not matched</p>
+                <p>Now, i and j represent two characters from strings S1 and S2 respectively. There are only two options that make sense: either the characters represented by i and j match or they don’t.</p>
 
                 <b>Case 1: When the characters match</b>
 
                 <li>
-                  <b>if(S1[i]==S2[j])</b> then we have 2 Different-Different Senior Occured
+                  <b>if(S1[i]==S2[j])</b>
                 </li>
-                <p>S1[i] == S2[j], now as the characters at i and j match, we would want to check the possibility of the
-                  remaining characters of S2 in S1 therefore we reduce the length of both the strings by 1 and call the
-                  function recursively.</p>
+                <p>SIf this is true, the characters at i and j match, we can simply move to the next characters of both the strings. So we will just decrement both i and j by 1 and recursively find the answer for the remaining string portions. We return <b>f(i-1,j-1)</b>. The following figure makes it clear.</p>
 
-                <img src="./Notes/L32resImg2.jpg" alt="">
-                <br>
-                <p>
-                  <b>VVVV Important Point</b> <br />
-                  Now, if we only make the above single recursive call, we are rejecting the opportunities to find more
-                  than one subsequences because it can happen that the jth character may match with more characters in
-                  S1[0…i-1], for example where there are more occurrences of ‘g’ in S1 from which also an answer needs
-                  to be explored.
-                </p>
-
-                <img src="./Notes/L32resImg3.jpg" alt="">
-
-                <br>
-                <p>
-                  To explore all such possibilities, we make another recursive call in which we reduce the length of the
-                  S1 string by 1 but keep the S2 string the same, i.e we call f(i-1,j).
-                </p>
-
-                <img src="./Notes/L32resImg4.jpg" alt="">
-                <br>
-
-                <li>Overall we Can Say that if <b>S1[i] == S2[j] then we have 2 Options that is to Explore the Remaining
-                    Porribilities of the occurrences of the <b>Current J</b></b></li>
-                <li><b>Picked J and Not Picked J</b> function(i-1,j-1) + function(i-1,j)</li>
-
+                <img src="./Notes/L34resImg2.PNG" alt="">
                 <br>
 
                 <b>Case 2: When the characters don’t match</b>
 
                 <li>
-                  <b>if(S1[i] != S2[j])</b>, it means that we don’t have any other choice than to try the next character
-                  of S1 and match it with the current character S2.
+                  <b>if(S1[i] != S2[j])</b>, is true, then we have three possible scenarios let's Check out.
+                  <ul>
+                    <li><b>Case1: S1[i] == ‘?’</b></li>
+                    <li><b>Case2: S1[i] == ‘*’</b></li>
+                    <li><b>Case3: S1[i] is some other character</b></li>
+                  </ul>
                 </li>
-                <li>Then Simply call the Recursion Function for the moving into the Nect char of the i and J Constant
-                  for math if any Possible Occurance of the Current j is Possible of Not, <b>function(i-1,j)</b></li>
-                <br>
-                <img src="./Notes/L32resImg5.jpg" alt="">
 
-                <br>
-                <b>Summarized the both Conditions</b>
-                <li><b>if(S1[i]==S2[j])</b>, call f(i-1,j-1) and f(i-1,j).</li>
-                <li><b>if(S1[i]!=S2[j])</b>, call f(i-1,j).</li>
-                <br>
 
-                <b>Step 3: Return the sum of choices</b> <br>
+                <b>Case 1: If S1[i] == ‘?’</b>
+                <p>
+                    In this case, we can explicitly match ‘?’ at index i of S1 with the corresponding character at index j of S2. And then recursively call f(i-1,j-1) to check for the remaining string.
+                </p>
 
-                <li>As we have to return the total count, we will return the sum of f(i-1,j-1) and f(i-1,j) in case 1
-                  and simply return f(i-1,j) in case 2.
+                <b>Case 2: If S1[i] == ‘*’ </b>
+                <p>
+                    This is an interesting case as now ‘*’ can be replaced with any sequence of characters( of length 0 or more) from S2.
+<br><br>
+We will revisit this example:
+<img src="./Notes/L34resImg3.PNG" alt=""> <br>
+
+If any of these cases return true, we can say that the characters do match. The next question is <b>how to try all possible ways?</b>
+
+<br><br>
+
+We are using two pointers i and j to represent characters of strings S1 and S2. We can surely write a for loop to compare characters from 0 to j of S2 for the above scenario. <b>Can we do it more smartly?</b> Yes, we can. Please understand the approach explained below.
+<br><br>
+
+<b>We are using a recursive function f(i,j). If we do only the following two recursive calls:</b> 
+<li>Call <b>f(i-1,j). i.e replace ‘*’ with nothing</b> and act as if it was not present.</li>
+<li>Call <b>f(i,j-1). i.e replace ‘*’ with a single character</b> at index j and make the i pointer to still point at index i. In this, we matched it with a single character (one of the many options that need to be tried) and in the next recursive call, as i still point to ‘*’, we get the exact two recursive calls again.</li>  <br>
+
+The following recursive tree will help us to understand the recursion better. <br>
+<img src="./Notes/L34resImg4.PNG" alt=""> <br>
+So we see how we can tackle all the required cases associated with ‘*’ by using recursion.
+                </p>
+
+                <b>Case 3: If S1[i] is neither ‘?’ nor ‘*’</b><br>
+                <p>
+                    then we can say as the characters at i and j don’t match then the strings don’t match, so we return false.
+                </p>
+
+                <b>Step 3:  Return logical OR (||) of all the Choices</b> <br>
+
+                <li>If any of the cases return true, we can say that strings do match. We can use OR operator (||) with the recursive calls.
                 </li>
 
                 <br>
                 <b>Base Cases</b>
-                <li>if j < 0, it means we have matched all characters of S2 with characters of S1, so we return 1.</li>
-                <li>if i < 0, it means we have checked all characters of S1 but we are not able to match all characters
-                    of S2, therefore we return 0.</li>
-                    <br>
-                    <p>The final pseudocode after steps 1, 2, and 3:</p>
-                    <img src="./Notes/L32resImg6.jpg" alt=""> <br>
 
+                We are reducing i and j in our recursive relation, there can be two possibilities, either i becomes -1 or j becomes -1., i,e we exhaust either S1 or S2 respectively.
 
-                    <div class="container">
-                      <div class="item">
-                        <div class="title"><b>Recursion Python Code</b></div>
-                        <div class="content">
-                          <img src=".//Notes/L32rcode (1).png" alt="" />
-                        </div>
-                      </div>
+                <br><br>
 
-                      <div class="item">
-                        <div class="title"><b>Recursion C++ Code</b></div>
-                        <div class="content">
-                          <img src=".//Notes/L32rcode (2).png" alt="" />
-                        </div>
-                      </div>
+                <b>1. When S1 is exhausted:</b> <br>
+                When S1 is exhausted (i < 0), we know that in order for the strings to match, String S2 should also exhaust simultaneously. If it does, we return true, else we return false.
 
-                      <div class="item">
-                        <div class="title"><b>Recursion Java Code</b></div>
-                        <div class="content">
-                          <h5>Sb Mai He Kru ...</h5>
-                          <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
-                        </div>
-                      </div>
+                <li>if(i < 0 && j < 0), return true.</li>
+                <li>if(i < 0 && j >= 0), return false.</li>
+
+                <br>
+                <b>2. When S2 is exhausted:</b> <br>
+                When S2 is exhausted(j < 0) and S1 has not, there is only one pattern that can account for true(matching of strings). It is if S1 is like this <b>“*”,”****”,”***”,</b> i.e: S1 contains only stars. Then we can replace every star with a sequence of length 0 and say that the string match.
+               <br>
+                <b>If S1 is all-stars, we return true, else return false.</b><br><br>
+                The final pseudocode after steps 1, and 2<br>
+
+                <img src="./Notes/L34resImg5.PNG" alt="">
+
+                <br>
+
+                <div class="container">
+                  <div class="item">
+                    <div class="title"><b>Recursion Python Code</b></div>
+                    <div class="content">
+                      <img src="./Notes/L34rcode (1).png" alt="" />
                     </div>
-                    <br>
+                  </div>
 
-                    <h3>Time & Space Complexity</h3>
-                    <b>Time Complexity: O(2^N)</b> <br>
+                  <div class="item">
+                    <div class="title"><b>Recursion C++ Code</b></div>
+                    <div class="content">
+                      <img src="./Notes/L34rcode (2).png" alt="" />
+                    </div>
+                  </div>
 
-                    Reason: Exponential Time we find out the all the Possible Path<br>
+                  <div class="item">
+                    <div class="title"><b>Recursion Java Code</b></div>
+                    <div class="content">
+                      <h5>Sb Mai He Kru ...</h5>
+                      <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
+                    </div>
+                  </div>
+                </div>
+                <br>
 
-                    <b>Space Complexity: O(N)</b> <br>
+                <h3>Time & Space Complexity</h3>
+                <b>Time Complexity: O(2^N)</b> <br>
 
-                    Reason: We are using a recursion stack space(O(N))<br><br>
+                Reason: Exponential Time we find out the all the Possible Path<br>
 
-                    <h3>Memoization Approch</h3>
+                <b>Space Complexity: O(N)</b> <br>
 
-                    <p>
-                      If we Observe in the recursion tree, we will observe a many number of overlapping subproblems.
-                      Therefore the recursive solution can be memoized for to reduce the time complexity.
-                    </p>
+                Reason: We are using a recursion stack space(O(N))<br><br>
 
-                    <b>Steps to convert Recursive code to memoization solution:</b> <br><br>
+                <h3>Memoization Approch</h3>
 
-                <li>Create a dp array of size [n][m]. The size of S1 and S2 are n and m respectively, so the variable i
-                  will always lie between ‘0’ and ‘n-1’ and the variable j between ‘0’ and ‘m-1’.</li> <br>
+                <p>
+                  If we Observe in the recursion tree, we will observe a many number of overlapping subproblems.
+                  Therefore the recursive solution can be memoized for to reduce the time complexity.
+                </p>
+
+                <b>Steps to convert Recursive code to memoization solution:</b> <br><br>
+
+                <li>Create a dp array of size [n][m]. The size of S1 and S2 are n and m respectively, so the variable i will always lie between ‘0’ and ‘n-1’ and the variable j between ‘0’ and ‘m-1’.</li> <br>
                 <li>We initialize the dp array to -1.</li> <br>
                 <li>Whenever we want to find the answer to particular parameters (say f(i,j)), we first check whether
                   the answer is already calculated using the dp array(i.e dp[i][j]!= -1 ). If yes, simply return the
@@ -275,14 +307,14 @@
                   <div class="item">
                     <div class="title"><b>Memoization Python Code</b></div>
                     <div class="content">
-                      <img src="./Notes/L32memocode (1).png" alt="">
+                      <img src="./Notes/L34memocode (1).png" alt="">
                     </div>
                   </div>
 
                   <div class="item">
                     <div class="title"><b>Memoization C++ Code</b></div>
                     <div class="content">
-                      <img src="./Notes/L32memocode (2).png" alt="">
+                      <img src="./Notes/L34memocode (2).png" alt="">
                     </div>
                   </div>
 
@@ -317,6 +349,8 @@
                     Relation into the form of the Looping</b>
                 </p>
 
+                <b>VVVV Important Point: Tabulation Approch is Always 1-Based Indexing Always Remember</b> <br><br>
+
                 <b>Steps to convert Recursive Solution to Tabulation one.</b><br>
 
                 <li>In the recursive logic, we set the base case too if( i < 0 ) and if( j < 0 ) but we can’t set the dp
@@ -325,14 +359,13 @@
                     <br>
                     <img src="./Notes/L32tabExp.jpg" alt=""><br>
                 <li>To convert the memoization approach to a tabulation one, create a dp array with the same size as
-                  done in memoization. We can initialize it as 0.</li>
+                  done in memoization. We can initialize it as 0. ([n+1][m+1] as zero)</li>
                 <br>
-                <li>First, we need to initialize the base conditions of the recursive solution.</li>
+                <li>First, we need to initialize the base conditions of the recursive solution, <b>(keep in mind 1-based
+                    indexing), we set the first column’s value as i and the first row as j(1-based indexing)</b>.</li>
                 <br>
-                <li>if J == 0 that means we search all the String of the S2 in S1 <b>So we Marked Every j == 0 is 1</b>
-                </li> <br>
-                <li>if i == 0 that means we something remaining that not found in the S1 <b>So we Marked Every i == 0 is
-                    0</b></li> <br>
+                <li>Similarly, we will implement the recursive code by keeping in mind the shifting of indexes, therefore S1[i] will be converted to S1[i-1]. Same for S2.</li>
+                <br>
                 <li>Similarly, we will implement the recursive code by keeping in mind the shifting of indexes,
                   therefore S1[i] will be converted to S1[i-1]. Same for S2.</li>
                 <br>
@@ -347,14 +380,14 @@
                   <div class="item">
                     <div class="title"><b>Tabulation Python Code</b></div>
                     <div class="content">
-                      <img src="./Notes/L32tabcode (1).png" alt="" />
+                      <img src="./Notes/L34tabcode (1).png" alt="" />
                     </div>
                   </div>
 
                   <div class="item">
                     <div class="title"><b>Tabulation C++ Code</b></div>
                     <div class="content">
-                      <img src="./Notes/L32tabcode (2).png" alt="" />
+                      <img src="./Notes/L34tabcode (2).png" alt="" />
                     </div>
                   </div>
 
@@ -381,9 +414,8 @@
                 <h3>Space Optimization</h3>
 
                 <p>
-                  If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: dp[i][j] =
-                    dp[i-1][j-1] + dp[i-1][j] or dp[i][j] = dp[i-1][j]</b> for the finding the our ans then definetly
-                  here <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
+                  If we closelly Observed <b>if any Tabulation Approch we used the Some Limited Stuff like: dp[i][j] =  dp[i-1][j-1], dp[i][j] = dp[i-1][j] ||dp[i][j-1] </b> for the finding the our ans then definetly here
+                  <b>Spaced Optimization</b> is Possible in that types of Problems. <b>Always Remember</b>
                 </p>
 
                 <b>Golden Rule</b>
@@ -391,56 +423,36 @@
 
                 <p>
 
-                  <li>We see that to calculate a value of a cell of the dp array, we need only the previous row values
-                    (say prev). So, we don’t need to store an entire array. Hence we can space optimize it.</li> <br>
+                  <li>We see that to calculate a value of a cell of the dp array, we need only the previous row values (say prev) and current row’s previous columns values. So, we don’t need to store an entire array. Hence we can space optimise it.</li> <br>
 
-                  <li>We will be space optimizing this solution using <b>only one row</b>.</li> <br>
-                <p>
-                  We have 2 Different Way to Optimized this Problem
-                  <li>using 2 array</li>
-                  <li>using 1 array</li> <br>
-                  <b>Same like the 0/1 and unbounded Knapsack Problem</b>
+                  <li>We take two rows ‘prev’ and ‘cur’</li> <br>
+                  <li>We initialize it to the base condition. We first initialize the prev row. Its first value needs to be true. Rest all the values of the prev row meeds to be false.</li> <br>
+                  <li>Moreover, the cur variable whenever declared should have its first cell’s value given by isAllStarts() function.</li><br>
+                  <li>Next, we implement the memoization logic. We replace dp[i-1] with prev and dp[i] by cur</li> <br>
+                  <li>After every inner loop execution, we set prev=cur, for the next iteration.</li> <br>
+                  <li>last our ans is prev[m]</li>
                 </p>
-                <li>If we clearly see the values required: dp[i-1][j-1] and dp[i-1][j], we can say that if we are at a
-                  column j, we will only require the values shown in the grey box from the previous row and other values
-                  will be from the cur row itself. So why do we need to store an entire array for it?</li> <br>
 
-                <img src="./Notes/L32spImg.jpg" alt="">
-                <br>
-
-                <p>If we need only two values from the prev row, there is no need to store an entire row. We can work a
-                  bit smarter.</p>
-
-                <b>We can use the cur row itself to store the required value in the following way:</b>
-                <li>We take a single row ‘prev’.</li> <br>
-                <li>We initialize it to the base condition.</li> <br>
-                <li>Whenever we want to compute a value of the cell prev[j], we take the already existing value (prev[j]
-                  before new computation) and prev[j-1] (if required, in case of character match).</li> <br>
-                <li>We perform the above step on all the indexes.</li> <br>
-                <li>So we see how we can space optimize using a single row itself.</li> <br>
-                <li>last our ans is prev[index2]</li>
-                </p>
+                <b>Some Important Points:</b><br>
+                <li>prev = curr: Some Time not working and not give a Correct answer, same like we face in this Problem due to the <b>Dynamic element Allocation</b></li>
+                <li>So we try at the place of the <b>prev = curr</b>
+                    <li><b>prev[:] = curr</b></li>
+                    <li><b>prev = curr[:]</b></li>
+                </li>
 
                 <br>
                 <div class="container">
                   <div class="item">
                     <div class="title"><b>SpaceOptmized Python Code</b></div>
                     <div class="content">
-                      <img src="./Notes/L32spcode (1).png" alt="" />
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="title"><b>Most Optimial Python Code 🔥</b></div>
-                    <div class="content">
-                      <img src="./Notes/L32motCode.png" alt="" />
+                      <img src="./Notes/L34spcode (1).png" alt="" />
                     </div>
                   </div>
 
                   <div class="item">
                     <div class="title"><b>SpaceOptmized C++ Code</b></div>
                     <div class="content">
-                      <img src="./Notes/L32spcode (2).png" alt="" />
+                      <img src="./Notes/L34spcode (2).png" alt="" />
                     </div>
                   </div>
 
@@ -457,13 +469,13 @@
                 <br>
 
                 <h3>Time & Space Complexity</h3>
-                <b>Time Complexity: O(N*W)</b> <br>
+                <b>Time Complexity: O(N*M)</b> <br>
 
                 Reason: There are three 2 nested loops<br>
 
                 <b>Space Complexity: O(W)</b> <br>
 
-                Reason: We are using an external array of size ‘W+1’ to store only one row.<br><br>
+                Reason: We are using an external array of size ‘M+1’ to store only one row.<br><br>
 
                 <!-- codeEditor  -->
                 <div class="QuestionmeraInterviewCodeEditior">
@@ -531,8 +543,9 @@
                   <script src="../codeEditor.js"></script>
                 </div>
 
+
               </div>
-              <br />
+              <br>
 
               <center>~ It's All About Consistency📈 Dedication🎯 HardWork💪 Happy Coding❤️ ~</center>
             </div>
@@ -545,6 +558,7 @@
     <!-- #main -->
   </div>
   <script src="../script.js"></script>
+
 </body>
 
 </html>

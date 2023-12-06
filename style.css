@@ -23,15 +23,15 @@
   gap: 5px;
 }
 
-.container:hover {
+/* .container:hover {
   cursor: pointer;
-}
+} */
 
 .title {
   display: flex;
   align-items: center;
   background: #ffffff;
-  height: 40px;
+  height: 45px;
   padding-left: 20px;
   color: black;
   border: 1px solid rgb(122, 116, 116);
@@ -75,9 +75,10 @@
 
 
 .problemList {
+  display: flex;
   padding: 0;
   margin: 0;
-  max-width: 700px;
+  width: 100%;
   position: relative;
 }
 
@@ -95,6 +96,10 @@
   padding: 0.5rem 1.5rem 1rem;
   border-radius: 1rem;
   background: peachpuff;
+}
+
+.prbmName:hover{
+  cursor: pointer;
 }
 
 .problemList {
@@ -402,7 +407,7 @@
   display: flex;
   width: 80px;
   margin-top: -60px;
-  margin-left: 160px;
+  margin-left: 34rem;
 }
 
 .circular-progress {
@@ -499,12 +504,18 @@ center {
   max-height: 50px;
   min-width: 150px;
   max-width: 150px;
+  opacity:0.8;
   /* background: #000; */
 }
 
 .nameTag {
   position: relative;
   top: 8px;
+  width: 35rem;
+}
+
+.nameTag h4{
+  font-size: 25px;
 }
 
 /* ------------------------------------------------------------------- */
@@ -592,15 +603,27 @@ center {
   border: none;
 }
 
+#AdvancedTitle:hover{
+  cursor: pointer;
+}
+
 #SecondAdvancedTitle {
   border: none;
   background: linear-gradient(90deg, rgba(0, 212, 255, 0.4514005431274072) 0%, rgba(115, 115, 191, 0.4654061453683036) 56%);
+}
+
+#SecondAdvancedTitle:hover{
+  cursor: pointer;
 }
 
 #ThirdAdvancedTitle {
   border: none;
   background: linear-gradient(90deg, rgba(223, 238, 255, 1) 0%, rgba(216, 233, 253, 1) 10%, rgba(148, 186, 231, 1) 61%);
 
+}
+
+#ThirdAdvancedTitle:hover{
+  cursor: pointer;
 }
 
 #AchivementTitle {
@@ -1163,6 +1186,7 @@ center {
   background-color: white;
 }
 
+
 /*  */
 
 /* .StartingDiv{
@@ -1264,6 +1288,19 @@ margin-left: 20px;
   color: rgba(51, 48, 48, 0.692);
 }
 
+
+#AchivementTitle:hover{
+  cursor: pointer;
+}
+
+.bigKrnaHai{
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.content img{
+  border-radius: 20px;
+}
 
 @media (max-width:412) {
   .aboutMe {

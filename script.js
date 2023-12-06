@@ -8,8 +8,7 @@ const items = document.querySelectorAll(".item");
           item.classList.toggle("active");
         });
       });
-
-
+      
 // -------------------------------------Main Bar --------------------------------------
 
 
