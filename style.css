@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: arial; */
+  /* font-family:Arial; */
+  /* font-size: 15px; */
 }
 
 .dsa {
@@ -18,7 +19,7 @@
 
 .container {
   width: 100%;
-  font-family: arial;
+  /* font-family: arial; */
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -42,7 +43,7 @@
 .myImg {
   border-radius: 10%;
   /* width: 70rem; */
-  width: 40rem;
+  width: 50rem;
 }
 
 .lastmyImg {
@@ -576,6 +577,7 @@ center {
   justify-content: center;
   justify-items: center;
   margin-top: 11px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .tagSec p {
@@ -602,6 +604,7 @@ center {
 #AdvancedTitle {
   background: linear-gradient(100deg, rgba(25, 241, 104, 0.4) 0%, rgba(191, 142, 115, 0.4) 79%);
   border: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #AdvancedTitle:hover{
@@ -611,6 +614,7 @@ center {
 #SecondAdvancedTitle {
   border: none;
   background: linear-gradient(90deg, rgba(0, 212, 255, 0.4514005431274072) 0%, rgba(115, 115, 191, 0.4654061453683036) 56%);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #SecondAdvancedTitle:hover{
@@ -620,7 +624,7 @@ center {
 #ThirdAdvancedTitle {
   border: none;
   background: linear-gradient(90deg, rgba(223, 238, 255, 1) 0%, rgba(216, 233, 253, 1) 10%, rgba(148, 186, 231, 1) 61%);
-
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #ThirdAdvancedTitle:hover{
@@ -916,6 +920,13 @@ center {
   text-align: justify;
   width: 50rem;
 } */
+.abutDiss{
+  /* background-color: red; */
+  height: 17rem;
+  width: 120rem;
+  overflow: hidden;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
 
 .abutDiss li {
   list-style: none;
@@ -1346,8 +1357,9 @@ margin-left: 20px;
 }
 
 .fontHeadSize{
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(51, 48, 48, 0.692);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
