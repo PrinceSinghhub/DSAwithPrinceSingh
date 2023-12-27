@@ -46,7 +46,7 @@
 
                 <h5 class="has-text-align-center">
                   <mark style="background-color: rgba(0, 0, 0, 0)" class="has-inline-color has-nebula-color">
-                    Jb Tak Fodega Nhi 🎯 Tb Tk Chodega Nhi 📚 (MAANG) 
+                    Jb Tak Fodega Nhi 🎯 Tb Tk Chodega Nhi 📚 (MAANG)
                   </mark>
 
                   <br><br>
@@ -96,7 +96,7 @@
                   <!-- <button class="hardQst" role="button">😢 Hard</button> -->
                   <button class="mediumQst" role="button">😟 Medium</button>
                   <!-- <button class="easyQst" role="button">😊 Easy</button>-->
-                    <!-- <button class="hardQst" role="button">😢 Hard</button> -->
+                  <!-- <button class="hardQst" role="button">😢 Hard</button> -->
                   <a href=""><button class="leetcodelink" role="button">
                       <div class="imgQstDiv">
                         <img src="../dsaProfileImg/leetcode.webp" alt="">LeetCode
@@ -115,20 +115,24 @@
                 </div>
 
                 <!-- Problem Statements  -->
-                
-                <p>
-                Best time to buy and sell stock I, We are given an array Arr[] of length n. It represents the price of a stock on ‘n’ days. The following guidelines need to be followed:
-                <br>
-                <li>We can buy and sell a stock only once.</li>
-                <li>We can buy and sell the stock on any day but to sell the stock, we need to first buy it on the same or any previous day.</li>
 
-                We need to tell the maximum profit one can get by buying and selling this stock.
+                <p>
+                  Best time to buy and sell stock I, We are given an array Arr[] of length n. It represents the price of
+                  a stock on ‘n’ days. The following guidelines need to be followed:
+                  <br>
+                  <li>We can buy and sell a stock only once.</li>
+                  <li>We can buy and sell the stock on any day but to sell the stock, we need to first buy it on the
+                    same or any previous day.</li>
+
+                  We need to tell the maximum profit one can get by buying and selling this stock.
                 </p>
 
 
                 <p><b>How To Solved this Problem</b> <br>
 
-                    For every index of string S1, we have different options to match that index with string S2. Therefore, we can think in terms of string matching path as we have done already in previous questions. <b>Again this Problem Based on the DP on String Matching</b>
+                  For every index of string S1, we have different options to match that index with string S2. Therefore,
+                  we can think in terms of string matching path as we have done already in previous questions. <b>Again
+                    this Problem Based on the DP on String Matching</b>
 
                   <li>Either the characters match already.</li>
                   <li>Or, if there is a ‘?’, we can explicitly match a single character.</li>
@@ -138,58 +142,103 @@
                   <img src="./Notes/L35expImg1.PNG" alt="">
 
                 </p>
-                
+
                 <p><b>VVVV Important Note:</b><br>
-                    <b><li>Dp on Stocks its Very Important to Understand the Concept of the Space Optimization.</li>
-                        <li>Becouse Recruter expect from your side you must know the concept of the Space Optimization on DP on Stocks.</li>
-                        <li>We can not Escape teh Space Optimization.</li></b>
+                  <b>
+                    <li>Dp on Stocks its Very Important to Understand the Concept of the Space Optimization.</li>
+                    <li>Becouse Recruter expect from your side you must know the concept of the Space Optimization on DP
+                      on Stocks.</li>
+                    <li>We can not Escape teh Space Optimization.</li>
+                  </b>
                 </p>
 
                 <br>
                 <h3>Intuition Behid this Problem</h3>
 
                 <p>
-                    We need to find the maximum profit. In order to maximize the profit, we need to buy the stock at its lowest price and sell it when the price is highest. In the given example the lowest price(1) is on Day 1 and the highest price is (7) is on Day 0. But we need to buy the stock before selling it therefore we need to modify this approach. <br><br>
+                  We need to find the maximum profit. In order to maximize the profit, we need to buy the stock at its
+                  lowest price and sell it when the price is highest. In the given example the lowest price(1) is on Day
+                  1 and the highest price is (7) is on Day 0. But we need to buy the stock before selling it therefore
+                  we need to modify this approach. <br><br>
 
-We can try to sell the stock every day and try to find the maximum profit that can be generated by selling the stock on that day. At last, we can return the maximum of these individual maximum profits as our answer.  <br><br>
+                  We can try to sell the stock every day and try to find the maximum profit that can be generated by
+                  selling the stock on that day. At last, we can return the maximum of these individual maximum profits
+                  as our answer. <br><br>
 
-To find the individual maximum profit on a day ‘i’, we know the selling price, i.e the price of the stock on day i, we need to find the buying price. To maximize the profit on day ‘i’, the buying price should be the lowest price of the stock from day 0 to day i (see the graph above). This way we can keep track of the correct buying price for any day.
+                  To find the individual maximum profit on a day ‘i’, we know the selling price, i.e the price of the
+                  stock on day i, we need to find the buying price. To maximize the profit on day ‘i’, the buying price
+                  should be the lowest price of the stock from day 0 to day i (see the graph above). This way we can
+                  keep track of the correct buying price for any day.
                 </p>
 
                 <h3>Approch</h3>
                 <p>
-                    <b>The algorithm approach can be stated as:</b> <br>
-                    <li>Initialize a variable ‘maxProfit’ to 0 and declare another variable ‘mini’ which we will use to keep track of the buying price (minimum price from day 0 to day i) for selling the stock.</li>
-                    <li>Traverse the array from index 1 to n-1. We started at index 1 because buying and selling the stock on the 0th day will give us a profit of 0, which we have initialized our maxProfit as already.</li>
-                    <li>In each iteration, try to find the curProfit. The selling price will be Arr[i] and ‘mini’ will give us the buying price. We calculate the curProfit. If it is more than the existing profit value (maxProfit), we update the maxProfit value.</li>
-                    <li>Before going to the next iteration, we check if the current price (Arr[i]) is less than the mini value, and we assign it as the new mini value. In this way, we keep track of the buying price in a single iteration itself.</li>
-                    <b><li>Always Remember if we shell the Stocks on the ith Day then you buy on the minimum price from [0 to i-1] day</li></b>
+                  <b>The algorithm approach can be stated as:</b> <br>
+                  <li>Initialize a variable ‘maxProfit’ to 0 and declare another variable ‘mini’ which we will use to
+                    keep track of the buying price (minimum price from day 0 to day i) for selling the stock.</li>
+                  <li>Traverse the array from index 1 to n-1. We started at index 1 because buying and selling the stock
+                    on the 0th day will give us a profit of 0, which we have initialized our maxProfit as already.</li>
+                  <li>In each iteration, try to find the curProfit. The selling price will be Arr[i] and ‘mini’ will
+                    give us the buying price. We calculate the curProfit. If it is more than the existing profit value
+                    (maxProfit), we update the maxProfit value.</li>
+                  <li>Before going to the next iteration, we check if the current price (Arr[i]) is less than the mini
+                    value, and we assign it as the new mini value. In this way, we keep track of the buying price in a
+                    single iteration itself.</li>
+                  <b>
+                    <li>Always Remember if we shell the Stocks on the ith Day then you buy on the minimum price from [0
+                      to i-1] day</li>
+                  </b>
                 </p>
 
                 <p><b>VVVV Important Note:</b><br>
-                    This Problem already take the liner time to solved this probelm and Space complexcity is Also take the Constant, so its not possible to more Optimized this Solution that's why we Direct the Optimial Code. <br><br>
+                  This Problem already take the liner time to solved this probelm and Space complexcity is Also take the
+                  Constant, so its not possible to more Optimized this Solution that's why we Direct the Optimial Code.
+                  <br><br>
 
-                    But in the Upcomming Problems on DP on Stock we will used the Same Approches and Flow that we used on the Previous Patterns on DP <br>
+                  But in the Upcomming Problems on DP on Stock we will used the Same Approches and Flow that we used on
+                  the Previous Patterns on DP <br>
 
-                    <li>Recursion Approch</li>
-                    <li>Memoization Approch</li>
-                    <li>Tabulation Approch</li>
-                    <li>Space Optimization Approch (Most Important)</li>
+                  <li>Recursion Approch</li>
+                  <li>Memoization Approch</li>
+                  <li>Tabulation Approch</li>
+                  <li>Space Optimization Approch (Most Important)</li>
 
                 </p>
-                
+
 
                 <br>
 
+                <!-- code part -->
                 <div class="container">
                   <div class="item">
                     <div class="title"><b>SpaceOptmized Python Code</b></div>
                     <div class="content">
-                      <img src="./Notes/L35pyOptCode.png" alt="" />
+                      <div class="code-container">
+                        <pre>
+<span class="code-class-name">class</span> Solution:
+        
+    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
+  
+        <span class="code-remain-code">maxProfit = 0</span>
+        <span class="code-remain-code">minPrice = prices[0]</span>
+                
+        <span class="code-reserved-word">for</span> index <span class="code-class-name">in</span> <span class="code-function-name">range</span>(1,<span class="code-reserved-word">len</span>(prices)):
+            <span class="code-remain-code">currentStockPrice = prices[index] - minPrice
+            maxProfit = max(maxProfit,currentStockPrice)
+            minPrice = min(minPrice,prices[index])</span>
+        
+        <span class="code-reserved-word">print</span>(minPrice)
+        <span class="code-reserved-word">return</span> maxProfit
+
+<span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
+<span class="code-remain-code">prices = [7,1,5,3,6,4]</span>
+<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
+        </pre>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="item">
+                  <!-- <div class="item">
                     <div class="title"><b>SpaceOptmized C++ Code</b></div>
                     <div class="content">
                       <img src="./Notes/L35cppOptCode.png" alt="" />
@@ -202,7 +251,8 @@ To find the individual maximum profit on a day ‘i’, we know the selling pric
                       <h5>Sb Mai He Kru ...</h5>
                       <p>Khud Bhi Kr le Khuch ..... Nalayk</p>
                     </div>
-                  </div>
+                  </div> -->
+
                 </div>
                 <br>
 
@@ -213,7 +263,8 @@ To find the individual maximum profit on a day ‘i’, we know the selling pric
 
                 <b>Space Complexity: O(1)</b> <br>
 
-                Reason:  No extra space is used. Just we used the Some Variables for the Storing the Some Dummy Data<br><br>
+                Reason: No extra space is used. Just we used the Some Variables for the Storing the Some Dummy
+                Data<br><br>
 
 
                 <!-- codeEditor  -->

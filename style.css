@@ -40,6 +40,10 @@
   border-radius: 20px;
 }
 
+.title:hover{
+  cursor: pointer;
+}
+
 .myImg {
   border-radius: 10%;
   /* width: 70rem; */
@@ -1370,10 +1374,6 @@ margin-right: 20px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-
-
 #AchivementTitle:hover{
   cursor: pointer;
 }
@@ -1411,6 +1411,68 @@ margin-right: 20px;
 
 .FooterClgTag{
   font-family: Arial;
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(70%);
+}
+  100% {
+    transform: translateX(-100%);
+  }
+  
+}
+
+.movingContent{
+  margin-top: 10px;
+  max-height: 30px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.movingContent p {
+  animation: moveLeftToRight 20s linear infinite;
+  font-size: 1rem;
+  color: var(--wp--preset--color--nebula) !important;
+  overflow: hidden;
+}
+
+.code-container {
+  position: relative;
+  top: -20px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.288);
+  border-radius: 5px;
+  overflow-x: auto; /* Add overflow-x property for horizontal scrollbar */
+}
+
+.code-class-name {
+  color: blue;
+}
+
+.code-function-name {
+  color: #007bff;
+}
+
+.code-reserved-word {
+  color: #e44d26;
+}
+
+/* .code-remain-code {
+  color: #000;
+} */
+
+.comment-code{
+  color: green;
+}
+
+/* Add a media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .code-container {
+      max-width: 100%; /* Adjust the max-width for smaller screens */
+  }
 }
 
 @media (max-width:412) {
