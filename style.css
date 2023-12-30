@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Apple Chancery', cursive;
+  /* font-family: 'Apple Chancery', cursive; */
   /* font-family:Arial; */
   /* font-size: 15px; */
 }
@@ -416,8 +416,8 @@
 .statusBarHai {
   display: flex;
   width: 80px;
-  margin-top: -60px;
-  margin-left: 38rem;
+  margin-top: -65px;
+  margin-left: 34rem;
 }
 
 .circular-progress {
@@ -521,7 +521,7 @@ center {
 .nameTag {
   position: relative;
   top: 8px;
-  width: 40rem;
+  width: 37rem;
 }
 
 .nameTag h4{
@@ -1391,7 +1391,7 @@ margin-right: 20px;
   font-family: Arial;
   font-size: 20px;
   font-weight: 800;
-  font-family: 'Apple Chancery', cursive;
+  /* font-family: 'Apple Chancery', cursive; */
 
 }
 
@@ -1459,9 +1459,9 @@ margin-right: 20px;
   overflow-x: auto; /* Add overflow-x property for horizontal scrollbar */
 }
 
-.code-container pre{
+/* .code-container pre{
   font-family: 'Apple Chancery', cursive;
-}
+} */
 
 .code-class-name {
   color: blue;
