@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Apple Chancery', cursive;
   /* font-family:Arial; */
   /* font-size: 15px; */
 }
@@ -48,6 +49,7 @@
   border-radius: 10%;
   /* width: 70rem; */
   width: 50rem;
+  background-color: red;
 }
 
 .lastmyImg {
@@ -77,6 +79,8 @@
 
 .titleHead {
   font-weight: bold;
+  margin-bottom: 60px;
+  text-align: center;
 }
 
 
@@ -413,7 +417,7 @@
   display: flex;
   width: 80px;
   margin-top: -60px;
-  margin-left: 34rem;
+  margin-left: 38rem;
 }
 
 .circular-progress {
@@ -517,7 +521,7 @@ center {
 .nameTag {
   position: relative;
   top: 8px;
-  width: 35rem;
+  width: 40rem;
 }
 
 .nameTag h4{
@@ -890,34 +894,34 @@ center {
 }
 
 .companyLogo1 {
-  height: 30px;
+  height: 50px;
   width: auto;
 
 }
 
 .companyLogo2 {
-  height: 35px;
+  height: 50px;
   width: auto;
 
 }
 
 .companyLogo3 {
   margin-top: -9px;
-  height: 40px;
+  height: 60px;
   width: auto;
 
 }
 
 .companyLogo4 {
   margin-top: -2px;
-  height: 30px;
+  height: 50px;
   width: auto;
 
 }
 
 .companyLogo5 {
-  margin-top: -7px;
-  height: 45px;
+  margin-top: -15px;
+  height: 80px;
   width: auto;
 
 }
@@ -934,7 +938,7 @@ center {
 .abutDiss{
   /* background-color: red; */
   height: 17rem;
-  width: 120rem;
+  width: 130rem;
   overflow: hidden;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
@@ -991,6 +995,10 @@ center {
 
 .whyDSA {
   margin-top: -20px;
+}
+
+.whyDSA h4{
+  font-size: 1.5rem;
 }
 
 .aboutBannerDiss {
@@ -1159,7 +1167,7 @@ center {
   display: flex;
   justify-content: center;
   justify-items: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .textEditorMainDiv {
@@ -1169,6 +1177,7 @@ center {
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 }
 
 .toolbar {
@@ -1289,7 +1298,7 @@ center {
 
 .StartingDiv {
   /* display: flex; */
-  width: 85%;
+  width: 90%;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
@@ -1298,7 +1307,7 @@ center {
 
 .CodeStartingDiv{
   /* display: flex; */
-  width: 80%;
+  width: 90%;
   /* flex-direction: column; */
   margin-left: auto;
   margin-right: auto;
@@ -1382,6 +1391,8 @@ margin-right: 20px;
   font-family: Arial;
   font-size: 20px;
   font-weight: 800;
+  font-family: 'Apple Chancery', cursive;
+
 }
 
 .content img{
@@ -1446,6 +1457,10 @@ margin-right: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.288);
   border-radius: 5px;
   overflow-x: auto; /* Add overflow-x property for horizontal scrollbar */
+}
+
+.code-container pre{
+  font-family: 'Apple Chancery', cursive;
 }
 
 .code-class-name {
