@@ -2,7 +2,7 @@
 <html lang="en-US" oncontextmenu="return false">
 
 <head>
-    <title>DPL36 Best Time to Buy and Sell Stock II</title>
+    <title>DP40 Buy and Sell Stocks With Transaction Fees</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link rel="stylesheet" id="wp-block-library-css"
@@ -102,7 +102,7 @@
                                 </h5>
 
                                 <h1 class="has-text-align-center mb-60">
-                                    DPL36 Best Time to Buy and Sell Stock II
+                                    DP40 Buy and Sell Stocks With Transaction Fees
                                 </h1>
 
                                 <div class="allBTNGroups">
@@ -146,24 +146,18 @@
                                         to first buy it on the same or any
                                         previous
                                         day.</li>
-                                    <li>We can’t buy a stock again after
-                                        buying it once. In other words, we
-                                        first buy a
-                                        stock and then sell it. After
-                                        selling we can buy and sell again.
-                                        But we can’t
-                                        sell before buying and can’t buy
-                                        before selling any previously bought
-                                        stock.
+                                    <li>We can’t buy a stock again after buying it once. In other words, we first buy a
+                                        stock and then sell it. After selling we can buy and sell again. But we can’t
+                                        sell before buying and can’t buy before selling any previously bought stock.
+                                    </li>
+                                    <li>
+                                        After every transaction, there is a <b>transaction fee (‘fee’)</b> associated
+                                        with it.
                                     </li>
 
                                     <br>
-                                    <img src="./Notes/L36expImg2.jpg" alt>
+                                    <img src="./Notes/L40expImg1.png" alt>
                                     <br>
-
-                                    <b>Find and return the maximum profit
-                                        you can achieve.</b> <br>
-                                    <img src="./Notes/L36expImg1.jpg" alt>
 
                                 </p>
 
@@ -186,8 +180,36 @@
                                     </li>
                                     <li><b>In Best Time to Buy and Sell Stock II: We Allow Infinite Transactions</b>
                                     </li>
-                                   
+                                    <li><b>In Best Time to Buy and Sell Stock III: We Allow Just Only 2 Transactions</b>
+                                    </li>
+                                    <li><b>In Best Time to Buy and Sell Stock IV: We Allow Just K Transactions</b>
+                                    </li>
+                                    <li><b>In Best Time to Buy and Sell Stock V: We Allow Infinite Transactions with
+                                            Cooldown</b>
+                                    </li>
+                                    <li><b>In Best Time to Buy and Sell Stock VI: We Allow Infinite Transactions with
+                                            Transactions Fees</b>
+                                    </li> <br>
                                 </p>
+
+                                <p>
+                                <h3>How Can I Solved this Problme and How I Link this Problem to the DP on Stock II</h3>
+
+                                Generally We Follow the Same <b>Approch and Logic</b> that we follow in the DP on
+                                <b>Stock II</b> but here is the Slight <b>Modification</b> that is Transactions Fee
+
+                                <br><br>
+                                The Only Modification is When We Shell the Stocks that means we Complete the 1
+                                Transactions and Every Transactions we just Minus the Transactions Fees Every Time tha's
+                                it and Entire Code and Logics will be Same as we Learned in the Our Preveiously
+                                Problems. <br>
+
+                                <b>shellTheStock: (prices[index] - transactionFee) when 1 Transactions Completed</b>
+                                </p>
+
+                                <b>
+                                    <h5>Now Remaining Entire 👇 Process will Be Same As Like in DPL36</h5>
+                                </b>
 
                                 <br>
                                 <h3>Recursice Approch</h3>
@@ -313,7 +335,7 @@
                                     day. In this
                                     case, the net profit earned from the
                                     current transaction will be <b>
-                                        +Arr[i]</b>. As
+                                        +Arr[i] - transactionFee</b>. As
                                     we are selling the stock, we are
                                     putting the money into our pocket,
                                     therefore the
@@ -328,6 +350,11 @@
                                     the next day.
                                     <b>Take</b>
                                 </li> <br>
+
+                                <li>
+                                    <b>Note: Buying and selling together count as one complete transaction. Therefore we
+                                        will account for the fee only once ( after selling the stock)</b>
+                                </li>
 
                                 <b>The figure below gives us the
                                     Summary</b>
@@ -349,7 +376,7 @@
                                 <br>
                                 <b>Base Cases</b>
 
-                                If ind==n, it means we have finished
+                                If ind>=n, (Index+2 May Be Excied the Limit of the Index) it means we have finished
                                 trading on all days, and there is no
                                 more money
                                 that we can get, therefore we simply
@@ -369,9 +396,9 @@
                                                 <pre>
 <span class="code-class-name">class</span> Solution:
         
-    <span class="code-function-name">def RecursionApproch</span>(<span class="code-class-name">self</span>, prices,index,n,decisionFlag):
+    <span class="code-function-name">def RecursionApproch</span>(<span class="code-class-name">self</span>, prices,index,n,decisionFlag,transactionFee):
         
-        <span class="comment-code"># Base Case</span>    
+        <span class="comment-code"># Base Case >= Becouse Index+2 May Be Excied the Limit of the Index</span>    
         <span class="code-reserved-word">if</span> index == n:
             <span class="code-reserved-word">return</span> 0
                 
@@ -379,26 +406,27 @@
                 
         <span class="code-reserved-word">if</span> decisionFlag == 1:
         <span class="code-remain-code"><span class="comment-code">    # as similar to take and notTake Concepts</span>
-            buyTheStock = -prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices,index+1,n,0)
-            notBuyTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices,index+1,n,1)
+            buyTheStock = -prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices,index+1,n,0,transactionFee)
+            notBuyTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices,index+1,n,1,transactionFee)
             maxProfit = <span class="code-reserved-word">max</span>(buyTheStock,notBuyTheStock)</span>
            
         <span class="code-reserved-word">else:</span>
-        <span class="code-remain-code">    shellTheStock = prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices, index + 1, n, 1)
-            notSellTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices, index + 1, n, 0)
+        <span class="code-remain-code">    shellTheStock =( prices[index] - transactionFee) + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices, index + 1, n, 1,transactionFee)
+            notSellTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices, index + 1, n, 0,transactionFee)
             maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                     </span>
         <span class="code-reserved-word">return</span> maxProfit
 
-    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
+    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices,transactionFee):
                  
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
         <span class="code-remain-code">decisionFlag = 1</span>
-        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices,0,n,decisionFlag)
+        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices,0,n,decisionFlag,transactionFee)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [7,1,5,3,6,4]</span>
-<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
+<span class="code-remain-code">prices = [1,3,2,8,4,9]</span>
+<span class="code-remain-code">transactionFee = 2</span>
+<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices,transactionFee)</span>)</span>
         </pre>
                                             </div>
                                         </div>
@@ -475,7 +503,7 @@
                                                 <pre>
 <span class="code-class-name">class</span> Solution:
         
-    <span class="code-function-name">def MemoizationApproch</span>(<span class="code-class-name">self</span>, prices,index,n,decisionFlag,dp):
+    <span class="code-function-name">def MemoizationApproch</span>(<span class="code-class-name">self</span>, prices,index,n,decisionFlag,dp,transactionFee):
 
         <span class="comment-code"># Base Case</span>
         <span class="code-reserved-word">if</span> index == n:
@@ -488,20 +516,20 @@
                 
         <span class="code-reserved-word">if</span> decisionFlag == 1:
         <span class="code-remain-code"><span class="comment-code">    # as similar to take and notTake Concepts</span>
-            buyTheStock = -prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices,index+1,n,0,dp)
-            notBuyTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices,index+1,n,1,dp)
+            buyTheStock = -prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices,index+1,n,0,dp,transactionFee)
+            notBuyTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices,index+1,n,1,dp,transactionFee)
             maxProfit = <span class="code-reserved-word">max</span>(buyTheStock,notBuyTheStock)</span>
            
         <span class="code-reserved-word">else:</span>
-        <span class="code-remain-code">    shellTheStock = prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices, index + 1, n, 1,dp)
-            notSellTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices, index + 1, n, 0,dp)
+        <span class="code-remain-code">    shellTheStock = (prices[index] - transactionFee) + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices, index + 1, n, 1,dp,transactionFee)
+            notSellTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices, index + 1, n, 0,dp,transactionFee)
             maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                     </span>
         <span class="code-remain-code">dp[index][decisionFlag] = maxProfit</span>
         <span class="comment-code"># we can also return maxProfit its also give the correct answer</span>
         <span class="code-reserved-word">return</span> dp[index][decisionFlag]
 
-    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
+    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices,transactionFee):
                  
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
         <span class="code-remain-code">decisionFlag = 1</span>
@@ -509,17 +537,18 @@
         <span class="code-reserved-word">for</span> _ <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n):
             arr = [-1] * (2)
             dp.<span class="code-reserved-word">append</span>(arr)</span>
-        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices,0,n,decisionFlag,dp)
+        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices,0,n,decisionFlag,dp,transactionFee)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [7,1,5,3,6,4]</span>
-<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
+<span class="code-remain-code">prices = [1,3,2,8,4,9]</span>
+<span class="code-remain-code">transactionFee = 2</span>
+<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices,transactionFee)</span>)</span>
         </pre>
                                             </div>
                                         </div>
                                     </div>
 
-                                
+
                                 </div>
 
                                 <br>
@@ -613,7 +642,7 @@
                                                 <pre>
 <span class="code-class-name">class</span> Solution:
         
-    <span class="code-function-name">def TabulationApproch</span>(<span class="code-class-name">self</span>, prices,n,dp):
+    <span class="code-function-name">def TabulationApproch</span>(<span class="code-class-name">self</span>, prices,n,dp,transactionFee):
 
         <span class="comment-code"># Base Case</span>
         <span class="code-remain-code">dp[n][0] = 0
@@ -631,7 +660,7 @@
                 </span>
 
                 <span class="code-reserved-word">else:</span>
-                    <span class="code-remain-code">shellTheStock = prices[index] + dp[index+1][1]
+                    <span class="code-remain-code">shellTheStock = (prices[index] - transactionFee) + dp[index+1][1]
                     notSellTheStock = 0 + dp[index+1][0]
                     maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                 </span>
@@ -642,26 +671,27 @@
         <span class="code-reserved-word">print</span>(dp)
         <span class="code-reserved-word">return</span> dp[0][1]
 
-    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
+    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices,transactionFee):
                  
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
         <span class="code-remain-code">decisionFlag = 1</span>
         <span class="code-remain-code">dp = []
-        <span class="code-reserved-word">for</span> _ <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n+1):
+        <span class="code-reserved-word">for</span> _ <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n+2):
             arr = [0] * (2)
             dp.<span class="code-reserved-word">append</span>(arr)</span>
         <span class="code-reserved-word">print</span>(dp)
-        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">TabulationApproch</span>(prices,n,dp)
+        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">TabulationApproch</span>(prices,n,dp,transactionFee)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [7,1,5,3,6,4]</span>
-<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
+<span class="code-remain-code">prices = [1,3,2,8,4,9]</span>
+<span class="code-remain-code">transactionFee = 2</span>
+<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices,transactionFee)</span>)</span>
         </pre>
                                             </div>
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
 
                                 <br>
@@ -758,57 +788,60 @@
                                     <div class="item">
                                         <div class="title"><b>SpaceOptmized
                                                 Python Code</b></div>
-                                         <div class="content">
+                                        <div class="content">
                                             <div class="code-container">
                                                 <pre>
 <span class="code-class-name">class</span> Solution:
         
-    <span class="code-function-name">def SpaceOptimizationApproch</span>(<span class="code-class-name">self</span>, prices,n,prev,curr):
-
-        <span class="comment-code"># Base Case</span>
+    <span class="code-function-name">def SpaceOptimizationApproch</span>(<span class="code-class-name">self</span>, prices,n,prev,curr,transactionFee):
+        <span class="code-remain-code"><span class="comment-code">
+        # Base Case
+        </span>
         <span class="code-remain-code">prev[0] = 0
         prev[1] = 0</span>
-
-        <span class="code-reserved-word">for</span> indx <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n-1,-1,-1):
+        <span class="code-reserved-word">for</span> index <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n-1,-1,-1):
             <span class="code-reserved-word">for</span> decisionFlag <span class="code-class-name">in</span> <span class="code-function-name">range</span>(2):
 
                 <span class="code-remain-code">maxProfit = 0</span>
                 <span class="code-reserved-word">if</span> decisionFlag == 1:
                 <span class="code-remain-code"><span class="comment-code">    # as similar to take and notTake Concepts</span>
-                    <span class="code-remain-code">buyTheStock = -prices[indx] + prev[0]
+                    <span class="code-remain-code">buyTheStock = -prices[index] + prev[0]
                     notBuyTheStock = 0 + prev[1]
                     maxProfit = <span class="code-reserved-word">max</span>(buyTheStock,notBuyTheStock)
                 </span>
 
                 <span class="code-reserved-word">else:</span>
-                    <span class="code-remain-code">shellTheStock = prices[indx] + prev[1]
+                    <span class="code-remain-code">shellTheStock = (prices[index] - transactionFee) + prev[1]
                     notSellTheStock = 0 + prev[0]
                     maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                 </span>
 
                 <span class="code-remain-code">curr[decisionFlag] = maxProfit</span>
             
-            <span class="code-remain-code">prev = curr</span>
+            <span class="code-remain-code">
+            prev = curr
+            </span>
 
         <span class="comment-code"># we can also return maxProfit its also give the correct answer</span>
         <span class="code-reserved-word">return</span> prev[1]
 
-    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
+    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices,transactionFee):
                  
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
         <span class="code-remain-code">prev = [0, 0]
         curr = [0, 0]</span>
-        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">SpaceOptimizationApproch</span>(prices,n,prev,curr)
+        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">SpaceOptimizationApproch</span>(prices,n,prev,curr,transactionFee)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [1,2,3,4,5,6,7]</span>
-<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
+<span class="code-remain-code">prices = [1,3,2,8,4,9]</span>
+<span class="code-remain-code">transactionFee = 2</span>
+<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices,transactionFee)</span>)</span>
         </pre>
                                             </div>
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
 
                                 <br>
@@ -841,36 +874,43 @@
                                         <div class="title"><b>Most
                                                 SpaceOptmized
                                                 Python Code</b></div>
-                                                <div class="content">
-                                         <div class="code-container">
+                                        <div class="content">
+                                            <div class="code-container">
                                                 <pre>
 <span class="code-class-name">class</span> Solution:
         
-    <span class="code-function-name">def MostSpaceOptimizationApproch</span>(<span class="code-class-name">self</span>, prices,n):
+    <span class="code-function-name">def MostSpaceOptimizationApproch</span>(<span class="code-class-name">self</span>, prices,n,transactionFee):
  
-        <span class="code-remain-code">profit = 0</span>
-        <span class="code-reserved-word">for</span> index <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n-1):
+        <span class="code-remain-code">prev = -prices[0]
+        profit = 0</span>
+        <span class="code-reserved-word">for</span> i <span class="code-class-name">in</span> <span class="code-function-name">range</span>(1,n):
                                                   
-            <span class="code-remain-code">currProfit = prices[index + 1] - prices[index]
-            <span class="code-reserved-word">if</span> currProfit > 0:
-                profit += currProfit
+            <span class="code-remain-code">buyTheStock = profit - prices[i]
+            curr1 = max(prev, buyTheStock)
+            </span>
+            <span class="code-remain-code">shellTheStock = prices[i] + (prev - transactionFee)
+            curr2 = max(profit, shellTheStock)
+            </span>
+            <span class="code-remain-code">prev = curr1
+            profit = curr2
             </span>
         <span class="code-reserved-word">return</span> profit
 
-    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
+    <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices,transactionFee):
                  
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
-        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">MostSpaceOptimizationApproch</span>(prices,n)
+        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">MostSpaceOptimizationApproch</span>(prices,n,transactionFee)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [1,2,3,4,5,6,7]</span>
-<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
+<span class="code-remain-code">prices = [1,3,2,8,4,9]</span>
+<span class="code-remain-code">transactionFee = 2</span>
+<span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices,transactionFee)</span>)</span>
         </pre>
                                             </div>
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
 
                                 <br>
@@ -882,8 +922,7 @@
 
                                 <b>Space Complexity: O(1)</b> <br>
 
-                                Reason: We are using just 2 variables of
-                                the calculating the Profte.<br><br>
+                                Reason: We are using just 2 variables<br><br>
 
                                 <!-- codeEditor  -->
                                 <div class="QuestionmeraInterviewCodeEditior">

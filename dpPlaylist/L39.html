@@ -2,7 +2,7 @@
 <html lang="en-US" oncontextmenu="return false">
 
 <head>
-    <title>DPL36 Best Time to Buy and Sell Stock II</title>
+    <title>DP39 Buy and Sell Stocks With Cooldown</title>
     <link rel="icon" type="image/x-icon" href="../photo.jpg" />
 
     <link rel="stylesheet" id="wp-block-library-css"
@@ -102,7 +102,7 @@
                                 </h5>
 
                                 <h1 class="has-text-align-center mb-60">
-                                    DPL36 Best Time to Buy and Sell Stock II
+                                    DP39 Buy and Sell Stocks With Cooldown
                                 </h1>
 
                                 <div class="allBTNGroups">
@@ -146,15 +146,11 @@
                                         to first buy it on the same or any
                                         previous
                                         day.</li>
-                                    <li>We can’t buy a stock again after
-                                        buying it once. In other words, we
-                                        first buy a
-                                        stock and then sell it. After
-                                        selling we can buy and sell again.
-                                        But we can’t
-                                        sell before buying and can’t buy
-                                        before selling any previously bought
-                                        stock.
+                                    <li>We can’t buy a stock again after buying it once. In other words, we first buy a stock and then sell it. After selling we can buy and sell again. But we can’t sell before buying and can’t buy before selling any previously bought stock.
+                                    </li>
+                                    <li>
+                                        We can’t buy a stock on the very next day of selling it. This is the <b>cooldown</b>
+                                         clause.
                                     </li>
 
                                     <br>
@@ -163,7 +159,7 @@
 
                                     <b>Find and return the maximum profit
                                         you can achieve.</b> <br>
-                                    <img src="./Notes/L36expImg1.jpg" alt>
+                                    <img src="./Notes/L39expImg1.png" alt>
 
                                 </p>
 
@@ -186,9 +182,39 @@
                                     </li>
                                     <li><b>In Best Time to Buy and Sell Stock II: We Allow Infinite Transactions</b>
                                     </li>
-                                   
+                                    <li><b>In Best Time to Buy and Sell Stock III: We Allow Just Only 2 Transactions</b>
+                                    </li> 
+                                    <li><b>In Best Time to Buy and Sell Stock IV: We Allow Just K Transactions</b>
+                                    </li>
+                                    <li><b>In Best Time to Buy and Sell Stock V: We Allow Infinite Transactions with Cooldown</b>
+                                    </li> <br>
                                 </p>
 
+                                <p>
+                                    <h3>How Can I Solved this Problme and How I Link this Problem to the DP on Stock II</h3>
+
+                                    Generally We Follow the Same <b>Approch and Logic</b> that we follow in the DP on <b>Stock II</b> but here is the Slight <b>Modification</b> that is Cooldown
+
+                                    <br><br>
+
+                                    this is the Recursive Solution of the DP on Stock II with Slight Modification<br>
+
+                                    What is teh Change and the Change is Only When we <b>shellTheStock</b> then Just the place of <b>index+1</b> we did it <b>index+2</b> this is the Only change and Entire Remaining Code and Concept wii be Same as We do in the DP on <b>Stock II</b> <br> <br>
+
+                                    <img src="./Notes/L39resImg1.jpg" alt="">
+
+                                    <br>
+                                    <b>Now the Question is Why ? we do index+2 at the Time of shellTheStock Only</b> <br><br>
+
+                                    Becouse the Defination of the <b>Cooldown</b> is <b>We Can Not Buy the Stock after Shelling the Stock Imedietely that's why</b> 
+
+                                    <li>We increment the <b>Index+2</b> atthe Time of Transactions Completion</li>
+                                </p>
+
+                                <b>
+                                    <h5>Now Remaining Entire 👇 Process will Be Same As Like in DPL36</h5>
+                                </b>
+                           
                                 <br>
                                 <h3>Recursice Approch</h3>
 
@@ -349,7 +375,7 @@
                                 <br>
                                 <b>Base Cases</b>
 
-                                If ind==n, it means we have finished
+                                If ind>=n, (Index+2 May Be Excied the Limit of the Index) it means we have finished
                                 trading on all days, and there is no
                                 more money
                                 that we can get, therefore we simply
@@ -371,8 +397,8 @@
         
     <span class="code-function-name">def RecursionApproch</span>(<span class="code-class-name">self</span>, prices,index,n,decisionFlag):
         
-        <span class="comment-code"># Base Case</span>    
-        <span class="code-reserved-word">if</span> index == n:
+        <span class="comment-code"># Base Case >= Becouse Index+2 May Be Excied the Limit of the Index</span>    
+        <span class="code-reserved-word">if</span> index >= n:
             <span class="code-reserved-word">return</span> 0
                 
         <span class="code-remain-code">maxProfit = 0</span>
@@ -384,7 +410,7 @@
             maxProfit = <span class="code-reserved-word">max</span>(buyTheStock,notBuyTheStock)</span>
            
         <span class="code-reserved-word">else:</span>
-        <span class="code-remain-code">    shellTheStock = prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices, index + 1, n, 1)
+        <span class="code-remain-code">    shellTheStock = prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices, index + 2, n, 1)
             notSellTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices, index + 1, n, 0)
             maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                     </span>
@@ -397,7 +423,7 @@
         <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">RecursionApproch</span>(prices,0,n,decisionFlag)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [7,1,5,3,6,4]</span>
+<span class="code-remain-code">prices = [1,2,3,0,2]</span>
 <span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
         </pre>
                                             </div>
@@ -478,7 +504,7 @@
     <span class="code-function-name">def MemoizationApproch</span>(<span class="code-class-name">self</span>, prices,index,n,decisionFlag,dp):
 
         <span class="comment-code"># Base Case</span>
-        <span class="code-reserved-word">if</span> index == n:
+        <span class="code-reserved-word">if</span> index >= n:
             <span class="code-reserved-word">return</span> 0
                 
         <span class="code-remain-code"><span class="code-reserved-word">if</span> dp[index][decisionFlag] != -1:
@@ -493,7 +519,7 @@
             maxProfit = <span class="code-reserved-word">max</span>(buyTheStock,notBuyTheStock)</span>
            
         <span class="code-reserved-word">else:</span>
-        <span class="code-remain-code">    shellTheStock = prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices, index + 1, n, 1,dp)
+        <span class="code-remain-code">    shellTheStock = prices[index] + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices, index + 2, n, 1,dp)
             notSellTheStock = 0 + <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices, index + 1, n, 0,dp)
             maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                     </span>
@@ -512,7 +538,7 @@
         <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">MemoizationApproch</span>(prices,0,n,decisionFlag,dp)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [7,1,5,3,6,4]</span>
+<span class="code-remain-code">prices = [1,2,3,0,2]</span>
 <span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
         </pre>
                                             </div>
@@ -631,7 +657,7 @@
                 </span>
 
                 <span class="code-reserved-word">else:</span>
-                    <span class="code-remain-code">shellTheStock = prices[index] + dp[index+1][1]
+                    <span class="code-remain-code">shellTheStock = prices[index] + dp[index+2][1]
                     notSellTheStock = 0 + dp[index+1][0]
                     maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                 </span>
@@ -647,14 +673,14 @@
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
         <span class="code-remain-code">decisionFlag = 1</span>
         <span class="code-remain-code">dp = []
-        <span class="code-reserved-word">for</span> _ <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n+1):
+        <span class="code-reserved-word">for</span> _ <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n+2):
             arr = [0] * (2)
             dp.<span class="code-reserved-word">append</span>(arr)</span>
         <span class="code-reserved-word">print</span>(dp)
         <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">TabulationApproch</span>(prices,n,dp)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [7,1,5,3,6,4]</span>
+<span class="code-remain-code">prices = [1,2,3,0,2]</span>
 <span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
         </pre>
                                             </div>
@@ -679,6 +705,16 @@
                                 eliminated.<br><br>
 
                                 <h3>Space Optimization</h3>
+
+                                <p style="color: red;">
+                                    Ideally <b>Space Optimization</b> Not be Considered Becouse we have 3 Different - Different Parameter that is 
+                                    <li>Index+1</li>
+                                    <li>Index+2</li>
+                                    <li>Curr Index</li>
+                                    3 Different Array Required that means its not worth it and its Occupied the Space like in Tabulation that's Why Not Space Optimization Not Required in this Question
+                                </p>
+
+                                <p><b>But We Do Space Optimization also for the Better Understandbality</b></p>
 
                                 <p>
                                     If we closelly Observed <b>if any
@@ -763,45 +799,48 @@
                                                 <pre>
 <span class="code-class-name">class</span> Solution:
         
-    <span class="code-function-name">def SpaceOptimizationApproch</span>(<span class="code-class-name">self</span>, prices,n,prev,curr):
-
-        <span class="comment-code"># Base Case</span>
-        <span class="code-remain-code">prev[0] = 0
-        prev[1] = 0</span>
-
-        <span class="code-reserved-word">for</span> indx <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n-1,-1,-1):
+    <span class="code-function-name">def SpaceOptimizationApproch</span>(<span class="code-class-name">self</span>, prices,n,curr,prev1,prev2):
+        <span class="code-remain-code"><span class="comment-code">
+        # Important Note: We All Ready in our DP inilisezed with the 0, no need to write the Base
+        # Case allready all 0, But we Write the Base Case for the Understanding the Tabulation
+        </span>
+        <span class="code-reserved-word">for</span> index <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n-1,-1,-1):
             <span class="code-reserved-word">for</span> decisionFlag <span class="code-class-name">in</span> <span class="code-function-name">range</span>(2):
 
                 <span class="code-remain-code">maxProfit = 0</span>
-                <span class="code-reserved-word">if</span> decisionFlag == 1:
+                <span class="code-reserved-word">if</span> decisionFlag == 0:
                 <span class="code-remain-code"><span class="comment-code">    # as similar to take and notTake Concepts</span>
-                    <span class="code-remain-code">buyTheStock = -prices[indx] + prev[0]
-                    notBuyTheStock = 0 + prev[1]
+                    <span class="code-remain-code">buyTheStock = -prices[index] + prev1[1]
+                    notBuyTheStock = 0 + prev1[0]
                     maxProfit = <span class="code-reserved-word">max</span>(buyTheStock,notBuyTheStock)
                 </span>
 
                 <span class="code-reserved-word">else:</span>
-                    <span class="code-remain-code">shellTheStock = prices[indx] + prev[1]
-                    notSellTheStock = 0 + prev[0]
+                    <span class="code-remain-code">shellTheStock = prices[index] + prev2[0]
+                    notSellTheStock = 0 + prev1[1]
                     maxProfit = <span class="code-reserved-word">max</span>(shellTheStock, notSellTheStock)
                 </span>
 
                 <span class="code-remain-code">curr[decisionFlag] = maxProfit</span>
             
-            <span class="code-remain-code">prev = curr</span>
+            <span class="code-remain-code">
+            prev2 = prev1.copy()
+            prev1 = curr.copy()
+            </span>
 
         <span class="comment-code"># we can also return maxProfit its also give the correct answer</span>
-        <span class="code-reserved-word">return</span> prev[1]
+        <span class="code-reserved-word">return</span> curr[0]
 
     <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
                  
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
-        <span class="code-remain-code">prev = [0, 0]
-        curr = [0, 0]</span>
-        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">SpaceOptimizationApproch</span>(prices,n,prev,curr)
+        <span class="code-remain-code">curr = [0,0]
+        prev1 = [0,0]
+        prev2 = [0,0]</span>
+        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">SpaceOptimizationApproch</span>(prices,n,curr,prev1,prev2)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [1,2,3,4,5,6,7]</span>
+<span class="code-remain-code">prices = [1,2,3,0,2]</span>
 <span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
         </pre>
                                             </div>
@@ -825,6 +864,21 @@
                                 of size ‘2’.<br><br>
 
                                 <h3>Most Space Optimization</h3>
+
+                                <p style="color: red;">
+                                    Ideally <b>Space Optimization</b> Not be Considered Becouse we have 3 Different - Different Parameter that is 
+                                    <li>Index+1</li>
+                                    <li>Index+2</li>
+                                    <li>Curr Index</li>
+                                    3 Different Array Required that means its not worth it and its Occupied the Space like in Tabulation that's Why Not Space Optimization Not Required in this Question
+                                </p>
+
+                                <p>But We definetly bypass the <b>Ineer loop of the </b>Tabulation Approch that we do in the Tabulation Approch  <br>
+                                    <li>I Know that <b>if index == 1</b> then buy and <b>index == 0</b> then sell</li>
+                                    <li>Used this Concept for the By Pass the Inner Loop</li>
+
+                                </p>
+
                                 <p>If we observe very carefully, we only
                                     require two variables, namely
                                     prices[index + 1]
@@ -836,6 +890,8 @@
                                     iteration, we
                                     update the profit.</p>
 
+                                
+                                <br>
                                 <div class="container">
                                     <div class="item">
                                         <div class="title"><b>Most
@@ -846,24 +902,45 @@
                                                 <pre>
 <span class="code-class-name">class</span> Solution:
         
-    <span class="code-function-name">def MostSpaceOptimizationApproch</span>(<span class="code-class-name">self</span>, prices,n):
- 
-        <span class="code-remain-code">profit = 0</span>
-        <span class="code-reserved-word">for</span> index <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n-1):
+    <span class="code-function-name">def TabulationApproch</span>(<span class="code-class-name">self</span>, prices,n,dp):
+            
+        <span class="comment-code"># Base Case</span>
+        <span class="code-remain-code">dp[n][0] = 0
+        dp[n][1] = 0</span>
+
+        <span class="code-reserved-word">for</span> index <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n-1,-1,-1):
                                                   
-            <span class="code-remain-code">currProfit = prices[index + 1] - prices[index]
-            <span class="code-reserved-word">if</span> currProfit > 0:
-                profit += currProfit
-            </span>
-        <span class="code-reserved-word">return</span> profit
+            <span class="code-remain-code">maxProfit = 0</span>
+
+            <span class="comment-code"># as similar to take and notTake Concepts</span>
+            <span class="code-remain-code">buyTheStock = -prices[index] + dp[index+1][0]
+            notBuyTheStock = 0 + dp[index+1][1]
+            maxProfit = max(buyTheStock,notBuyTheStock)
+            dp[index][1] = maxProfit</span>
+
+            <span class="code-remain-code">shellTheStock = prices[index] + dp[index+2][1]
+            notSellTheStock = 0 + dp[index+1][0]
+            maxProfit = max(shellTheStock, notSellTheStock)
+            dp[index][0] = maxProfit</span>
+
+        <span class="comment-code"># we can also return maxProfit its also give the correct answer</span>
+        <span class="code-reserved-word">print</span>(dp)
+        <span class="code-reserved-word">return</span> dp[0][1]
 
     <span class="code-function-name">def maxProfit</span>(<span class="code-class-name">self</span>, prices):
                  
         <span class="code-remain-code">n = <span class="code-reserved-word">len</span>(prices)</span>
-        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">MostSpaceOptimizationApproch</span>(prices,n)
+        <span class="code-remain-code">dp = []</span>
+        <span class="code-reserved-word">for</span> _ <span class="code-class-name">in</span> <span class="code-function-name">range</span>(n+2):
+            arr = [0] * (2)
+            dp.<span class="code-reserved-word">append</span>(arr)</span>
+        
+        <span class="code-reserved-word">print</span>(dp)
+
+        <span class="code-reserved-word">return</span> <span class="code-class-name">self</span>.<span class="code-function-name">TabulationApproch</span>(prices,n,dp)
 
 <span class="code-remain-code">ans = <span class="code-class-name">Solution()</span></span>
-<span class="code-remain-code">prices = [1,2,3,4,5,6,7]</span>
+<span class="code-remain-code">prices = prices = [1,2,3,0,2]</span>
 <span class="code-remain-code"><span class="code-reserved-word">print</span>(ans.<span class="code-function-name">maxProfit(prices)</span>)</span>
         </pre>
                                             </div>
